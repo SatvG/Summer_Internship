@@ -1,0 +1,2997 @@
+{
+    "info": {
+        "added": 1693129047.340416, 
+        "started": 1693132311.702504, 
+        "duration": 149, 
+        "ended": 1693132461.57081, 
+        "owner": null, 
+        "score": 0.6, 
+        "id": 38, 
+        "category": "file", 
+        "git": {
+            "head": "13cbe0d9e457be3673304533043e992ead1ea9b2", 
+            "fetch_head": "13cbe0d9e457be3673304533043e992ead1ea9b2"
+        }, 
+        "monitor": "2deb9ccd75d5a7a3fe05b2625b03a8639d6ee36b", 
+        "package": "", 
+        "route": "none", 
+        "custom": null, 
+        "machine": {
+            "status": "stopped", 
+            "name": "cuckoo2", 
+            "label": "cuckoo2", 
+            "manager": "VirtualBox", 
+            "started_on": "2023-08-27 10:31:51", 
+            "shutdown_on": "2023-08-27 10:34:21"
+        }, 
+        "platform": null, 
+        "version": "2.0.7", 
+        "options": ""
+    }, 
+    "signatures": [
+        {
+            "families": [], 
+            "description": "Command line console output was observed", 
+            "severity": 1, 
+            "ttp": {}, 
+            "markcount": 1, 
+            "references": [], 
+            "marks": [
+                {
+                    "call": {
+                        "category": "misc", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "WriteConsoleA", 
+                        "return_value": 1, 
+                        "arguments": {
+                            "buffer": "  END : TYPE ENTER TO EXIT\r\n", 
+                            "console_handle": "0x00000007"
+                        }, 
+                        "time": 1693132340.234751, 
+                        "tid": 2608, 
+                        "flags": {}
+                    }, 
+                    "pid": 2848, 
+                    "type": "call", 
+                    "cid": 39
+                }
+            ], 
+            "name": "console_output"
+        }, 
+        {
+            "families": [], 
+            "description": "The executable contains unknown PE section names indicative of a packer (could be a false positive)", 
+            "severity": 1, 
+            "ttp": {
+                "T1045": {
+                    "short": "Software Packing", 
+                    "long": "Software packing is a method of compressing or encrypting an executable. Packing an executable changes the file signature in an attempt to avoid signature-based detection. Most decompression techniques decompress the executable code in memory."
+                }
+            }, 
+            "markcount": 1, 
+            "references": [], 
+            "marks": [
+                {
+                    "category": "section", 
+                    "ioc": ".trace", 
+                    "type": "ioc", 
+                    "description": null
+                }
+            ], 
+            "name": "pe_features"
+        }, 
+        {
+            "families": [], 
+            "description": "The executable uses a known packer", 
+            "severity": 1, 
+            "ttp": {
+                "T1045": {
+                    "short": "Software Packing", 
+                    "long": "Software packing is a method of compressing or encrypting an executable. Packing an executable changes the file signature in an attempt to avoid signature-based detection. Most decompression techniques decompress the executable code in memory."
+                }
+            }, 
+            "markcount": 1, 
+            "references": [], 
+            "marks": [
+                {
+                    "category": "packer", 
+                    "ioc": "InstallShield 2000", 
+                    "type": "ioc", 
+                    "description": null
+                }
+            ], 
+            "name": "peid_packer"
+        }
+    ], 
+    "target": {
+        "category": "file", 
+        "file": {
+            "yara": [], 
+            "sha1": "065233d742d92a49ec5469f120556de300efd5ea", 
+            "name": "16c8e241421ffb9c2d878cf20f01d63e9ddcec1cb55e198cce5f5ad9e748dad8_benign.exe", 
+            "type": "PE32 executable (console) Intel 80386, for MS Windows", 
+            "sha256": "16c8e241421ffb9c2d878cf20f01d63e9ddcec1cb55e198cce5f5ad9e748dad8", 
+            "urls": [], 
+            "crc32": "1FD35B03", 
+            "path": "/home/abc/.cuckoo/storage/binaries/16c8e241421ffb9c2d878cf20f01d63e9ddcec1cb55e198cce5f5ad9e748dad8", 
+            "ssdeep": null, 
+            "size": 413762, 
+            "sha512": "311934c9573b9b310000860e00de8508076efd323c5673ac5cb2a57b5b3b2e8f045bd2e3a14e1ee6c4e67a39b9d1a064e46ba1bb90ebb08d9fe7ffb1ed5fe680", 
+            "md5": "14578b6e5d8a9cf0d8d5092a584d54b8"
+        }
+    }, 
+    "network": {
+        "tls": [], 
+        "udp": [
+            {
+                "src": "192.168.56.101", 
+                "dst": "192.168.56.1", 
+                "offset": 2533, 
+                "time": 35.45836806297302, 
+                "dport": 53, 
+                "sport": 49927
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "192.168.56.1", 
+                "offset": 2625, 
+                "time": 20.396867990493774, 
+                "dport": 53, 
+                "sport": 50502
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "192.168.56.1", 
+                "offset": 2717, 
+                "time": 16.90100908279419, 
+                "dport": 53, 
+                "sport": 52397
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "192.168.56.1", 
+                "offset": 2809, 
+                "time": 5.639438152313232, 
+                "dport": 53, 
+                "sport": 55971
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "192.168.56.1", 
+                "offset": 2910, 
+                "time": 8.461799144744873, 
+                "dport": 53, 
+                "sport": 56774
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "192.168.56.1", 
+                "offset": 3007, 
+                "time": 35.97273397445679, 
+                "dport": 53, 
+                "sport": 59602
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "192.168.56.1", 
+                "offset": 3108, 
+                "time": 132.5462920665741, 
+                "dport": 53, 
+                "sport": 59704
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "192.168.56.1", 
+                "offset": 3209, 
+                "time": 19.304991960525513, 
+                "dport": 53, 
+                "sport": 59720
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "192.168.56.1", 
+                "offset": 3306, 
+                "time": 8.374562978744507, 
+                "dport": 53, 
+                "sport": 64965
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "192.168.56.255", 
+                "offset": 3398, 
+                "time": 2.9405341148376465, 
+                "dport": 137, 
+                "sport": 137
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "192.168.56.255", 
+                "offset": 15926, 
+                "time": 8.930000066757202, 
+                "dport": 138, 
+                "sport": 138
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 23770, 
+                "time": 5.258213043212891, 
+                "dport": 5355, 
+                "sport": 49856
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 24090, 
+                "time": 45.232521057128906, 
+                "dport": 5355, 
+                "sport": 49866
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 24410, 
+                "time": 5.261914014816284, 
+                "dport": 5355, 
+                "sport": 53845
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 24730, 
+                "time": 8.434237957000732, 
+                "dport": 5355, 
+                "sport": 54159
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 25058, 
+                "time": 13.494627952575684, 
+                "dport": 5355, 
+                "sport": 54218
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 25386, 
+                "time": 21.528069019317627, 
+                "dport": 5355, 
+                "sport": 55915
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 25714, 
+                "time": 10.89596700668335, 
+                "dport": 5355, 
+                "sport": 56830
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 26042, 
+                "time": 16.23079204559326, 
+                "dport": 5355, 
+                "sport": 58019
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 26370, 
+                "time": 18.902682065963745, 
+                "dport": 5355, 
+                "sport": 64311
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 26698, 
+                "time": 0.9235100746154785, 
+                "dport": 5355, 
+                "sport": 64652
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 27042, 
+                "time": 2.798953056335449, 
+                "dport": 5355, 
+                "sport": 64751
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "239.255.255.250", 
+                "offset": 27386, 
+                "time": 39.825109004974365, 
+                "dport": 1900, 
+                "sport": 1900
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "239.255.255.250", 
+                "offset": 46796, 
+                "time": 12.614554166793823, 
+                "dport": 1900, 
+                "sport": 56833
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "239.255.255.250", 
+                "offset": 53564, 
+                "time": 0.9434881210327148, 
+                "dport": 3702, 
+                "sport": 58151
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "8.8.8.8", 
+                "offset": 61940, 
+                "time": 31.496746063232422, 
+                "dport": 53, 
+                "sport": 49927
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "8.8.8.8", 
+                "offset": 62400, 
+                "time": 20.397501945495605, 
+                "dport": 53, 
+                "sport": 50502
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "8.8.8.8", 
+                "offset": 62768, 
+                "time": 16.901456117630005, 
+                "dport": 53, 
+                "sport": 52397
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "8.8.8.8", 
+                "offset": 63136, 
+                "time": 5.640144109725952, 
+                "dport": 53, 
+                "sport": 55971
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "8.8.8.8", 
+                "offset": 63540, 
+                "time": 8.462232112884521, 
+                "dport": 53, 
+                "sport": 56774
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "8.8.8.8", 
+                "offset": 63928, 
+                "time": 32.009329080581665, 
+                "dport": 53, 
+                "sport": 59602
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "8.8.8.8", 
+                "offset": 64433, 
+                "time": 128.548681974411, 
+                "dport": 53, 
+                "sport": 59704
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "8.8.8.8", 
+                "offset": 64938, 
+                "time": 19.30549907684326, 
+                "dport": 53, 
+                "sport": 59720
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "8.8.8.8", 
+                "offset": 65326, 
+                "time": 8.375311136245728, 
+                "dport": 53, 
+                "sport": 64965
+            }
+        ], 
+        "dns_servers": [
+            "8.8.8.8", 
+            "192.168.56.1"
+        ], 
+        "http": [], 
+        "icmp": [], 
+        "smtp": [], 
+        "tcp": [], 
+        "smtp_ex": [], 
+        "mitm": [], 
+        "hosts": [
+            "8.8.8.8"
+        ], 
+        "pcap_sha256": "d596835628aace7fbc23db8be9dfaa965a2a135c3e0a129f831deb28ce757cd2", 
+        "dns": [
+            {
+                "type": "A", 
+                "request": "update.googleapis.com", 
+                "answers": []
+            }, 
+            {
+                "type": "A", 
+                "request": "time.windows.com", 
+                "answers": []
+            }, 
+            {
+                "type": "A", 
+                "request": "www.msftncsi.com", 
+                "answers": []
+            }, 
+            {
+                "type": "A", 
+                "request": "dns.msftncsi.com", 
+                "answers": []
+            }, 
+            {
+                "type": "A", 
+                "request": "teredo.ipv6.microsoft.com", 
+                "answers": []
+            }
+        ], 
+        "http_ex": [], 
+        "domains": [
+            {
+                "ip": "131.107.255.255", 
+                "domain": "dns.msftncsi.com"
+            }, 
+            {
+                "ip": "", 
+                "domain": "teredo.ipv6.microsoft.com"
+            }, 
+            {
+                "ip": "142.250.194.35", 
+                "domain": "update.googleapis.com"
+            }, 
+            {
+                "ip": "49.44.178.168", 
+                "domain": "www.msftncsi.com"
+            }
+        ], 
+        "dead_hosts": [], 
+        "sorted_pcap_sha256": "e6bef12c6a7b151b6f128c545f757b6e7b8bf4881f383d951ffc520b71033166", 
+        "irc": [], 
+        "https_ex": []
+    }, 
+    "static": {
+        "pdb_path": null, 
+        "pe_imports": [
+            {
+                "imports": [
+                    {
+                        "name": "GetACP", 
+                        "address": "0x454000"
+                    }, 
+                    {
+                        "name": "SetErrorMode", 
+                        "address": "0x454004"
+                    }, 
+                    {
+                        "name": "SetConsoleCtrlHandler", 
+                        "address": "0x454008"
+                    }, 
+                    {
+                        "name": "SetLastError", 
+                        "address": "0x45400c"
+                    }, 
+                    {
+                        "name": "GetCommandLineA", 
+                        "address": "0x454010"
+                    }, 
+                    {
+                        "name": "RaiseException", 
+                        "address": "0x454014"
+                    }, 
+                    {
+                        "name": "GetFileType", 
+                        "address": "0x454018"
+                    }, 
+                    {
+                        "name": "GetLastError", 
+                        "address": "0x45401c"
+                    }, 
+                    {
+                        "name": "VirtualAlloc", 
+                        "address": "0x454020"
+                    }, 
+                    {
+                        "name": "VirtualFree", 
+                        "address": "0x454024"
+                    }, 
+                    {
+                        "name": "GetVersionExA", 
+                        "address": "0x454028"
+                    }, 
+                    {
+                        "name": "CloseHandle", 
+                        "address": "0x45402c"
+                    }, 
+                    {
+                        "name": "GetStdHandle", 
+                        "address": "0x454030"
+                    }, 
+                    {
+                        "name": "FormatMessageA", 
+                        "address": "0x454034"
+                    }, 
+                    {
+                        "name": "DebugBreak", 
+                        "address": "0x454038"
+                    }, 
+                    {
+                        "name": "FreeLibrary", 
+                        "address": "0x45403c"
+                    }, 
+                    {
+                        "name": "GetCurrentThread", 
+                        "address": "0x454040"
+                    }, 
+                    {
+                        "name": "GetCurrentProcess", 
+                        "address": "0x454044"
+                    }, 
+                    {
+                        "name": "GetProcAddress", 
+                        "address": "0x454048"
+                    }, 
+                    {
+                        "name": "LoadLibraryA", 
+                        "address": "0x45404c"
+                    }, 
+                    {
+                        "name": "GetModuleFileNameA", 
+                        "address": "0x454050"
+                    }, 
+                    {
+                        "name": "VirtualQuery", 
+                        "address": "0x454054"
+                    }, 
+                    {
+                        "name": "MapViewOfFile", 
+                        "address": "0x454058"
+                    }, 
+                    {
+                        "name": "CreateFileMappingA", 
+                        "address": "0x45405c"
+                    }, 
+                    {
+                        "name": "CreateFileA", 
+                        "address": "0x454060"
+                    }, 
+                    {
+                        "name": "GetModuleHandleA", 
+                        "address": "0x454064"
+                    }, 
+                    {
+                        "name": "ReadFile", 
+                        "address": "0x454068"
+                    }, 
+                    {
+                        "name": "SetEndOfFile", 
+                        "address": "0x45406c"
+                    }, 
+                    {
+                        "name": "SetFilePointer", 
+                        "address": "0x454070"
+                    }, 
+                    {
+                        "name": "GetTempFileNameA", 
+                        "address": "0x454074"
+                    }, 
+                    {
+                        "name": "GetTempPathA", 
+                        "address": "0x454078"
+                    }, 
+                    {
+                        "name": "GetFullPathNameA", 
+                        "address": "0x45407c"
+                    }, 
+                    {
+                        "name": "GetFileInformationByHandle", 
+                        "address": "0x454080"
+                    }, 
+                    {
+                        "name": "Sleep", 
+                        "address": "0x454084"
+                    }, 
+                    {
+                        "name": "WriteFile", 
+                        "address": "0x454088"
+                    }, 
+                    {
+                        "name": "DeleteFileA", 
+                        "address": "0x45408c"
+                    }, 
+                    {
+                        "name": "WaitForSingleObject", 
+                        "address": "0x454090"
+                    }, 
+                    {
+                        "name": "SetThreadPriority", 
+                        "address": "0x454094"
+                    }, 
+                    {
+                        "name": "CreateProcessA", 
+                        "address": "0x454098"
+                    }, 
+                    {
+                        "name": "Beep", 
+                        "address": "0x45409c"
+                    }, 
+                    {
+                        "name": "GetLocalTime", 
+                        "address": "0x4540a0"
+                    }, 
+                    {
+                        "name": "SetLocalTime", 
+                        "address": "0x4540a4"
+                    }, 
+                    {
+                        "name": "FlushFileBuffers", 
+                        "address": "0x4540a8"
+                    }, 
+                    {
+                        "name": "GetVersion", 
+                        "address": "0x4540ac"
+                    }, 
+                    {
+                        "name": "ExitProcess", 
+                        "address": "0x4540b0"
+                    }, 
+                    {
+                        "name": "TerminateProcess", 
+                        "address": "0x4540b4"
+                    }, 
+                    {
+                        "name": "UnhandledExceptionFilter", 
+                        "address": "0x4540b8"
+                    }, 
+                    {
+                        "name": "IsBadWritePtr", 
+                        "address": "0x4540bc"
+                    }, 
+                    {
+                        "name": "IsBadReadPtr", 
+                        "address": "0x4540c0"
+                    }, 
+                    {
+                        "name": "HeapValidate", 
+                        "address": "0x4540c4"
+                    }, 
+                    {
+                        "name": "RtlUnwind", 
+                        "address": "0x4540c8"
+                    }, 
+                    {
+                        "name": "ReadConsoleInputA", 
+                        "address": "0x4540cc"
+                    }, 
+                    {
+                        "name": "SetConsoleMode", 
+                        "address": "0x4540d0"
+                    }, 
+                    {
+                        "name": "GetConsoleMode", 
+                        "address": "0x4540d4"
+                    }, 
+                    {
+                        "name": "PeekConsoleInputA", 
+                        "address": "0x4540d8"
+                    }, 
+                    {
+                        "name": "GetNumberOfConsoleInputEvents", 
+                        "address": "0x4540dc"
+                    }, 
+                    {
+                        "name": "MultiByteToWideChar", 
+                        "address": "0x4540e0"
+                    }, 
+                    {
+                        "name": "FreeEnvironmentStringsA", 
+                        "address": "0x4540e4"
+                    }, 
+                    {
+                        "name": "FreeEnvironmentStringsW", 
+                        "address": "0x4540e8"
+                    }, 
+                    {
+                        "name": "WideCharToMultiByte", 
+                        "address": "0x4540ec"
+                    }, 
+                    {
+                        "name": "GetEnvironmentStrings", 
+                        "address": "0x4540f0"
+                    }, 
+                    {
+                        "name": "GetEnvironmentStringsW", 
+                        "address": "0x4540f4"
+                    }, 
+                    {
+                        "name": "SetHandleCount", 
+                        "address": "0x4540f8"
+                    }, 
+                    {
+                        "name": "GetStartupInfoA", 
+                        "address": "0x4540fc"
+                    }, 
+                    {
+                        "name": "GetEnvironmentVariableA", 
+                        "address": "0x454100"
+                    }, 
+                    {
+                        "name": "HeapDestroy", 
+                        "address": "0x454104"
+                    }, 
+                    {
+                        "name": "HeapCreate", 
+                        "address": "0x454108"
+                    }, 
+                    {
+                        "name": "HeapFree", 
+                        "address": "0x45410c"
+                    }, 
+                    {
+                        "name": "GetStringTypeA", 
+                        "address": "0x454110"
+                    }, 
+                    {
+                        "name": "GetStringTypeW", 
+                        "address": "0x454114"
+                    }, 
+                    {
+                        "name": "LCMapStringA", 
+                        "address": "0x454118"
+                    }, 
+                    {
+                        "name": "LCMapStringW", 
+                        "address": "0x45411c"
+                    }, 
+                    {
+                        "name": "InterlockedDecrement", 
+                        "address": "0x454120"
+                    }, 
+                    {
+                        "name": "OutputDebugStringA", 
+                        "address": "0x454124"
+                    }, 
+                    {
+                        "name": "InterlockedIncrement", 
+                        "address": "0x454128"
+                    }, 
+                    {
+                        "name": "HeapAlloc", 
+                        "address": "0x45412c"
+                    }, 
+                    {
+                        "name": "HeapReAlloc", 
+                        "address": "0x454130"
+                    }, 
+                    {
+                        "name": "GetCPInfo", 
+                        "address": "0x454134"
+                    }, 
+                    {
+                        "name": "GetOEMCP", 
+                        "address": "0x454138"
+                    }, 
+                    {
+                        "name": "WriteConsoleA", 
+                        "address": "0x45413c"
+                    }, 
+                    {
+                        "name": "SetEnvironmentVariableW", 
+                        "address": "0x454140"
+                    }, 
+                    {
+                        "name": "SetEnvironmentVariableA", 
+                        "address": "0x454144"
+                    }, 
+                    {
+                        "name": "GetFileAttributesA", 
+                        "address": "0x454148"
+                    }, 
+                    {
+                        "name": "CompareStringA", 
+                        "address": "0x45414c"
+                    }, 
+                    {
+                        "name": "CompareStringW", 
+                        "address": "0x454150"
+                    }, 
+                    {
+                        "name": "SetStdHandle", 
+                        "address": "0x454154"
+                    }, 
+                    {
+                        "name": "GetExitCodeProcess", 
+                        "address": "0x454158"
+                    }
+                ], 
+                "dll": "KERNEL32.dll"
+            }
+        ], 
+        "peid_signatures": [
+            "InstallShield 2000"
+        ], 
+        "keys": [], 
+        "signature": [], 
+        "pe_timestamp": "2005-05-14 13:55:56", 
+        "pe_exports": [], 
+        "imported_dll_count": 1, 
+        "pe_imphash": "ad90d9d2384d686f739486d55be43fca", 
+        "pe_resources": [], 
+        "pe_versioninfo": [], 
+        "pe_sections": [
+            {
+                "size_of_data": "0x00053000", 
+                "virtual_address": "0x00001000", 
+                "entropy": 6.49560194103675, 
+                "name": ".text", 
+                "virtual_size": "0x00052bdf"
+            }, 
+            {
+                "size_of_data": "0x00005000", 
+                "virtual_address": "0x00054000", 
+                "entropy": 5.614802236829869, 
+                "name": ".rdata", 
+                "virtual_size": "0x0000461a"
+            }, 
+            {
+                "size_of_data": "0x0000b000", 
+                "virtual_address": "0x00059000", 
+                "entropy": 4.745902963218822, 
+                "name": ".data", 
+                "virtual_size": "0x0001839c"
+            }, 
+            {
+                "size_of_data": "0x00001000", 
+                "virtual_address": "0x00072000", 
+                "entropy": 1.0045717681052644, 
+                "name": ".trace", 
+                "virtual_size": "0x000001a1"
+            }
+        ]
+    }, 
+    "behavior": {
+        "generic": [
+            {
+                "process_path": "C:\\Users\\cuckoo2\\AppData\\Local\\Temp\\16c8e241421ffb9c2d878cf20f01d63e9ddcec1cb55e198cce5f5ad9e748dad8_benign.exe", 
+                "process_name": "16c8e241421ffb9c2d878cf20f01d63e9ddcec1cb55e198cce5f5ad9e748dad8_benign.exe", 
+                "pid": 2848, 
+                "summary": {
+                    "file_opened": [
+                        "C:\\Windows\\Globalization\\Sorting\\sortdefault.nls"
+                    ], 
+                    "file_created": [
+                        "C:\\Users\\cuckoo2\\AppData\\Local\\Temp\\TEST-DATA-OUT.XYZ", 
+                        "C:\\Users\\cuckoo2\\AppData\\Local\\Temp\\TEST-DATA-OUT.DAT", 
+                        "C:\\Users\\cuckoo2\\AppData\\Local\\Temp\\ctd001-466.mods"
+                    ], 
+                    "regkey_read": [
+                        "HKEY_LOCAL_MACHINE\\SYSTEM\\ControlSet001\\Control\\Nls\\CustomLocale\\en-US", 
+                        "HKEY_LOCAL_MACHINE\\SYSTEM\\ControlSet001\\Control\\Nls\\ExtendedLocale\\en-US"
+                    ], 
+                    "dll_loaded": [
+                        "kernel32.dll"
+                    ]
+                }, 
+                "first_seen": 1693132339.813751, 
+                "ppid": 1980
+            }
+        ], 
+        "apistats": {
+            "2848": {
+                "NtQueryValueKey": 2, 
+                "NtCreateSection": 1, 
+                "NtReadFile": 1, 
+                "NtMapViewOfSection": 1, 
+                "WriteConsoleA": 1, 
+                "NtOpenKey": 2, 
+                "LdrGetProcedureAddress": 3, 
+                "LdrLoadDll": 1, 
+                "NtCreateFile": 4, 
+                "GetFileType": 10, 
+                "NtAllocateVirtualMemory": 6, 
+                "NtClose": 8, 
+                "GetSystemWindowsDirectoryW": 1, 
+                "LdrGetDllHandle": 1, 
+                "NtFreeVirtualMemory": 1
+            }
+        }, 
+        "processes": [
+            {
+                "process_path": "C:\\Users\\cuckoo2\\AppData\\Local\\Temp\\16c8e241421ffb9c2d878cf20f01d63e9ddcec1cb55e198cce5f5ad9e748dad8_benign.exe", 
+                "calls": [
+                    {
+                        "category": "process", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtAllocateVirtualMemory", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "process_identifier": 2848, 
+                            "region_size": 1703936, 
+                            "stack_dep_bypass": 0, 
+                            "stack_pivoted": 0, 
+                            "heap_dep_bypass": 0, 
+                            "protection": 4, 
+                            "process_handle": "0xffffffff", 
+                            "allocation_type": 8192, 
+                            "base_address": "0x00700000"
+                        }, 
+                        "time": 1693132340.109751, 
+                        "tid": 2608, 
+                        "flags": {
+                            "protection": "PAGE_READWRITE", 
+                            "allocation_type": "MEM_RESERVE"
+                        }
+                    }, 
+                    {
+                        "category": "process", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtFreeVirtualMemory", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "free_type": 32768, 
+                            "process_identifier": 2848, 
+                            "process_handle": "0xffffffff", 
+                            "base_address": "0x00700000", 
+                            "size": 1638400
+                        }, 
+                        "time": 1693132340.109751, 
+                        "tid": 2608, 
+                        "flags": {}
+                    }, 
+                    {
+                        "category": "process", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtAllocateVirtualMemory", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "process_identifier": 2848, 
+                            "region_size": 4096, 
+                            "stack_dep_bypass": 0, 
+                            "stack_pivoted": 0, 
+                            "heap_dep_bypass": 0, 
+                            "protection": 4, 
+                            "process_handle": "0xffffffff", 
+                            "allocation_type": 4096, 
+                            "base_address": "0x00890000"
+                        }, 
+                        "time": 1693132340.109751, 
+                        "tid": 2608, 
+                        "flags": {
+                            "protection": "PAGE_READWRITE", 
+                            "allocation_type": "MEM_COMMIT"
+                        }
+                    }, 
+                    {
+                        "category": "file", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "GetFileType", 
+                        "return_value": 2, 
+                        "arguments": {
+                            "file_handle": "0x00000003"
+                        }, 
+                        "time": 1693132340.141751, 
+                        "tid": 2608, 
+                        "flags": {}
+                    }, 
+                    {
+                        "category": "file", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "GetFileType", 
+                        "return_value": 2, 
+                        "arguments": {
+                            "file_handle": "0x00000007"
+                        }, 
+                        "time": 1693132340.141751, 
+                        "tid": 2608, 
+                        "flags": {}
+                    }, 
+                    {
+                        "category": "file", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "GetFileType", 
+                        "return_value": 2, 
+                        "arguments": {
+                            "file_handle": "0x0000000b"
+                        }, 
+                        "time": 1693132340.141751, 
+                        "tid": 2608, 
+                        "flags": {}
+                    }, 
+                    {
+                        "category": "process", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtAllocateVirtualMemory", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "process_identifier": 2848, 
+                            "region_size": 4096, 
+                            "stack_dep_bypass": 0, 
+                            "stack_pivoted": 0, 
+                            "heap_dep_bypass": 0, 
+                            "protection": 4, 
+                            "process_handle": "0xffffffff", 
+                            "allocation_type": 4096, 
+                            "base_address": "0x00891000"
+                        }, 
+                        "time": 1693132340.141751, 
+                        "tid": 2608, 
+                        "flags": {
+                            "protection": "PAGE_READWRITE", 
+                            "allocation_type": "MEM_COMMIT"
+                        }
+                    }, 
+                    {
+                        "category": "system", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "LdrGetDllHandle", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "module_name": "KERNEL32", 
+                            "stack_pivoted": 0, 
+                            "module_address": "0x75820000"
+                        }, 
+                        "time": 1693132340.141751, 
+                        "tid": 2608, 
+                        "flags": {}
+                    }, 
+                    {
+                        "category": "system", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "LdrGetProcedureAddress", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "ordinal": 0, 
+                            "module": "kernel32", 
+                            "module_address": "0x75820000", 
+                            "function_address": "0x75835235", 
+                            "function_name": "IsProcessorFeaturePresent"
+                        }, 
+                        "time": 1693132340.141751, 
+                        "tid": 2608, 
+                        "flags": {}
+                    }, 
+                    {
+                        "category": "process", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtAllocateVirtualMemory", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "process_identifier": 2848, 
+                            "region_size": 4096, 
+                            "stack_dep_bypass": 0, 
+                            "stack_pivoted": 0, 
+                            "heap_dep_bypass": 0, 
+                            "protection": 4, 
+                            "process_handle": "0xffffffff", 
+                            "allocation_type": 4096, 
+                            "base_address": "0x00892000"
+                        }, 
+                        "time": 1693132340.141751, 
+                        "tid": 2608, 
+                        "flags": {
+                            "protection": "PAGE_READWRITE", 
+                            "allocation_type": "MEM_COMMIT"
+                        }
+                    }, 
+                    {
+                        "category": "file", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtCreateFile", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "create_disposition": 3, 
+                            "file_handle": "0x00000040", 
+                            "filepath": "C:\\Users\\cuckoo2\\AppData\\Local\\Temp\\ctd001-466.mods", 
+                            "desired_access": "0xc0100080", 
+                            "file_attributes": 128, 
+                            "filepath_r": "\\??\\C:\\Users\\cuckoo2\\AppData\\Local\\Temp\\ctd001-466.mods", 
+                            "create_options": 96, 
+                            "status_info": 2, 
+                            "share_access": 1
+                        }, 
+                        "time": 1693132340.156751, 
+                        "tid": 2608, 
+                        "flags": {
+                            "create_disposition": "FILE_OPEN_IF", 
+                            "desired_access": "FILE_READ_ATTRIBUTES|SYNCHRONIZE|GENERIC_WRITE", 
+                            "create_options": "FILE_NON_DIRECTORY_FILE|FILE_SYNCHRONOUS_IO_NONALERT", 
+                            "file_attributes": "FILE_ATTRIBUTE_NORMAL", 
+                            "status_info": "FILE_CREATED", 
+                            "share_access": "FILE_SHARE_READ"
+                        }
+                    }, 
+                    {
+                        "category": "file", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "GetFileType", 
+                        "return_value": 1, 
+                        "arguments": {
+                            "file_handle": "0x00000040"
+                        }, 
+                        "time": 1693132340.156751, 
+                        "tid": 2608, 
+                        "flags": {}
+                    }, 
+                    {
+                        "category": "process", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtAllocateVirtualMemory", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "process_identifier": 2848, 
+                            "region_size": 12288, 
+                            "stack_dep_bypass": 0, 
+                            "stack_pivoted": 0, 
+                            "heap_dep_bypass": 0, 
+                            "protection": 4, 
+                            "process_handle": "0xffffffff", 
+                            "allocation_type": 4096, 
+                            "base_address": "0x00893000"
+                        }, 
+                        "time": 1693132340.156751, 
+                        "tid": 2608, 
+                        "flags": {
+                            "protection": "PAGE_READWRITE", 
+                            "allocation_type": "MEM_COMMIT"
+                        }
+                    }, 
+                    {
+                        "category": "file", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtCreateFile", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "create_disposition": 3, 
+                            "file_handle": "0x00000044", 
+                            "filepath": "C:\\Users\\cuckoo2\\AppData\\Local\\Temp\\TEST-DATA-OUT.DAT", 
+                            "desired_access": "0xc0100080", 
+                            "file_attributes": 128, 
+                            "filepath_r": "\\??\\C:\\Users\\cuckoo2\\AppData\\Local\\Temp\\TEST-DATA-OUT.DAT", 
+                            "create_options": 96, 
+                            "status_info": 2, 
+                            "share_access": 1
+                        }, 
+                        "time": 1693132340.156751, 
+                        "tid": 2608, 
+                        "flags": {
+                            "create_disposition": "FILE_OPEN_IF", 
+                            "desired_access": "FILE_READ_ATTRIBUTES|SYNCHRONIZE|GENERIC_WRITE", 
+                            "create_options": "FILE_NON_DIRECTORY_FILE|FILE_SYNCHRONOUS_IO_NONALERT", 
+                            "file_attributes": "FILE_ATTRIBUTE_NORMAL", 
+                            "status_info": "FILE_CREATED", 
+                            "share_access": "FILE_SHARE_READ"
+                        }
+                    }, 
+                    {
+                        "category": "file", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "GetFileType", 
+                        "return_value": 1, 
+                        "arguments": {
+                            "file_handle": "0x00000044"
+                        }, 
+                        "time": 1693132340.156751, 
+                        "tid": 2608, 
+                        "flags": {}
+                    }, 
+                    {
+                        "category": "process", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtAllocateVirtualMemory", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "process_identifier": 2848, 
+                            "region_size": 12288, 
+                            "stack_dep_bypass": 0, 
+                            "stack_pivoted": 0, 
+                            "heap_dep_bypass": 0, 
+                            "protection": 4, 
+                            "process_handle": "0xffffffff", 
+                            "allocation_type": 4096, 
+                            "base_address": "0x00896000"
+                        }, 
+                        "time": 1693132340.156751, 
+                        "tid": 2608, 
+                        "flags": {
+                            "protection": "PAGE_READWRITE", 
+                            "allocation_type": "MEM_COMMIT"
+                        }
+                    }, 
+                    {
+                        "category": "file", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtCreateFile", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "create_disposition": 3, 
+                            "file_handle": "0x00000048", 
+                            "filepath": "C:\\Users\\cuckoo2\\AppData\\Local\\Temp\\TEST-DATA-OUT.XYZ", 
+                            "desired_access": "0xc0100080", 
+                            "file_attributes": 128, 
+                            "filepath_r": "\\??\\C:\\Users\\cuckoo2\\AppData\\Local\\Temp\\TEST-DATA-OUT.XYZ", 
+                            "create_options": 96, 
+                            "status_info": 2, 
+                            "share_access": 1
+                        }, 
+                        "time": 1693132340.172751, 
+                        "tid": 2608, 
+                        "flags": {
+                            "create_disposition": "FILE_OPEN_IF", 
+                            "desired_access": "FILE_READ_ATTRIBUTES|SYNCHRONIZE|GENERIC_WRITE", 
+                            "create_options": "FILE_NON_DIRECTORY_FILE|FILE_SYNCHRONOUS_IO_NONALERT", 
+                            "file_attributes": "FILE_ATTRIBUTE_NORMAL", 
+                            "status_info": "FILE_CREATED", 
+                            "share_access": "FILE_SHARE_READ"
+                        }
+                    }, 
+                    {
+                        "category": "file", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "GetFileType", 
+                        "return_value": 1, 
+                        "arguments": {
+                            "file_handle": "0x00000048"
+                        }, 
+                        "time": 1693132340.172751, 
+                        "tid": 2608, 
+                        "flags": {}
+                    }, 
+                    {
+                        "category": "file", 
+                        "status": 0, 
+                        "stacktrace": [], 
+                        "last_error": 0, 
+                        "nt_status": -1073741515, 
+                        "api": "NtReadFile", 
+                        "return_value": 3221225489, 
+                        "arguments": {
+                            "file_handle": "0x00000040", 
+                            "buffer": "", 
+                            "length": 8192, 
+                            "offset": 0
+                        }, 
+                        "time": 1693132340.172751, 
+                        "tid": 2608, 
+                        "flags": {}
+                    }, 
+                    {
+                        "category": "system", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtClose", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "handle": "0x00000040"
+                        }, 
+                        "time": 1693132340.172751, 
+                        "tid": 2608, 
+                        "flags": {}
+                    }, 
+                    {
+                        "category": "system", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtClose", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "handle": "0x00000044"
+                        }, 
+                        "time": 1693132340.172751, 
+                        "tid": 2608, 
+                        "flags": {}
+                    }, 
+                    {
+                        "category": "system", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtClose", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "handle": "0x00000048"
+                        }, 
+                        "time": 1693132340.172751, 
+                        "tid": 2608, 
+                        "flags": {}
+                    }, 
+                    {
+                        "category": "system", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtClose", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "handle": "0x00000048"
+                        }, 
+                        "time": 1693132340.172751, 
+                        "tid": 2608, 
+                        "flags": {}
+                    }, 
+                    {
+                        "category": "registry", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtOpenKey", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "key_handle": "0x00000048", 
+                            "desired_access": "0x00020019", 
+                            "regkey": "HKEY_LOCAL_MACHINE\\System\\CurrentControlSet\\Control\\Nls\\CustomLocale"
+                        }, 
+                        "time": 1693132340.172751, 
+                        "tid": 2608, 
+                        "flags": {
+                            "desired_access": "READ_CONTROL"
+                        }
+                    }, 
+                    {
+                        "category": "registry", 
+                        "status": 0, 
+                        "stacktrace": [], 
+                        "last_error": 0, 
+                        "nt_status": -1073741515, 
+                        "api": "NtQueryValueKey", 
+                        "return_value": 3221225524, 
+                        "arguments": {
+                            "key_handle": "0x00000048", 
+                            "key_name": "", 
+                            "value": "", 
+                            "reg_type": 0, 
+                            "information_class": 1, 
+                            "regkey": "HKEY_LOCAL_MACHINE\\SYSTEM\\ControlSet001\\Control\\Nls\\CustomLocale\\en-US"
+                        }, 
+                        "time": 1693132340.172751, 
+                        "tid": 2608, 
+                        "flags": {
+                            "reg_type": "REG_NONE", 
+                            "information_class": "KeyValueFullInformation"
+                        }
+                    }, 
+                    {
+                        "category": "system", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtClose", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "handle": "0x00000048"
+                        }, 
+                        "time": 1693132340.172751, 
+                        "tid": 2608, 
+                        "flags": {}
+                    }, 
+                    {
+                        "category": "registry", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtOpenKey", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "key_handle": "0x00000048", 
+                            "desired_access": "0x00020019", 
+                            "regkey": "HKEY_LOCAL_MACHINE\\System\\CurrentControlSet\\Control\\Nls\\ExtendedLocale"
+                        }, 
+                        "time": 1693132340.172751, 
+                        "tid": 2608, 
+                        "flags": {
+                            "desired_access": "READ_CONTROL"
+                        }
+                    }, 
+                    {
+                        "category": "registry", 
+                        "status": 0, 
+                        "stacktrace": [], 
+                        "last_error": 0, 
+                        "nt_status": -1073741515, 
+                        "api": "NtQueryValueKey", 
+                        "return_value": 3221225524, 
+                        "arguments": {
+                            "key_handle": "0x00000048", 
+                            "key_name": "", 
+                            "value": "", 
+                            "reg_type": 0, 
+                            "information_class": 1, 
+                            "regkey": "HKEY_LOCAL_MACHINE\\SYSTEM\\ControlSet001\\Control\\Nls\\ExtendedLocale\\en-US"
+                        }, 
+                        "time": 1693132340.172751, 
+                        "tid": 2608, 
+                        "flags": {
+                            "reg_type": "REG_NONE", 
+                            "information_class": "KeyValueFullInformation"
+                        }
+                    }, 
+                    {
+                        "category": "system", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtClose", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "handle": "0x00000048"
+                        }, 
+                        "time": 1693132340.172751, 
+                        "tid": 2608, 
+                        "flags": {}
+                    }, 
+                    {
+                        "category": "system", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "LdrLoadDll", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "basename": "kernel32", 
+                            "module_address": "0x75820000", 
+                            "flags": 0, 
+                            "module_name": "kernel32.dll", 
+                            "stack_pivoted": 0
+                        }, 
+                        "time": 1693132340.172751, 
+                        "tid": 2608, 
+                        "flags": {}
+                    }, 
+                    {
+                        "category": "system", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "LdrGetProcedureAddress", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "ordinal": 0, 
+                            "module": "kernel32", 
+                            "module_address": "0x75820000", 
+                            "function_address": "0x7583719c", 
+                            "function_name": "SortGetHandle"
+                        }, 
+                        "time": 1693132340.172751, 
+                        "tid": 2608, 
+                        "flags": {}
+                    }, 
+                    {
+                        "category": "system", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "LdrGetProcedureAddress", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "ordinal": 0, 
+                            "module": "kernel32", 
+                            "module_address": "0x75820000", 
+                            "function_address": "0x758cbb84", 
+                            "function_name": "SortCloseHandle"
+                        }, 
+                        "time": 1693132340.172751, 
+                        "tid": 2608, 
+                        "flags": {}
+                    }, 
+                    {
+                        "category": "file", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "GetSystemWindowsDirectoryW", 
+                        "return_value": 10, 
+                        "arguments": {
+                            "dirpath": "C:\\Windows"
+                        }, 
+                        "time": 1693132340.172751, 
+                        "tid": 2608, 
+                        "flags": {}
+                    }, 
+                    {
+                        "category": "file", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtCreateFile", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "create_disposition": 1, 
+                            "file_handle": "0x00000048", 
+                            "filepath": "C:\\Windows\\Globalization\\Sorting\\sortdefault.nls", 
+                            "desired_access": "0x80100080", 
+                            "file_attributes": 128, 
+                            "filepath_r": "\\??\\C:\\Windows\\Globalization\\Sorting\\sortdefault.nls", 
+                            "create_options": 96, 
+                            "status_info": 1, 
+                            "share_access": 1
+                        }, 
+                        "time": 1693132340.172751, 
+                        "tid": 2608, 
+                        "flags": {
+                            "create_disposition": "FILE_OPEN", 
+                            "desired_access": "FILE_READ_ATTRIBUTES|SYNCHRONIZE", 
+                            "create_options": "FILE_NON_DIRECTORY_FILE|FILE_SYNCHRONOUS_IO_NONALERT", 
+                            "file_attributes": "FILE_ATTRIBUTE_NORMAL", 
+                            "status_info": "FILE_OPENED", 
+                            "share_access": "FILE_SHARE_READ"
+                        }
+                    }, 
+                    {
+                        "category": "process", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtCreateSection", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "section_handle": "0x00000044", 
+                            "object_handle": "0x00000000", 
+                            "desired_access": "0x000f0005", 
+                            "protection": 2, 
+                            "section_name": "", 
+                            "file_handle": "0x00000048"
+                        }, 
+                        "time": 1693132340.172751, 
+                        "tid": 2608, 
+                        "flags": {
+                            "desired_access": "STANDARD_RIGHTS_REQUIRED|DELETE|READ_CONTROL|WRITE_DAC|WRITE_OWNER"
+                        }
+                    }, 
+                    {
+                        "category": "process", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtMapViewOfSection", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "section_handle": "0x00000044", 
+                            "process_identifier": 2848, 
+                            "commit_size": 0, 
+                            "win32_protect": 2, 
+                            "buffer": "", 
+                            "process_handle": "0xffffffff", 
+                            "allocation_type": 0, 
+                            "section_offset": 0, 
+                            "view_size": 2945024, 
+                            "base_address": "0x00900000"
+                        }, 
+                        "time": 1693132340.172751, 
+                        "tid": 2608, 
+                        "flags": {
+                            "win32_protect": "PAGE_READONLY", 
+                            "allocation_type": ""
+                        }
+                    }, 
+                    {
+                        "category": "system", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtClose", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "handle": "0x00000044"
+                        }, 
+                        "time": 1693132340.234751, 
+                        "tid": 2608, 
+                        "flags": {}
+                    }, 
+                    {
+                        "category": "system", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtClose", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "handle": "0x00000048"
+                        }, 
+                        "time": 1693132340.234751, 
+                        "tid": 2608, 
+                        "flags": {}
+                    }, 
+                    {
+                        "category": "file", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "GetFileType", 
+                        "return_value": 2, 
+                        "arguments": {
+                            "file_handle": "0x00000007"
+                        }, 
+                        "time": 1693132340.234751, 
+                        "tid": 2608, 
+                        "flags": {}
+                    }, 
+                    {
+                        "category": "misc", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "WriteConsoleA", 
+                        "return_value": 1, 
+                        "arguments": {
+                            "buffer": "  END : TYPE ENTER TO EXIT\r\n", 
+                            "console_handle": "0x00000007"
+                        }, 
+                        "time": 1693132340.234751, 
+                        "tid": 2608, 
+                        "flags": {}
+                    }, 
+                    {
+                        "category": "file", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "GetFileType", 
+                        "return_value": 2, 
+                        "arguments": {
+                            "file_handle": "0x00000003"
+                        }, 
+                        "time": 1693132340.234751, 
+                        "tid": 2608, 
+                        "flags": {}
+                    }, 
+                    {
+                        "category": "file", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "GetFileType", 
+                        "return_value": 2, 
+                        "arguments": {
+                            "file_handle": "0x00000003"
+                        }, 
+                        "time": 1693132340.234751, 
+                        "tid": 2608, 
+                        "flags": {}
+                    }, 
+                    {
+                        "category": "file", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "GetFileType", 
+                        "return_value": 2, 
+                        "arguments": {
+                            "file_handle": "0x00000003"
+                        }, 
+                        "time": 1693132340.234751, 
+                        "tid": 2608, 
+                        "flags": {}
+                    }
+                ], 
+                "track": true, 
+                "pid": 2848, 
+                "process_name": "16c8e241421ffb9c2d878cf20f01d63e9ddcec1cb55e198cce5f5ad9e748dad8_benign.exe", 
+                "command_line": "\"C:\\Users\\cuckoo2\\AppData\\Local\\Temp\\16c8e241421ffb9c2d878cf20f01d63e9ddcec1cb55e198cce5f5ad9e748dad8_benign.exe\" ", 
+                "modules": [
+                    {
+                        "basename": "16c8e241421ffb9c2d878cf20f01d63e9ddcec1cb55e198cce5f5ad9e748dad8_benign.exe", 
+                        "imgsize": 471040, 
+                        "baseaddr": "0x400000", 
+                        "filepath": "C:\\Users\\cuckoo2\\AppData\\Local\\Temp\\16c8e241421ffb9c2d878cf20f01d63e9ddcec1cb55e198cce5f5ad9e748dad8_benign.exe"
+                    }, 
+                    {
+                        "basename": "ntdll.dll", 
+                        "imgsize": 1572864, 
+                        "baseaddr": "0x77c70000", 
+                        "filepath": "C:\\Windows\\SysWOW64\\ntdll.dll"
+                    }, 
+                    {
+                        "basename": "kernel32.dll", 
+                        "imgsize": 1114112, 
+                        "baseaddr": "0x75820000", 
+                        "filepath": "C:\\Windows\\syswow64\\kernel32.dll"
+                    }, 
+                    {
+                        "basename": "KERNELBASE.dll", 
+                        "imgsize": 286720, 
+                        "baseaddr": "0x76310000", 
+                        "filepath": "C:\\Windows\\syswow64\\KERNELBASE.dll"
+                    }, 
+                    {
+                        "basename": "monitor-x86.dll", 
+                        "imgsize": 2117632, 
+                        "baseaddr": "0x73c30000", 
+                        "filepath": "C:\\tmpezozfh\\bin\\monitor-x86.dll"
+                    }, 
+                    {
+                        "basename": "msvcrt.dll", 
+                        "imgsize": 704512, 
+                        "baseaddr": "0x763a0000", 
+                        "filepath": "C:\\Windows\\syswow64\\msvcrt.dll"
+                    }
+                ], 
+                "time": 0, 
+                "tid": 2608, 
+                "first_seen": 1693132339.813751, 
+                "ppid": 1980, 
+                "type": "process"
+            }
+        ], 
+        "processtree": [
+            {
+                "track": true, 
+                "pid": 2848, 
+                "process_name": "16c8e241421ffb9c2d878cf20f01d63e9ddcec1cb55e198cce5f5ad9e748dad8_benign.exe", 
+                "command_line": "\"C:\\Users\\cuckoo2\\AppData\\Local\\Temp\\16c8e241421ffb9c2d878cf20f01d63e9ddcec1cb55e198cce5f5ad9e748dad8_benign.exe\" ", 
+                "first_seen": 1693132339.813751, 
+                "ppid": 1980, 
+                "children": []
+            }
+        ], 
+        "summary": {
+            "file_opened": [
+                "C:\\Windows\\Globalization\\Sorting\\sortdefault.nls"
+            ], 
+            "file_created": [
+                "C:\\Users\\cuckoo2\\AppData\\Local\\Temp\\TEST-DATA-OUT.XYZ", 
+                "C:\\Users\\cuckoo2\\AppData\\Local\\Temp\\TEST-DATA-OUT.DAT", 
+                "C:\\Users\\cuckoo2\\AppData\\Local\\Temp\\ctd001-466.mods"
+            ], 
+            "regkey_read": [
+                "HKEY_LOCAL_MACHINE\\SYSTEM\\ControlSet001\\Control\\Nls\\CustomLocale\\en-US", 
+                "HKEY_LOCAL_MACHINE\\SYSTEM\\ControlSet001\\Control\\Nls\\ExtendedLocale\\en-US"
+            ], 
+            "dll_loaded": [
+                "kernel32.dll"
+            ]
+        }
+    }, 
+    "debug": {
+        "action": [], 
+        "dbgview": [], 
+        "errors": [], 
+        "log": [
+            "2023-08-27 09:37:27,062 [analyzer] DEBUG: Starting analyzer from: C:\\tmpezozfh\n", 
+            "2023-08-27 09:37:27,062 [analyzer] DEBUG: Pipe server name: \\??\\PIPE\\umWeLdxhLlogyKvVgymkf\n", 
+            "2023-08-27 09:37:27,062 [analyzer] DEBUG: Log pipe server name: \\??\\PIPE\\MExxDnatxbxRHLrzbHwLVI\n", 
+            "2023-08-27 09:37:27,062 [analyzer] DEBUG: No analysis package specified, trying to detect it automagically.\n", 
+            "2023-08-27 09:37:27,280 [analyzer] INFO: Automatically selected analysis package \"exe\"\n", 
+            "2023-08-27 09:37:30,473 [analyzer] DEBUG: Started auxiliary module DbgView\n", 
+            "2023-08-26 22:02:18,345 [analyzer] DEBUG: Started auxiliary module Disguise\n", 
+            "2023-08-26 22:02:18,548 [lib.api.process] ERROR: Failed to inject 64-bit process with pid None and process name lsass.exe\n", 
+            "2023-08-26 22:02:18,548 [analyzer] DEBUG: Started auxiliary module DumpTLSMasterSecrets\n", 
+            "2023-08-26 22:02:18,562 [analyzer] DEBUG: Started auxiliary module Human\n", 
+            "2023-08-26 22:02:18,562 [analyzer] DEBUG: Started auxiliary module InstallCertificate\n", 
+            "2023-08-26 22:02:18,562 [analyzer] DEBUG: Started auxiliary module Reboot\n", 
+            "2023-08-26 22:02:19,016 [analyzer] DEBUG: Started auxiliary module RecentFiles\n", 
+            "2023-08-26 22:02:19,032 [analyzer] DEBUG: Started auxiliary module Screenshots\n", 
+            "2023-08-26 22:02:19,032 [analyzer] DEBUG: Started auxiliary module LoadZer0m0n\n", 
+            "2023-08-26 22:02:19,548 [lib.api.process] INFO: Successfully executed process from path u'C:\\\\Users\\\\cuckoo2\\\\AppData\\\\Local\\\\Temp\\\\16c8e241421ffb9c2d878cf20f01d63e9ddcec1cb55e198cce5f5ad9e748dad8_benign.exe' with arguments '' and pid 2848\n", 
+            "2023-08-26 22:02:20,109 [analyzer] DEBUG: Loaded monitor into process with pid 2848\n", 
+            "2023-08-26 22:04:19,234 [analyzer] INFO: Analysis timeout hit, terminating analysis.\n", 
+            "2023-08-26 22:04:19,234 [analyzer] INFO: Analysis completed.\n"
+        ], 
+        "cuckoo": [
+            "2023-08-27 10:31:51,848 [cuckoo.core.scheduler] INFO: Task #38: acquired machine cuckoo2 (label=cuckoo2)\n", 
+            "2023-08-27 10:31:51,848 [cuckoo.core.resultserver] DEBUG: Now tracking machine 192.168.56.101 for task #38\n", 
+            "2023-08-27 10:31:51,849 [cuckoo.core.plugins] DEBUG: Started auxiliary module: Replay\n", 
+            "2023-08-27 10:31:51,885 [cuckoo.auxiliary.sniffer] INFO: Started sniffer with PID 71292 (interface=vboxnet0, host=192.168.56.101)\n", 
+            "2023-08-27 10:31:51,885 [cuckoo.core.plugins] DEBUG: Started auxiliary module: Sniffer\n", 
+            "2023-08-27 10:31:51,978 [cuckoo.machinery.virtualbox] DEBUG: Starting vm cuckoo2\n", 
+            "2023-08-27 10:31:52,142 [cuckoo.machinery.virtualbox] DEBUG: Restoring virtual machine cuckoo2 to cuckoo2_snap\n", 
+            "2023-08-27 10:31:55,326 [cuckoo.core.guest] INFO: Starting analysis #38 on guest (id=cuckoo2, ip=192.168.56.101)\n", 
+            "2023-08-27 10:31:56,330 [cuckoo.core.guest] DEBUG: cuckoo2: not ready yet\n", 
+            "2023-08-27 10:31:57,334 [cuckoo.core.guest] DEBUG: cuckoo2: not ready yet\n", 
+            "2023-08-27 10:31:58,338 [cuckoo.core.guest] DEBUG: cuckoo2: not ready yet\n", 
+            "2023-08-27 10:31:58,358 [cuckoo.core.guest] INFO: Guest is running Cuckoo Agent 0.10 (id=cuckoo2, ip=192.168.56.101)\n", 
+            "2023-08-27 10:31:58,390 [cuckoo.core.guest] DEBUG: Uploading analyzer to guest (id=cuckoo2, ip=192.168.56.101, monitor=latest, size=3884763)\n", 
+            "2023-08-27 10:32:03,646 [cuckoo.core.resultserver] DEBUG: Task #38: live log analysis.log initialized.\n", 
+            "2023-08-27 10:32:05,653 [cuckoo.core.guest] DEBUG: cuckoo2: analysis #38 still processing\n", 
+            "2023-08-27 10:32:10,724 [cuckoo.core.guest] DEBUG: cuckoo2: analysis #38 still processing\n", 
+            "2023-08-27 10:32:15,769 [cuckoo.core.guest] DEBUG: cuckoo2: analysis #38 still processing\n", 
+            "2023-08-27 10:32:19,842 [cuckoo.core.resultserver] DEBUG: Task #38 is sending a BSON stream\n", 
+            "2023-08-27 10:32:20,514 [cuckoo.core.resultserver] DEBUG: Task #38: File upload for 'shots/0001.jpg'\n", 
+            "2023-08-27 10:32:20,535 [cuckoo.core.resultserver] DEBUG: Task #38 uploaded file length: 70732\n", 
+            "2023-08-27 10:32:20,815 [cuckoo.core.guest] DEBUG: cuckoo2: analysis #38 still processing\n", 
+            "2023-08-27 10:32:21,752 [cuckoo.core.resultserver] DEBUG: Task #38: File upload for 'shots/0002.jpg'\n", 
+            "2023-08-27 10:32:21,785 [cuckoo.core.resultserver] DEBUG: Task #38 uploaded file length: 67878\n", 
+            "2023-08-27 10:32:25,870 [cuckoo.core.guest] DEBUG: cuckoo2: analysis #38 still processing\n", 
+            "2023-08-27 10:32:30,920 [cuckoo.core.guest] DEBUG: cuckoo2: analysis #38 still processing\n", 
+            "2023-08-27 10:32:35,976 [cuckoo.core.guest] DEBUG: cuckoo2: analysis #38 still processing\n", 
+            "2023-08-27 10:32:40,091 [cuckoo.core.resultserver] DEBUG: Task #38: File upload for 'shots/0003.jpg'\n", 
+            "2023-08-27 10:32:40,111 [cuckoo.core.resultserver] DEBUG: Task #38 uploaded file length: 67937\n", 
+            "2023-08-27 10:32:41,054 [cuckoo.core.guest] DEBUG: cuckoo2: analysis #38 still processing\n", 
+            "2023-08-27 10:32:41,335 [cuckoo.core.resultserver] DEBUG: Task #38: File upload for 'shots/0004.jpg'\n", 
+            "2023-08-27 10:32:41,346 [cuckoo.core.resultserver] DEBUG: Task #38 uploaded file length: 67878\n", 
+            "2023-08-27 10:32:43,665 [cuckoo.core.resultserver] DEBUG: Task #38: File upload for 'shots/0005.jpg'\n", 
+            "2023-08-27 10:32:43,676 [cuckoo.core.resultserver] DEBUG: Task #38 uploaded file length: 68206\n", 
+            "2023-08-27 10:32:44,849 [cuckoo.core.resultserver] DEBUG: Task #38: File upload for 'shots/0006.jpg'\n", 
+            "2023-08-27 10:32:44,860 [cuckoo.core.resultserver] DEBUG: Task #38 uploaded file length: 67878\n", 
+            "2023-08-27 10:32:46,095 [cuckoo.core.guest] DEBUG: cuckoo2: analysis #38 still processing\n", 
+            "2023-08-27 10:32:51,165 [cuckoo.core.guest] DEBUG: cuckoo2: analysis #38 still processing\n", 
+            "2023-08-27 10:32:56,208 [cuckoo.core.guest] DEBUG: cuckoo2: analysis #38 still processing\n", 
+            "2023-08-27 10:33:01,259 [cuckoo.core.guest] DEBUG: cuckoo2: analysis #38 still processing\n", 
+            "2023-08-27 10:33:06,313 [cuckoo.core.guest] DEBUG: cuckoo2: analysis #38 still processing\n", 
+            "2023-08-27 10:33:11,356 [cuckoo.core.guest] DEBUG: cuckoo2: analysis #38 still processing\n", 
+            "2023-08-27 10:33:16,400 [cuckoo.core.guest] DEBUG: cuckoo2: analysis #38 still processing\n", 
+            "2023-08-27 10:33:21,469 [cuckoo.core.guest] DEBUG: cuckoo2: analysis #38 st"
+        ]
+    }, 
+    "screenshots": [
+        {
+            "path": "/home/abc/.cuckoo/storage/analyses/38/shots/0001.jpg", 
+            "ocr": ""
+        }, 
+        {
+            "path": "/home/abc/.cuckoo/storage/analyses/38/shots/0002.jpg", 
+            "ocr": ""
+        }, 
+        {
+            "path": "/home/abc/.cuckoo/storage/analyses/38/shots/0003.jpg", 
+            "ocr": ""
+        }, 
+        {
+            "path": "/home/abc/.cuckoo/storage/analyses/38/shots/0004.jpg", 
+            "ocr": ""
+        }, 
+        {
+            "path": "/home/abc/.cuckoo/storage/analyses/38/shots/0005.jpg", 
+            "ocr": ""
+        }, 
+        {
+            "path": "/home/abc/.cuckoo/storage/analyses/38/shots/0006.jpg", 
+            "ocr": ""
+        }, 
+        {
+            "path": "/home/abc/.cuckoo/storage/analyses/38/shots/0007.jpg", 
+            "ocr": ""
+        }
+    ], 
+    "strings": [
+        "!This program cannot be run in DOS mode.", 
+        "`.rdata", 
+        "@.data", 
+        ".trace", 
+        "\u001f\u001f\u001f\u001f\u001f\u001f\u001f\u001f\u001f\u001f\u001f\u001f\u001f\u001f\u001f\u001f", 
+        "t<It*It", 
+        "ttItbItB", 
+        "t#<,t\u001f</t", 
+        "PQh@KE", 
+        "Ht'Hu6", 
+        "t3ItNIt", 
+        "t6Ht#Ht0", 
+        "It7It^It", 
+        "Iu-h4!", 
+        "K8WRQP", 
+        "K8WRQP", 
+        "K8WRQP", 
+        "<Pt$<St", 
+        "<Lt$<Rt", 
+        "f=`Aw(u", 
+        "DWPVQR", 
+        "D$'9D$ u,", 
+        "j]h,fE", 
+        "j^h,fE", 
+        "jBhHfE", 
+        "jChHfE", 
+        "u!h<gE", 
+        "t&hxfE", 
+        "u!h<gE", 
+        "t&hxfE", 
+        "u!h@hE", 
+        "t!hlgE", 
+        "t!hPgE", 
+        "u!h<gE", 
+        "u!h@hE", 
+        "t!h@iE", 
+        "t!h iE", 
+        "u!h<gE", 
+        "u!h@hE", 
+        "t!h iE", 
+        " Qh|lE", 
+        " QhTlE", 
+        " Qh lE", 
+        "Q,Rh<mE", 
+        "jih4nE", 
+        "t.;t$$t(", 
+        "VC20XC00U", 
+        "jwh@nE", 
+        "j5htnE", 
+        "j6htnE", 
+        "j7htnE", 
+        "j8htnE", 
+        "SVWhLrE", 
+        "j;h(rE", 
+        "jmhTrE", 
+        "=tGjyhTrE", 
+        "jdhlrE", 
+        "uBhdwE", 
+        "t hXwE", 
+        "u!hHyE", 
+        "jAh`yE", 
+        "uZj^h`yE", 
+        "t!hlyE", 
+        "u]hdwE", 
+        "j]h,fE", 
+        "j^h,fE", 
+        "|jyh {E", 
+        "kj<h,{E", 
+        "jvh8{E", 
+        "jahD{E", 
+        "u'hh{E", 
+        "u$h`{E", 
+        "u$hX{E", 
+        "}!h0|E", 
+        " END : TYPE ENTER TO EXIT", 
+        "#   Z       TEMP      SAL     SOUND SPEED     LON      LAT", 
+        "#     ID    NB      LON         LAT       ZMAX   JOULIAN DAY ", 
+        "@TEST-DATA-OUT.DAT", 
+        "ctd001-466.mods", 
+        "CONOUT$", 
+        "CONIN$", 
+        "forrtl", 
+        "forrtl: info", 
+        "forrtl: warning", 
+        "forrtl: error", 
+        "forrtl: severe", 
+        "Unknown", 
+        "Visual Fortran run-time error ", 
+        "run-time error ", 
+        "\"Unknown\"", 
+        "D\"D\"D\"D\"D\"D\"D\"", 
+        "(f/f/f/f/f/f/f/'5'5'5'5'5'5", 
+        "d\"d\"d\"d\"d\"e'e'e'e'e'e'e'&.&.&.&.&.&.&.'5'5'5'5'5'5", 
+        " *$*$*$*$K'K'K'", 
+        "-n1n1n1n1", 
+        ":-6aU,$", 
+        "6aKSO1", 
+        "9Y>)F$", 
+        "L!L!L!-$-$-$.&.&O&p&", 
+        "#n&@(#) CVTAS 2.1-2 ", 
+        "format != NULL", 
+        "sprintf.c", 
+        "string != NULL", 
+        "sscanf.c", 
+        "Client", 
+        "Ignore", 
+        "Normal", 
+        "Error: memory allocation: bad memory block type.", 
+        "Invalid allocation size: %u bytes.", 
+        "Client hook allocation failure.", 
+        "Client hook allocation failure at file %hs line %d.", 
+        "dbgheap.c", 
+        "_CrtCheckMemory()", 
+        "_pFirstBlock == pOldBlock", 
+        "_pLastBlock == pOldBlock", 
+        "fRealloc || (!fRealloc && pNewBlock == pOldBlock)", 
+        "_BLOCK_TYPE(pOldBlock->nBlockUse)==_BLOCK_TYPE(nBlockUse)", 
+        "pOldBlock->nLine == IGNORE_LINE && pOldBlock->lRequest == IGNORE_REQ", 
+        "_CrtIsValidHeapPointer(pUserData)", 
+        "Allocation too large or negative: %u bytes.", 
+        "Client hook re-allocation failure.", 
+        "Client hook re-allocation failure at file %hs line %d.", 
+        "_pFirstBlock == pHead", 
+        "_pLastBlock == pHead", 
+        "pHead->nBlockUse == nBlockUse", 
+        "pHead->nLine == IGNORE_LINE && pHead->lRequest == IGNORE_REQ", 
+        "DAMAGE: after %hs block (#%d) at 0x%08X.", 
+        "DAMAGE: before %hs block (#%d) at 0x%08X.", 
+        "_BLOCK_TYPE_IS_VALID(pHead->nBlockUse)", 
+        "Client hook free failure.", 
+        "memory check error at 0x%08X = 0x%02X, should be 0x%02X.", 
+        "%hs located at 0x%08X is %u bytes long.", 
+        "%hs allocated at file %hs(%d).", 
+        "DAMAGE: on top of Free block at 0x%08X.", 
+        "DAMAGED", 
+        "_heapchk fails with unknown return value!", 
+        "_heapchk fails with _HEAPBADPTR.", 
+        "_heapchk fails with _HEAPBADEND.", 
+        "_heapchk fails with _HEAPBADNODE.", 
+        "_heapchk fails with _HEAPBADBEGIN.", 
+        "Bad memory block found at 0x%08X.", 
+        "_CrtMemCheckPoint: NULL state pointer.", 
+        "_CrtMemDifference: NULL state pointer.", 
+        "Object dump complete.", 
+        "crt block at 0x%08X, subtype %x, %u bytes long.", 
+        "normal block at 0x%08X, %u bytes long.", 
+        "client block at 0x%08X, subtype %x, %u bytes long.", 
+        "{%ld} ", 
+        "%hs(%d) : ", 
+        "#File Error#(%d) : ", 
+        "Dumping objects ->", 
+        " Data: <%s> %s", 
+        "Detected memory leaks!", 
+        "Total allocations: %ld bytes.", 
+        "Largest number used: %ld bytes.", 
+        "%ld bytes in %ld %hs Blocks.", 
+        "vsprintf.c", 
+        "fprintf.c", 
+        "str != NULL", 
+        "_file.c", 
+        "mode != NULL", 
+        "*filename != _T('\\0')", 
+        "freopen.c", 
+        "filename != NULL", 
+        "(\"inconsistent IOB fields\", stream->_ptr - stream->_base >= 0)", 
+        "_flsbuf.c", 
+        "fclose.c", 
+        "*mode != _T('\\0')", 
+        "*file != _T('\\0')", 
+        "fopen.c", 
+        "file != NULL", 
+        "Illegal byte sequence", 
+        "Directory not empty", 
+        "Function not implemented", 
+        "No locks available", 
+        "Filename too long", 
+        "Resource deadlock avoided", 
+        "Result too large", 
+        "Domain error", 
+        "Broken pipe", 
+        "Too many links", 
+        "Read-only file system", 
+        "Invalid seek", 
+        "No space left on device", 
+        "File too large", 
+        "Inappropriate I/O control operation", 
+        "Too many open files", 
+        "Too many open files in system", 
+        "Invalid argument", 
+        "Is a directory", 
+        "Not a directory", 
+        "No such device", 
+        "Improper link", 
+        "File exists", 
+        "Resource device", 
+        "Unknown error", 
+        "Bad address", 
+        "Permission denied", 
+        "Not enough space", 
+        "Resource temporarily unavailable", 
+        "No child processes", 
+        "Bad file descriptor", 
+        "Exec format error", 
+        "Arg list too long", 
+        "No such device or address", 
+        "Input/output error", 
+        "Interrupted function call", 
+        "No such process", 
+        "No such file or directory", 
+        "Operation not permitted", 
+        "No error", 
+        "strupr.c", 
+        "putenv.c", 
+        "*arglist != _T('\\0')", 
+        "arglist != NULL", 
+        "spawnlp.c", 
+        "cmd.exe", 
+        "command.com", 
+        "system.c", 
+        "*command != _T('\\0')", 
+        "COMSPEC", 
+        "stdenvp.c", 
+        "stdargv.c", 
+        "a_env.c", 
+        "ioinit.c", 
+        "__GLOBAL_HEAP_SELECTED", 
+        "__MSVCRT_HEAP_SELECT", 
+        "runtime error ", 
+        "TLOSS error", 
+        "SING error", 
+        "DOMAIN error", 
+        "- unable to initialize heap", 
+        "- not enough space for lowio initialization", 
+        "- not enough space for stdio initialization", 
+        "- pure virtual function call", 
+        "- not enough space for _onexit/atexit table", 
+        "- unable to open console device", 
+        "- unexpected heap error", 
+        "- unexpected multithread lock error", 
+        "- not enough space for thread data", 
+        "abnormal program termination", 
+        "- not enough space for environment", 
+        "- not enough space for arguments", 
+        "- floating point not loaded", 
+        "Microsoft Visual C++ Runtime Library", 
+        "Runtime Error!", 
+        "Program: ", 
+        "<program name unknown>", 
+        "?IsProcessorFeaturePresent", 
+        "KERNEL32", 
+        "`h````", 
+        "ppxxxx", 
+        "(null)", 
+        "output.c", 
+        "ch != _T('\\0')", 
+        "Assertion Failed", 
+        "Warning", 
+        "%s(%d) : %s", 
+        "Assertion failed!", 
+        "Assertion failed: ", 
+        "_CrtDbgReport: String too long or IO Error", 
+        "Second Chance Assertion Failed: File %s, Line %d", 
+        "wsprintfA", 
+        "user32.dll", 
+        "Microsoft Visual C++ Debug Library", 
+        "Debug %s!", 
+        "Program: %s%s%s%s%s%s%s%s%s%s%s", 
+        "(Press Retry to debug the application)", 
+        "Module: ", 
+        "File: ", 
+        "Line: ", 
+        "Expression: ", 
+        "For information on how your program can cause an assertion", 
+        "failure, see the Visual C++ documentation on asserts.", 
+        "dbgrpt.c", 
+        "szUserMessage != NULL", 
+        "wtombenv.c", 
+        "@stream != NULL", 
+        "input.c", 
+        "_sftbuf.c", 
+        "flag == 0 || flag == 1", 
+        "_open.c", 
+        "_getbuf.c", 
+        "_freebuf.c", 
+        "stream.c", 
+        "CONIN$", 
+        "CONOUT$", 
+        "setenv.c", 
+        "**argv != _T('\\0')", 
+        "*argv != NULL", 
+        "argv != NULL", 
+        "spawnvpe.c", 
+        "spawnve.c", 
+        "GetLastActivePopup", 
+        "GetActiveWindow", 
+        "MessageBoxA", 
+        "a_cmp.c", 
+        "cchCount1==0 && cchCount2==1 || cchCount1==1 && cchCount2==0", 
+        "mbtowc.c", 
+        "MB_CUR_MAX == 1 || MB_CUR_MAX == 2", 
+        "_filbuf.c", 
+        "ungetc.c", 
+        "osfinfo.c", 
+        "mbtowenv.c", 
+        "dospawn.c", 
+        "cenvarg.c", 
+        "1#QNAN", 
+        "1#SNAN", 
+        "_hypot", 
+        "chsize.c", 
+        "size >= 0", 
+        "i386\\filter.c", 
+        "i386\\filter_simd.c", 
+        "XMMI2_FP_Emulation internal error: unknown operation code %d", 
+        "XMMI2_FP_Emulation internal error: unknown operation code OP_UNSPEC", 
+        "XMMI2_FP_Emulation () INTERNAL XMMI2_FP_Emulation () ERROR for MAXPS/MAXSS/MINPS/MINSS", 
+        "XMMI2_FP_Emulation () INTERNAL XMMI2_FP_Emulation () ERROR for COMISS/UCOMISS", 
+        "XMMI2_FP_Emulation () INTERNAL XMMI2_FP_Emulation () ERROR for CMPPS/CMPSS", 
+        "GetACP", 
+        "SetErrorMode", 
+        "SetConsoleCtrlHandler", 
+        "SetLastError", 
+        "GetCommandLineA", 
+        "RaiseException", 
+        "GetFileType", 
+        "GetLastError", 
+        "VirtualAlloc", 
+        "VirtualFree", 
+        "GetVersionExA", 
+        "CloseHandle", 
+        "GetStdHandle", 
+        "FormatMessageA", 
+        "DebugBreak", 
+        "FreeLibrary", 
+        "GetCurrentThread", 
+        "GetCurrentProcess", 
+        "GetProcAddress", 
+        "LoadLibraryA", 
+        "GetModuleFileNameA", 
+        "VirtualQuery", 
+        "MapViewOfFile", 
+        "CreateFileMappingA", 
+        "CreateFileA", 
+        "GetModuleHandleA", 
+        "ReadFile", 
+        "SetEndOfFile", 
+        "SetFilePointer", 
+        "GetTempFileNameA", 
+        "GetTempPathA", 
+        "GetFullPathNameA", 
+        "GetFileInformationByHandle", 
+        "WriteFile", 
+        "DeleteFileA", 
+        "WaitForSingleObject", 
+        "SetThreadPriority", 
+        "CreateProcessA", 
+        "GetLocalTime", 
+        "SetLocalTime", 
+        "FlushFileBuffers", 
+        "GetVersion", 
+        "ExitProcess", 
+        "TerminateProcess", 
+        "UnhandledExceptionFilter", 
+        "IsBadWritePtr", 
+        "IsBadReadPtr", 
+        "HeapValidate", 
+        "RtlUnwind", 
+        "ReadConsoleInputA", 
+        "SetConsoleMode", 
+        "GetConsoleMode", 
+        "PeekConsoleInputA", 
+        "GetNumberOfConsoleInputEvents", 
+        "MultiByteToWideChar", 
+        "FreeEnvironmentStringsA", 
+        "FreeEnvironmentStringsW", 
+        "WideCharToMultiByte", 
+        "GetEnvironmentStrings", 
+        "GetEnvironmentStringsW", 
+        "SetHandleCount", 
+        "GetStartupInfoA", 
+        "GetEnvironmentVariableA", 
+        "HeapDestroy", 
+        "HeapCreate", 
+        "HeapFree", 
+        "GetStringTypeA", 
+        "GetStringTypeW", 
+        "LCMapStringA", 
+        "LCMapStringW", 
+        "InterlockedDecrement", 
+        "OutputDebugStringA", 
+        "InterlockedIncrement", 
+        "HeapAlloc", 
+        "HeapReAlloc", 
+        "GetCPInfo", 
+        "GetOEMCP", 
+        "WriteConsoleA", 
+        "SetEnvironmentVariableW", 
+        "SetEnvironmentVariableA", 
+        "GetFileAttributesA", 
+        "CompareStringA", 
+        "CompareStringW", 
+        "SetStdHandle", 
+        "GetExitCodeProcess", 
+        "KERNEL32.dll", 
+        "FOR_NOERROR_DIALOGS", 
+        "control-C", 
+        "control-BREAK", 
+        "window-CLOSE", 
+        "FOR_IGNORE_EXCEPTIONS", 
+        "FOR__IS_DEBUGGER_PRESENT", 
+        "FOR_RUN_FLAWED_PENTIUM", 
+        "E:\\forrtl\\build\\for_reentrancy.c", 
+        "unknown", 
+        "SEQUENTIAL", 
+        "DIRECT", 
+        "APPEND", 
+        "FORTRAN", 
+        "DELETE", 
+        "SUBMIT", 
+        "PRINT/DELETE", 
+        "SUBMIT/DELETE", 
+        "FORMATTED", 
+        "UNFORMATTED", 
+        "BINARY", 
+        "SEQUENTIAL", 
+        "RELATIVE", 
+        "INDEXED", 
+        "VARIABLE", 
+        "SEGMENTED", 
+        "STREAM", 
+        "STREAM_CR", 
+        "STREAM_LF", 
+        "SCRATCH", 
+        "UNKNOWN", 
+        "REPLACE", 
+        "BIG_ENDIAN", 
+        "LITTLE_ENDIAN", 
+        "NATIVE", 
+        "READWRITE", 
+        "APOSTROPHE", 
+        "APPEND", 
+        "REWIND", 
+        "READWRITE", 
+        "COMPAT", 
+        "DENYNONE", 
+        "DENYRD", 
+        "DENYRW", 
+        "DENYWR", 
+        "E:\\forrtl\\build\\for_open.c", 
+        "E:\\forrtl\\build\\for_open.c", 
+        "FORT_CONVERT", 
+        "FORT_CONVERT%d", 
+        "NATIVE", 
+        "BIG_ENDIAN", 
+        "LITTLE_ENDIAN", 
+        "CONOUT$", 
+        "CONIN$", 
+        "unknown", 
+        "unknown", 
+        "E:\\forrtl\\build\\for_rseq_fmt.c", 
+        "unknown", 
+        "E:\\forrtl\\build\\for_wseq_fmt.c", 
+        "E:\\forrtl\\build\\for_wseq_fmt.c", 
+        "E:\\forrtl\\build\\for_wseq_fmt.c", 
+        "unknown", 
+        "E:\\forrtl\\build\\for_wseq_lis.c", 
+        "E:\\forrtl\\build\\for_wseq_lis.c", 
+        "E:\\forrtl\\build\\for_wseq_lis.c", 
+        "E:\\forrtl\\build\\for_wseq_lis.c", 
+        "E:\\forrtl\\build\\for_wseq_lis.c", 
+        "E:\\forrtl\\build\\for_wseq_lis.c", 
+        "E:\\forrtl\\build\\for_wseq_lis.c", 
+        "E:\\forrtl\\build\\for_wseq_lis.c", 
+        "E:\\forrtl\\build\\for_wseq_lis.c", 
+        "E:\\forrtl\\build\\for_wseq_lis.c", 
+        "unknown", 
+        "unknown", 
+        "unknown", 
+        "Stop - Program terminated.", 
+        "Return code ", 
+        "unknown", 
+        "E:\\forrtl\\build\\for_stop.c", 
+        "E:\\forrtl\\build\\for_stop.c", 
+        "E:\\forrtl\\build\\for_exit_handler.c", 
+        "E:\\forrtl\\build\\for_exit_handler.c", 
+        "operation completed successfully", 
+        "ignored requested disposition", 
+        "ignored requested disposition, file not deleted", 
+        "requested disposition modified, file not deleted, unit %d, file %s", 
+        "@(#)Compaq Fortran RTL Message Catalog", 
+        "V1.1-24", 
+        "13-Oct-2000", 
+        "unit not connected", 
+        "format syntax error at or near %.*s", 
+        "floating point conversion failed", 
+        "floating point conversion failed", 
+        "%d floating inexact traps", 
+        "%d floating invalid traps", 
+        "%d floating overflow traps", 
+        "%d floating divide-by-zero traps", 
+        "%d floating underflow traps", 
+        "output conversion error, unit %d, file %s", 
+        "floating invalid", 
+        "process interrupted (SIGINT)", 
+        "floating overflow", 
+        "floating divide by zero", 
+        "floating underflow", 
+        "floating point exception", 
+        "IOT trap signal", 
+        "process killed (SIGTERM)", 
+        "process quit (SIGQUIT)", 
+        "floating underflow in math library", 
+        "floating inexact", 
+        "program aborting due to %s event", 
+        "FORTRAN abort routine called", 
+        "not a FORTRAN specific error", 
+        "not implemented", 
+        "internal consistency check failure, file %s, line %d", 
+        "permission to access file denied, unit %d, file %s", 
+        "cannot overwrite existing file, unit %d, file %s", 
+        "syntax error in NAMELIST input, unit %d, file %s", 
+        "too many values for NAMELIST variable, unit %d, file %s", 
+        "invalid reference to variable in NAMELIST input, unit %d, file %s", 
+        "REWIND error, unit %d, file %s", 
+        "duplicate file specifications, unit %d, file %s", 
+        "input record too long, unit %d, file %s", 
+        "BACKSPACE error, unit %d, file %s", 
+        "end-of-file during read, unit %d, file %s", 
+        "record number outside range, unit %d, file %s", 
+        "OPEN or DEFINE FILE required", 
+        "too many records in I/O statement, unit %d, file %s", 
+        "CLOSE error, unit %d, file %s", 
+        "file not found, unit %d, file %s", 
+        "open failure, unit %d, file %s", 
+        "mixed file access modes, unit %d, file %s", 
+        "invalid logical unit number, unit %d, file %s", 
+        "ENDFILE error, unit %d, file %s", 
+        "unit already open, unit %d, file %s", 
+        "segmented record format error, unit %d, file %s", 
+        "attempt to access non-existent record, unit %d, file %s", 
+        "inconsistent record length, unit %d, file %s", 
+        "error during write, unit %d, file %s", 
+        "error during read, unit %d, file %s", 
+        "recursive I/O operation, unit %d, file %s", 
+        "insufficient virtual memory", 
+        "no such device, unit %d, file %s", 
+        "file name specification error, unit %d, file %s", 
+        "inconsistent record type, unit %d, file %s", 
+        "keyword value error in OPEN statement, unit %d, file %s", 
+        "inconsistent OPEN/CLOSE parameters, unit %d, file %s", 
+        "write to READONLY file, unit %d, file %s", 
+        "invalid argument to FORTRAN Run-Time Library", 
+        "invalid key specification, unit %d, file %s", 
+        "inconsistent key change or duplicate key, unit %d, file %s", 
+        "inconsistent file organization, unit %d, file %s", 
+        "specified record locked, unit %d, file %s", 
+        "no current record, unit %d, file %s", 
+        "REWRITE error, unit %d, file %s", 
+        "DELETE error, unit %d, file %s", 
+        "UNLOCK error, unit %d, file %s", 
+        "FIND error, unit %d, file %s", 
+        "list-directed I/O syntax error, unit %d, file %s", 
+        "infinite format loop, unit %d, file %s", 
+        "format/variable-type mismatch, unit %d, file %s", 
+        "syntax error in format, unit %d, file %s", 
+        "input conversion error, unit %d, file %s", 
+        "output statement overflows record, unit %d, file %s", 
+        "input statement requires too much data, unit %d, file %s", 
+        "variable format expression value error, unit %d, file %s", 
+        "integer overflow", 
+        "integer divide by zero", 
+        "subscript out of range", 
+        "wrong number of arguments", 
+        "invalid argument to math library", 
+        "undefined exponentiation", 
+        "logarithm of zero or negative value", 
+        "square root of negative value", 
+        "significance lost in math library", 
+        "floating overflow in math library", 
+        "adjustable array dimension error", 
+        "invalid key match specifier for key direction, unit %d, file %s", 
+        "cannot stat file, unit %d, file %s", 
+        "operation requires seek ability, unit %d, file %s", 
+        "user breakpoint (SIGTRAP)", 
+        "kernel breakpoint (SIGTRAP)", 
+        "taken branch delay emulation (SIGTRAP)", 
+        "not taken branch delay emulation (SIGTRAP)", 
+        "user single step (SIGTRAP)", 
+        "overflow check (SIGTRAP)", 
+        "divide by zero check (SIGTRAP)", 
+        "array index out of bounds (SIGTRAP)", 
+        "array index out of bounds for index %d (SIGTRAP)", 
+        "decimal overflow", 
+        "decimal divide by zero", 
+        "decimal invalid", 
+        "reserved operand", 
+        "assertion error", 
+        "null pointer error", 
+        "stack overflow", 
+        "string length error", 
+        "substring error", 
+        "range error", 
+        "allocatable array is already allocated", 
+        "unresolved contention for Compaq Fortran RTL global resource", 
+        "allocatable array or pointer is not allocated", 
+        "array index out of bounds", 
+        "array index out of bounds for index %d", 
+        "GENTRAP code = 0x%lx (%ld)", 
+        "Program Exception - access violation", 
+        "Program Exception - datatype misalignment", 
+        "Program Exception - breakpoint", 
+        "Program Exception - single step", 
+        "Program Exception - array bounds exceeded", 
+        "Program Exception - denormal floating-point operand", 
+        "Program Exception - floating stack check", 
+        "Program Exception - integer divide by zero", 
+        "Program Exception - integer overflow", 
+        "Program Exception - privileged instruction", 
+        "Program Exception - in page error", 
+        "Program Exception - illegal instruction", 
+        "Program Exception - noncontinuable exception", 
+        "Program Exception - stack overflow", 
+        "Program Exception - invalid disposition", 
+        "Program Exception - exception code = 0x%lx (%ld)", 
+        "A pointer passed to DEALLOCATE points to an array that cannot be deallocated", 
+        "SIGSEGV, %s", 
+        "DATE argument to DATE_AND_TIME is too short (LEN=%d), required LEN=8", 
+        "TIME argument to DATE_AND_TIME is too short (LEN=%d), required LEN=10", 
+        "ZONE argument to DATE_AND_TIME is too short (LEN=%d), required LEN=5", 
+        "Divide by zero", 
+        "Cannot allocate array - overflow on array size calculation.", 
+        "Intel Pentium fdiv flaw detected, please update the processor", 
+        "unformatted I/O to unit open for formatted transfers, unit %d, file %s", 
+        "formatted I/O to unit open for unformatted transfers, unit %d, file %s", 
+        "direct-access I/O to unit open for keyed access, unit %d, file %s", 
+        "sequential-access I/O to unit open for direct access, unit %d, file %s", 
+        "keyed-access I/O to unit open for direct access, unit %d, file %s", 
+        "I/O to non-FORTRAN unit", 
+        "invalid text is %s in record number %d", 
+        "invalid text is %s", 
+        "operation requires file to be on disk or tape, unit %d, file %s", 
+        "operation requires sequential file organization and access, unit %d, file %s", 
+        "end of record during read, unit %d, file %s", 
+        "Diagnostic message buffer overflow, hex message number was %8.8x", 
+        "array or substring subscript expression out of range", 
+        "CHARACTER substring expression out of range", 
+        "label not found in assigned GOTO list", 
+        "INTEGER arithmetic overflow", 
+        "INTEGER overflow on input", 
+        "invalid INTEGER", 
+        "REAL indefinite (uninitialized or previous error)", 
+        "invalid REAL", 
+        "REAL math overflow", 
+        "No matching CASE found for SELECT CASE", 
+        "INTEGER assignment overflow", 
+        "formatted I/O not consistent with OPEN options", 
+        "list-directed I/O not consistent with OPEN options", 
+        "terminal I/O not consistent with OPEN options", 
+        "direct I/O not consistent with OPEN options", 
+        "unformatted I/O not consistent with OPEN options", 
+        "A edit descriptor expected for CHARACTER", 
+        "E, F, D or G edit descriptor expected for REAL", 
+        "I edit descriptor expected for INTEGER", 
+        "L edit descriptor expected for LOGICAL", 
+        "file already open : parameter mismatch", 
+        "namelist I/O not consistent with OPEN options", 
+        "IOFOCUS illegal with non-window unit", 
+        "IOFOCUS illegal without QuickWin", 
+        "TITLE illegal with non-window unit", 
+        "TITLE illegal without QuickWin", 
+        "KEEP illegal for scratch file", 
+        "SCRATCH illegal for named file", 
+        "multiple radix specifiers", 
+        "illegal radix specifier", 
+        "illegal STATUS value", 
+        "illegal MODE value", 
+        "illegal ACCESS value", 
+        "illegal BLANK value", 
+        "illegal FORM value", 
+        "illegal SHARE value", 
+        "illegal LOCKMODE value", 
+        "illegal record number", 
+        "no unit number associated with *", 
+        "illegal RECORDS value", 
+        "illegal unit number", 
+        "illegal RECL value", 
+        "array already allocated", 
+        "array size zero or negative", 
+        "non-HUGE array exceeds 64K", 
+        "array not allocated", 
+        "BACKSPACE illegal on terminal device", 
+        "EOF illegal on terminal device", 
+        "ENDFILE illegal on terminal device", 
+        "REWIND illegal on terminal device", 
+        "DELETE illegal for read-only file", 
+        "external I/O illegal beyond end of file", 
+        "truncation error : file closed", 
+        "terminal buffer overflow", 
+        "comma delimiter disabled after left repositioning", 
+        "LOCKING illegal on sequential file", 
+        "file already locked or unlocked", 
+        "file deadlocked", 
+        "SHARE not installed", 
+        "file already connected to a different unit", 
+        "access not allowed", 
+        "file already exists", 
+        "file not found", 
+        "too many open files", 
+        "too many units connected", 
+        "illegal structure for unformatted file", 
+        "unknown unit number", 
+        "file read-only or locked against writing", 
+        "no space left on device", 
+        "too many threads", 
+        "invalid argument", 
+        "BACKSPACE illegal for SEQUENTIAL WRITE-only files", 
+        "file not open for reading or file locked", 
+        "end of file encountered", 
+        "positive integer expected in repeat field", 
+        "multiple repeat field", 
+        "invalid number in input", 
+        "invalid string in input", 
+        "comma missing in COMPLEX input", 
+        "T or F expected in LOGICAL read", 
+        "too many bytes read from unformatted record", 
+        "H or apostrophe edit descriptor illegal on input", 
+        "illegal character in hexadecimal input", 
+        "variable name not found", 
+        "invalid NAMELIST input format", 
+        "wrong number of array dimensions", 
+        "array subscript exceeds allocated area", 
+        "invalid subrange in NAMELIST input", 
+        "substring range specified on non-CHARACTER item", 
+        "internal file overflow", 
+        "direct record overflow", 
+        "numeric field bigger than record size", 
+        "heap space limit exceeded", 
+        "scratch file name limit exceeded", 
+        "D field exceeds W field in ES edit descriptor", 
+        "D field exceeds W field in EN edit descriptor", 
+        "Exponent of 0 not allowed in format", 
+        "integer expected in format", 
+        "initial left parenthesis expected in format", 
+        "positive integer expected in format", 
+        "repeat count on nonrepeatable descriptor", 
+        "integer expected preceding H, X, or P edit descriptor", 
+        "N or Z expected after B in format", 
+        "format nesting limit exceeded", 
+        "'.' expected in format", 
+        "unexpected end of format", 
+        "unexpected character in format", 
+        "M field exceeds W field in I edit descriptor", 
+        "integer out of range in format", 
+        "format not set by ASSIGN", 
+        "separator expected in format", 
+        "%c or $ : nonstandard edit descriptor in format", 
+        "Z : nonstandard edit descriptor in format", 
+        "DOS graphics not supported under Windows NT", 
+        "Graphics error", 
+        "Using QuickWin is illegal in console application", 
+        "Illegal 'ADVANCE' value", 
+        "DIM argument to SIZE out of range (value %d)", 
+        "Uninitialised pointer used as argument to ASSOCIATED function", 
+        "Reference to uninitialised POINTER", 
+        "Reference to POINTER which is not ASSOCIATED", 
+        "Reference to uninitialised POINTER %s", 
+        "Reference to POINTER %s which is not ASSOCIATED", 
+        "Out of range: substring starting position %d is less than 1", 
+        "Out of range: substring ending position %d is greater than length %d", 
+        "Subscript %d of %s (value %d) is out of range (%d:%d)", 
+        "Subscript %d of %s (value %d) is out of range (%d:*)", 
+        "VECTOR argument to PACK has incompatible character length", 
+        "VECTOR argument to PACK is too small", 
+        "SOURCE and PAD arguments to RESHAPE have different character lengths", 
+        "Element %d of SHAPE argument to RESHAPE is negative", 
+        "SOURCE too small for specified SHAPE in RESHAPE, and no PAD", 
+        "Out of memory", 
+        "SHAPE and ORDER arguments to RESHAPE have different sizes (%d and %d)", 
+        "Element %d of ORDER argument to RESHAPE is out of range (%d)", 
+        "Value %d occurs twice in ORDER argument to RESHAPE", 
+        "impossible nextelt overflow in RESHAPE", 
+        "Invalid value %d for argument DIM for SPREAD of rank %d source", 
+        "Complex zero raised to power zero", 
+        "Complex zero raised to negative power", 
+        "Impossible error in NAMELIST input", 
+        "DIM argument to CSHIFT (%d) is out of range", 
+        "DIM argument (%d) to CSHIFT is out of range (1:%d)", 
+        "Shape mismatch (dimension %d) between ARRAY and SHIFT in CSHIFT", 
+        "Internal Error - bad arguments to cshift_ca", 
+        "Internal error - bad arguments to cshift_caa", 
+        "DATE argument to DATE_AND_TIME is too short (LEN=%d)", 
+        "TIME argument to DATE_AND_TIME is too short (LEN=%d)", 
+        "ZONE argument to DATE_AND_TIME is too short (LEN=%d)", 
+        "VALUES argument to DATE_AND_TIME is too small (%d elements)", 
+        "Out of range: DIM argument to COUNT has value %d", 
+        "Out of range: DIM argument to COUNT has value %d with MASK of rank %d", 
+        "Out of range: DIM argument to PRODUCT has value %d", 
+        "Out of range: DIM argument to PRODUCT has value %d with ARRAY of rank %d", 
+        "Out of range: DIM argument to SUM has value %d with ARRAY of rank %d", 
+        "Real zero raised to zeroth power", 
+        "Real zero raised to negative power", 
+        "Out of range: DIM argument to SUM has value %d", 
+        "DIM argument (%d) to EOSHIFT is out of range (1:%d)", 
+        "Shape mismatch (dimension %d) between ARRAY and BOUNDARY in EOSHIFT", 
+        "DIM argument to EOSHIFT is out of range (%d)", 
+        "Shape mismatch (dimension %d) between ARRAY and SHIFT in EOSHIFT", 
+        "BOUNDARY argument to EOSHIFT has wrong LEN (%d instead of %d)", 
+        "BOUNDARY has LEN %d instead of %d to EOSHIFT", 
+        "Internal error - bad arguments to EOSHIFT", 
+        "GETARG: Value of K (%d) is out of range", 
+        "FLUSH: Value of LUNIT (%d) is out of range", 
+        "FLUSH: Unit %d is not connected", 
+        "Invalid string length (%d) to ICHAR", 
+        "Invalid string length (%d) to IACHAR", 
+        "Integer zero raised to a negative power", 
+        "Integer zero raised to zeroth power", 
+        "SIZE argument (%d) to ISHFTC intrinsic out of range", 
+        "SHIFT argument (%d) to ISHFTC intrinsic out of range", 
+        "Out of range: DIM argument to LBOUND has value %d", 
+        "Out of range: DIM argument (%d) to LBOUND greater than array rank (%d)", 
+        "Out of range: DIM argument to MAXVAL has value %d", 
+        "Out of range: DIM argument to MAXVAL has value %d with ARRAY of rank %d", 
+        "Cannot allocate array temporary - out of memory", 
+        "Attempt to DEALLOCATE part of a larger object", 
+        "Pointer in DEALLOCATE is ASSOCIATED with an ALLOCATABLE array", 
+        "Attempt to DEALLOCATE an object which was not ALLOCATEd", 
+        "Cannot ALLOCATE scalar POINTER - out of memory", 
+        "DEALLOCATE: object not allocated/associated", 
+        "Cannot allocate POINTER array - out of memory", 
+        "DEALLOCATE: Array not allocated", 
+        "DEALLOCATE: Character array not allocated", 
+        "Cannot ALLOCATE ALLOCATABLE array - out of memory", 
+        "Cannot allocate automatic variable - out of memory", 
+        "DEALLOCATE failure: ALLOCATABLE array is not ALLOCATEd", 
+        "Out of range: DIM argument to MINVAL has value %d", 
+        "Out of range: DIM argument to MINVAL has value %d with ARRAY of rank %d", 
+        "P argument to MOD is double precision zero", 
+        "P argument to MOD is integer zero", 
+        "P argument to MOD is real zero", 
+        "P argument to MODULO is real zero", 
+        "P argument to modulo is zero", 
+        "Argument S to NEAREST is zero", 
+        "Heap Storage Exhausted", 
+        "PUT argument to RANDOM_SEED is too small", 
+        "GET argument to RANDOM_SEED is too small", 
+        "Recursive i/o reference", 
+        "Argument to SHAPE intrinsic is not PRESENT", 
+        "Out of range: DIM argument to UBOUND has value %d", 
+        "Out of range: DIM argument (%d) to UBOUND greater than array rank (%d)", 
+        "Out of range: UBOUND of assumed-size array with DIM==rank (%d)", 
+        "Out of range: DIM argument (%d) to UBOUND greater than array rank", 
+        "Shape mismatch: Dimension %d extents are %d and %d", 
+        "Illegal POSITION value", 
+        "Illegal ACTION value", 
+        "DELIM= specifier not allowed for an UNFORMATTED file", 
+        "Illegal DELIM value", 
+        "PAD= specifier not allowed for an UNFORMATTED file", 
+        "illegal PAD value", 
+        "illegal CARRIAGECONTROL value", 
+        "SIZE specifier only allowed with ADVANCE=NO", 
+        "illegal character in binary input", 
+        "illegal character in octal input", 
+        "End of record encountered", 
+        "Illegal subcript in namelist input record", 
+        ": CLOSE(", 
+        ": WRITE(", 
+        ": ENDFILE(", 
+        ": INQUIRE(", 
+        ": LOCKING(", 
+        ": OPEN(", 
+        ": READ(", 
+        ": REWIND(", 
+        ": BACKSPACE(", 
+        ": EOF(", 
+        ": $DEBUG", 
+        ": ALLOCATE", 
+        ": DEALLOCATE", 
+        ": BEGINTHREAD", 
+        ": MATH", 
+        ": QWIN", 
+        "DFORMSG.DLL", 
+        "Message not found", 
+        "%s (%i): %s", 
+        "f77_dump_flag", 
+        "decfort_dump_flag", 
+        "\"Unknown\"", 
+        "forrtl", 
+        "forrtl", 
+        "E:\\forrtl\\build\\for_diags.c", 
+        "FormatMessage failed for sysmem message number %i", 
+        "%s: %s", 
+        "%s: %s", 
+        "DFORMSG.DLL", 
+        "FOR_DISABLE_STACK_TRACE", 
+        "Message not found", 
+        "%s (%i): %s", 
+        "%s (%i): %s", 
+        "%s%s%s", 
+        "FOR_GENERATE_DEBUG_EXCEPTION", 
+        "FOR__IS_DEBUGGER_PRESENT", 
+        "f77_dump_flag", 
+        "decfort_dump_flag", 
+        "Incrementally linked image--PC correlation disabled.", 
+        "Stack trace terminated abnormally.", 
+        "imagehlp.dll", 
+        "StackWalk", 
+        "SymInitialize", 
+        "SymCleanup", 
+        "ImagehlpApiVersionEx", 
+        "SymFunctionTableAccess", 
+        "FOR_ENABLE_VERBOSE_STACK_TRACE", 
+        "****Can't get image name*", 
+        "AddrMode1616", 
+        "AddrMode1632", 
+        "AddrModeReal", 
+        "AddrModeFlat", 
+        "Source", 
+        "Routine", 
+        "%-19.19s%-10.10s%-19.19s%-12.12s%-19.19s", 
+        "Traceback symbolic or hex stack dump follows:", 
+        "FOR_FULL_SRC_FILE_SPEC", 
+        "%-17.17s  %8.8lX  %-17.17s  %10.10s  %s", 
+        "  Params[3]:   ", 
+        "Params[2]:      ", 
+        "  Params[1]:   ", 
+        "Params[0]:      ", 
+        "  Stack.Mode:   ", 
+        "  Stack.Segment:   ", 
+        "Stack.Offset:   ", 
+        "  Frame.Mode:   ", 
+        "  Frame.Segment:   ", 
+        "Frame.Offset:   ", 
+        "  Return.Mode:  ", 
+        "  Return.Segment:  ", 
+        "Return.Offset:  ", 
+        "  PC.Mode:      ", 
+        "  PC.Segment:      ", 
+        "PC.Offset:      ", 
+        "Info from StackFrame is:", 
+        "--------- Frame # %u ---------------------------------------", 
+        "Image:         %s", 
+        "Routine name:  %s", 
+        "Source file:   %s", 
+        "Line number:   %s", 
+        "%s%s%8.8lX%s%4.4lX%s%s", 
+        "%s%8.8lX%s%4.4lX%s%s", 
+        "%s%8.8lX%s%4.4lX%s%s", 
+        "%s%8.8lX%s%4.4lX%s%s", 
+        "%s%8.8lX%s%8.8lX", 
+        "%s%8.8lX%s%8.8lX", 
+        "Hex Dump Of Exception Record Context Information:", 
+        "  EBP:  ", 
+        "  ESP:  ", 
+        "  SS:   ", 
+        "  EIP:  ", 
+        "EFlags:  ", 
+        "Exception Context:  Processor Control and Status Registers.", 
+        "%s%8.8lX", 
+        "%s%8.8lX%s%8.8lX%s%8.8lX%s%8.8lX%s%8.8lX", 
+        "  EDI:  ", 
+        "  EDX:  ", 
+        "  ECX:  ", 
+        "  EBX:  ", 
+        "Exception Context:  Processor Integer Registers.", 
+        "%s%8.8lX%s%8.8lX%s%8.8lX%s%8.8lX", 
+        "%s%8.8lX%s%8.8lX", 
+        "  GS:   ", 
+        "  FS:   ", 
+        "  ES:   ", 
+        "Exception Context:  Processor Segment Registers.", 
+        "%s%8.8lX%s%8.8lX%s%8.8lX%s%8.8lX", 
+        "  RegisterArea[70]:  ", 
+        "RegisterArea[60]:  ", 
+        "  RegisterArea[50]:  ", 
+        "RegisterArea[40]:  ", 
+        "  RegisterArea[30]:  ", 
+        "RegisterArea[20]:  ", 
+        "  RegisterArea[10]:  ", 
+        "RegisterArea[00]:  ", 
+        "Exception Context:  Floating Point RegisterArea.", 
+        "  Cr0NpxState:    ", 
+        "TagWord:      ", 
+        "  DataSelector:  ", 
+        "  ErrorSelector:  ", 
+        "StatusWord:   ", 
+        "  DataOffset:    ", 
+        "  ErrorOffset:    ", 
+        "ControlWord:  ", 
+        "Exception Context:  Floating Point Control and Status Registers.", 
+        "%s%8.8lX%s%8.8lX%s%8.8lX", 
+        "%s%8.8lX%s%8.8lX%s%8.8lX", 
+        "%s%8.8lX%s%8.8lX", 
+        "%s%4.4hX%8.8lX%8.8lX%s%4.4hX%8.8lX%8.8lX", 
+        "%s%4.4hX%8.8lX%8.8lX%s%4.4hX%8.8lX%8.8lX", 
+        "%s%4.4hX%8.8lX%8.8lX%s%4.4hX%8.8lX%8.8lX", 
+        "%s%4.4hX%8.8lX%8.8lX%s%4.4hX%8.8lX%8.8lX", 
+        ".trace", 
+        "MessageBoxA", 
+        "FOR_DIAGNOSTIC_LOG_FILE", 
+        "FOR_DISABLE_DIAGNOSTIC_DISPLAY", 
+        "user32.dll", 
+        "Message not found", 
+        "FOR_DISABLE_STACK_TRACE", 
+        "FOR__IS_DEBUGGER_PRESENT", 
+        "f77_dump_flag", 
+        "decfort_dump_flag", 
+        "        ", 
+        "cotan   ", 
+        "sign    ", 
+        "nint    ", 
+        "dim     ", 
+        "cpow    ", 
+        "cabs    ", 
+        "ccos    ", 
+        "csin    ", 
+        "cexp    ", 
+        "clog    ", 
+        "csqrt   ", 
+        "**      ", 
+        "mod     ", 
+        "COTAN: ", 
+        "floating-point error: ", 
+        "DOMAIN", 
+        "OVERFLOW", 
+        "UNDERFLOW", 
+        "invalid", 
+        "denormal", 
+        "divide by zero", 
+        "overflow", 
+        "underflow", 
+        "inexact", 
+        "square root", 
+        "stack overflow", 
+        "stack underflow", 
+        " error", 
+        "E:\\forrtl\\build\\for_lub_mgt.c", 
+        "E:\\forrtl\\build\\for_lub_mgt.c", 
+        "E:\\forrtl\\build\\for_lub_mgt.c", 
+        "CONOUT$", 
+        "CONIN$", 
+        "CONOUT$", 
+        "CONIN$", 
+        "CONOUT$", 
+        "E:\\forrtl\\build\\for_nt_open_proc.c", 
+        "FORT_BUFFERED", 
+        "Unit %i", 
+        "E:\\forrtl\\build\\for_nt_open_proc.c", 
+        "FOR_READ", 
+        "FOR_ACCEPT", 
+        "FOR_TYPE", 
+        "FOR_PRINT", 
+        "FORT%d", 
+        "fort.%d", 
+        "SCRATCH", 
+        "CONOUT$", 
+        "CONOUT$", 
+        "CONOUT$", 
+        "Open: Select File for Unit ", 
+        "File Open Error", 
+        "A File Must be Selected", 
+        "Terminate Program?", 
+        "File name missing or blank - please enter file name", 
+        "UNIT %d? ", 
+        "E:\\forrtl\\build\\for_nt_open_proc.c", 
+        "E:\\forrtl\\build\\for_desc_item.c", 
+        "E:\\forrtl\\build\\for_desc_item.c", 
+        "E:\\forrtl\\build\\for_get.c", 
+        "E:\\forrtl\\build\\for_fmt_comp.c", 
+        "E:\\forrtl\\build\\for_intrp_fmt.c", 
+        "E:\\forrtl\\build\\for_intrp_fmt.c", 
+        "E:\\forrtl\\build\\for_intrp_fmt.c", 
+        "E:\\forrtl\\build\\for_put.c", 
+        "E:\\forrtl\\build\\for_put.c", 
+        "%s && DEL %s", 
+        "FOR_DEFAULT_PRINT_DEVICE", 
+        "Command.com /C COPY \"%s\" %s", 
+        "Cmd.exe /C COPY \"%s\" %s", 
+        "SeSystemtimePrivilege", 
+        "advapi32.dll", 
+        "AdjustTokenPrivileges", 
+        "advapi32.dll", 
+        "LookupPrivilegeValueA", 
+        "advapi32.dll", 
+        "OpenProcessToken", 
+        "SeSystemtimePrivilege", 
+        "unknown", 
+        "E:\\forrtl\\build\\for_wseq.c", 
+        "E:\\forrtl\\build\\for_wseq.c", 
+        "E:\\forrtl\\build\\for_wseq.c", 
+        "E:\\forrtl\\build\\for_wseq.c", 
+        "E:\\forrtl\\build\\for_wseq.c", 
+        "E:\\forrtl\\build\\for_wseq.c", 
+        "E:\\forrtl\\build\\for_wseq.c", 
+        "E:\\forrtl\\build\\for_wseq.c", 
+        "E:\\forrtl\\build\\for_wseq.c", 
+        "E:\\forrtl\\build\\for_wseq.c", 
+        "0123456789ABCDEF", 
+        "0123456789ABCDEF", 
+        "0123456789ABCDEF", 
+        "0123456789ABCDEF", 
+        "E:\\forrtl\\build\\for_portlib.c", 
+        "E:\\forrtl\\build\\for_portlib.c", 
+        "E:\\forrtl\\build\\for_portlib.c", 
+        "INFINITY", 
+        "infinity", 
+        "Infinity", 
+        "Infinity", 
+        "INFINITY", 
+        "infinity", 
+        "Infinity", 
+        "Infinity", 
+        "Cp/n/P+", 
+        "Ep/n7P+", 
+        "Op/n1P+", 
+        "Ip/n5P+", 
+        "Cp'n/P%", 
+        "Ep'n7P%", 
+        "Op'n1P%", 
+        "Ip'n5P%", 
+        "*Tp3.;P", 
+        "D:\\ELBA\\SOUND-SPEED\\SOUND-from-MODS.FOR", 
+        "MAIN$SOUND-FROM-MODS", 
+        "SOUND_SPEED", 
+        "D:\\ELBA\\SOUND-SPEED\\SOUNDMODS\\Debug\\SOUNDMODS.pdb", 
+        "jjjjjj", 
+        "JCQCzC[ClC", 
+        "D&E&EBEBE", 
+        "!!!!!!!", 
+        "\"%(,/269<@CFJMPTWZ^adgknqux{", 
+        "(null)", 
+        "         (((((                  H", 
+        ";T^h<U_i=V`j>Wak?Xbl@YcmAZdnB[eoC\\fpD]gq"
+    ], 
+    "metadata": {
+        "output": {
+            "pcap": {
+                "basename": "dump.pcap", 
+                "sha256": "d596835628aace7fbc23db8be9dfaa965a2a135c3e0a129f831deb28ce757cd2", 
+                "dirname": ""
+            }
+        }
+    }
+}

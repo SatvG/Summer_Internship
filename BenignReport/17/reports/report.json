@@ -1,0 +1,1387 @@
+{
+    "info": {
+        "added": 1693129021.366303, 
+        "started": 1693130538.609953, 
+        "duration": 35, 
+        "ended": 1693130573.726982, 
+        "owner": null, 
+        "score": 0.0, 
+        "id": 17, 
+        "category": "file", 
+        "git": {
+            "head": "13cbe0d9e457be3673304533043e992ead1ea9b2", 
+            "fetch_head": "13cbe0d9e457be3673304533043e992ead1ea9b2"
+        }, 
+        "monitor": "2deb9ccd75d5a7a3fe05b2625b03a8639d6ee36b", 
+        "package": "", 
+        "route": "none", 
+        "custom": null, 
+        "machine": {
+            "status": "stopped", 
+            "name": "cuckoo2", 
+            "label": "cuckoo2", 
+            "manager": "VirtualBox", 
+            "started_on": "2023-08-27 10:02:18", 
+            "shutdown_on": "2023-08-27 10:02:53"
+        }, 
+        "platform": null, 
+        "version": "2.0.7", 
+        "options": ""
+    }, 
+    "signatures": [], 
+    "target": {
+        "category": "file", 
+        "file": {
+            "yara": [], 
+            "sha1": "65ff1968c4301dbd562d4462082541af00485465", 
+            "name": "15805c31103b4bc0811ec97ba13e12df90e4edbb4c024e152544fa5ee48f656b_benign.exe", 
+            "type": "PE32 executable (GUI) Intel 80386, for MS Windows", 
+            "sha256": "15805c31103b4bc0811ec97ba13e12df90e4edbb4c024e152544fa5ee48f656b", 
+            "urls": [
+                "http://ts-crl.ws.symantec.com/tss-ca-g2.crl0(", 
+                "https://d.symcb.com/cps0%", 
+                "http://crl.thawte.com/ThawteTimestampingCA.crl0", 
+                "http://sw.symcd.com0", 
+                "https://d.symcb.com/rpa0", 
+                "http://sw.symcb.com/sw.crl0", 
+                "http://s.symcd.com0", 
+                "http://sw1.symcb.com/sw.crt0", 
+                "http://logo.verisign.com/vslogo.gif0", 
+                "http://ocsp.thawte.com0", 
+                "http://s.symcb.com/pca3-g5.crl0", 
+                "http://www.efi.com0", 
+                "http://ts-aia.ws.symantec.com/tss-ca-g2.cer0", 
+                "https://d.symcb.com/rpa0)", 
+                "http://ts-ocsp.ws.symantec.com07"
+            ], 
+            "crc32": "39CDAE13", 
+            "path": "/home/abc/.cuckoo/storage/binaries/15805c31103b4bc0811ec97ba13e12df90e4edbb4c024e152544fa5ee48f656b", 
+            "ssdeep": null, 
+            "size": 32216, 
+            "sha512": "c6e967b25e25ccbe007c406be894ae501ae7a72447c48ee2c8ee819b754e01cc4fa3015183ad4e01805dfabc4361a71ed5d91fdda671c1603c8f75e590f75724", 
+            "md5": "7e12dbde17193c81f4a627966bbe02bf"
+        }
+    }, 
+    "network": {
+        "tls": [], 
+        "udp": [
+            {
+                "src": "192.168.56.101", 
+                "dst": "192.168.56.1", 
+                "offset": 1807, 
+                "time": 3.268829822540283, 
+                "dport": 53, 
+                "sport": 49925
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "192.168.56.1", 
+                "offset": 1908, 
+                "time": 17.99139094352722, 
+                "dport": 53, 
+                "sport": 54106
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "192.168.56.1", 
+                "offset": 2000, 
+                "time": 14.500818967819214, 
+                "dport": 53, 
+                "sport": 57960
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "192.168.56.1", 
+                "offset": 2092, 
+                "time": 7.360383987426758, 
+                "dport": 53, 
+                "sport": 62521
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "192.168.56.1", 
+                "offset": 2184, 
+                "time": 18.116461992263794, 
+                "dport": 53, 
+                "sport": 64311
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "192.168.56.1", 
+                "offset": 2281, 
+                "time": 7.12342095375061, 
+                "dport": 53, 
+                "sport": 64965
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "192.168.56.255", 
+                "offset": 2378, 
+                "time": 2.8932669162750244, 
+                "dport": 137, 
+                "sport": 137
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "192.168.56.255", 
+                "offset": 13358, 
+                "time": 8.913611888885498, 
+                "dport": 138, 
+                "sport": 138
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 18652, 
+                "time": 18.539127826690674, 
+                "dport": 5355, 
+                "sport": 50502
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 18980, 
+                "time": 15.898891925811768, 
+                "dport": 5355, 
+                "sport": 52397
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 19308, 
+                "time": 13.260113000869751, 
+                "dport": 5355, 
+                "sport": 54218
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 19636, 
+                "time": 21.09403896331787, 
+                "dport": 5355, 
+                "sport": 55915
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 19964, 
+                "time": 4.766467809677124, 
+                "dport": 5355, 
+                "sport": 55971
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 20284, 
+                "time": 8.09156084060669, 
+                "dport": 5355, 
+                "sport": 56774
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 20612, 
+                "time": 10.692264795303345, 
+                "dport": 5355, 
+                "sport": 56830
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 20940, 
+                "time": 4.5444347858428955, 
+                "dport": 5355, 
+                "sport": 60415
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 21260, 
+                "time": 0.824138879776001, 
+                "dport": 5355, 
+                "sport": 64652
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 21604, 
+                "time": 2.826107978820801, 
+                "dport": 5355, 
+                "sport": 64751
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "239.255.255.250", 
+                "offset": 21948, 
+                "time": 9.963980913162231, 
+                "dport": 1900, 
+                "sport": 56777
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "239.255.255.250", 
+                "offset": 25768, 
+                "time": 0.8556759357452393, 
+                "dport": 3702, 
+                "sport": 58151
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "8.8.8.8", 
+                "offset": 34144, 
+                "time": 3.2692887783050537, 
+                "dport": 53, 
+                "sport": 49925
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "8.8.8.8", 
+                "offset": 34548, 
+                "time": 17.991854906082153, 
+                "dport": 53, 
+                "sport": 54106
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "8.8.8.8", 
+                "offset": 34824, 
+                "time": 14.501246929168701, 
+                "dport": 53, 
+                "sport": 57960
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "8.8.8.8", 
+                "offset": 35192, 
+                "time": 7.361081838607788, 
+                "dport": 53, 
+                "sport": 62521
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "8.8.8.8", 
+                "offset": 35560, 
+                "time": 18.11698579788208, 
+                "dport": 53, 
+                "sport": 64311
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "8.8.8.8", 
+                "offset": 35851, 
+                "time": 7.123976945877075, 
+                "dport": 53, 
+                "sport": 64965
+            }
+        ], 
+        "dns_servers": [
+            "8.8.8.8", 
+            "192.168.56.1"
+        ], 
+        "http": [], 
+        "icmp": [], 
+        "smtp": [], 
+        "tcp": [], 
+        "smtp_ex": [], 
+        "mitm": [], 
+        "hosts": [
+            "8.8.8.8"
+        ], 
+        "pcap_sha256": "a0421bec9ed9b6198ae72901ac3fd4819602d66871aa7124391b0fcfad7f546b", 
+        "dns": [
+            {
+                "type": "A", 
+                "request": "update.googleapis.com", 
+                "answers": []
+            }, 
+            {
+                "type": "A", 
+                "request": "time.windows.com", 
+                "answers": []
+            }, 
+            {
+                "type": "A", 
+                "request": "www.msftncsi.com", 
+                "answers": []
+            }, 
+            {
+                "type": "A", 
+                "request": "dns.msftncsi.com", 
+                "answers": []
+            }, 
+            {
+                "type": "A", 
+                "request": "teredo.ipv6.microsoft.com", 
+                "answers": []
+            }
+        ], 
+        "http_ex": [], 
+        "domains": [
+            {
+                "ip": "", 
+                "domain": "teredo.ipv6.microsoft.com"
+            }, 
+            {
+                "ip": "131.107.255.255", 
+                "domain": "dns.msftncsi.com"
+            }, 
+            {
+                "ip": "49.44.116.238", 
+                "domain": "www.msftncsi.com"
+            }, 
+            {
+                "ip": "142.250.194.35", 
+                "domain": "update.googleapis.com"
+            }
+        ], 
+        "dead_hosts": [], 
+        "sorted_pcap_sha256": "39946e17599afeb095886c105e0313e40418b939fb22883f660c6e0909a812a5", 
+        "irc": [], 
+        "https_ex": []
+    }, 
+    "static": {
+        "pdb_path": null, 
+        "pe_imports": [
+            {
+                "imports": [
+                    {
+                        "name": "?Flush@wxFile@@QAE_NXZ", 
+                        "address": "0x4040fc"
+                    }, 
+                    {
+                        "name": "?Close@wxFile@@QAE_NXZ", 
+                        "address": "0x404100"
+                    }, 
+                    {
+                        "name": "??0wxFile@@QAE@PBDW4OpenMode@0@@Z", 
+                        "address": "0x404104"
+                    }, 
+                    {
+                        "name": "?Leave@wxCriticalSection@@QAEXXZ", 
+                        "address": "0x404108"
+                    }, 
+                    {
+                        "name": "?Enter@wxCriticalSection@@QAEXXZ", 
+                        "address": "0x40410c"
+                    }, 
+                    {
+                        "name": "??1wxCriticalSection@@QAE@XZ", 
+                        "address": "0x404110"
+                    }, 
+                    {
+                        "name": "??0wxCriticalSection@@QAE@XZ", 
+                        "address": "0x404114"
+                    }, 
+                    {
+                        "name": "?GetCurrentId@wxThread@@SAKXZ", 
+                        "address": "0x404118"
+                    }, 
+                    {
+                        "name": "?Printf@wxString@@QAAHPBDZZ", 
+                        "address": "0x40411c"
+                    }, 
+                    {
+                        "name": "?wxConvUTF8@@3AAVwxMBConvUTF8@@A", 
+                        "address": "0x404120"
+                    }, 
+                    {
+                        "name": "??H@YA?AVwxString@@ABV0@0@Z", 
+                        "address": "0x404124"
+                    }, 
+                    {
+                        "name": "?OnFatalException@wxAppConsole@@UAEXXZ", 
+                        "address": "0x404128"
+                    }, 
+                    {
+                        "name": "??0TimeZone@wxDateTime@@QAE@W4TZ@1@@Z", 
+                        "address": "0x40412c"
+                    }, 
+                    {
+                        "name": "?Format@wxDateTime@@QBE?AVwxString@@PBDABVTimeZone@1@@Z", 
+                        "address": "0x404130"
+                    }, 
+                    {
+                        "name": "?UNow@wxDateTime@@SA?AV1@XZ", 
+                        "address": "0x404134"
+                    }, 
+                    {
+                        "name": "?TryValidator@wxEvtHandler@@MAE_NAAVwxEvent@@@Z", 
+                        "address": "0x404138"
+                    }, 
+                    {
+                        "name": "?Write@wxFile@@QAE_NABVwxString@@ABVwxMBConv@@@Z", 
+                        "address": "0x40413c"
+                    }, 
+                    {
+                        "name": "??4wxString@@QAEAAV0@ABV0@@Z", 
+                        "address": "0x404140"
+                    }, 
+                    {
+                        "name": "?OnUnhandledException@wxAppConsole@@UAEXXZ", 
+                        "address": "0x404144"
+                    }, 
+                    {
+                        "name": "?IsActive@wxAppBase@@UBE_NXZ", 
+                        "address": "0x404148"
+                    }, 
+                    {
+                        "name": "?SetDisplayMode@wxAppBase@@UAE_NABUwxVideoMode@@@Z", 
+                        "address": "0x40414c"
+                    }, 
+                    {
+                        "name": "?SetPrintMode@wxApp@@UAEXH@Z", 
+                        "address": "0x404150"
+                    }, 
+                    {
+                        "name": "?GetPrintMode@wxApp@@UBEHXZ", 
+                        "address": "0x404154"
+                    }, 
+                    {
+                        "name": "?GetPathSeparator@wxFileName@@SADW4wxPathFormat@@@Z", 
+                        "address": "0x404158"
+                    }, 
+                    {
+                        "name": "?CallOnInit@wxAppConsole@@UAE_NXZ", 
+                        "address": "0x40415c"
+                    }, 
+                    {
+                        "name": "?OnCmdLineHelp@wxAppConsole@@UAE_NAAVwxCmdLineParser@@@Z", 
+                        "address": "0x404160"
+                    }, 
+                    {
+                        "name": "?OnCmdLineError@wxAppConsole@@UAE_NAAVwxCmdLineParser@@@Z", 
+                        "address": "0x404164"
+                    }, 
+                    {
+                        "name": "?FilterEvent@wxAppConsole@@UAEHAAVwxEvent@@@Z", 
+                        "address": "0x404168"
+                    }, 
+                    {
+                        "name": "?HandleEvent@wxAppConsole@@UBEXPAVwxEvtHandler@@P82@AEXAAVwxEvent@@@Z1@Z", 
+                        "address": "0x40416c"
+                    }, 
+                    {
+                        "name": "?ProcessPendingEvents@wxAppConsole@@UAEXXZ", 
+                        "address": "0x404170"
+                    }, 
+                    {
+                        "name": "?CheckBuildOptions@wxAppConsole@@SA_NPBD0@Z", 
+                        "address": "0x404174"
+                    }, 
+                    {
+                        "name": "?ms_appInitFn@wxAppConsole@@1P6APAV1@XZA", 
+                        "address": "0x404178"
+                    }, 
+                    {
+                        "name": "?OnInitGui@wxAppBase@@UAE_NXZ", 
+                        "address": "0x40417c"
+                    }, 
+                    {
+                        "name": "?OnRun@wxAppBase@@UAEHXZ", 
+                        "address": "0x404180"
+                    }, 
+                    {
+                        "name": "?OnExit@wxAppBase@@UAEHXZ", 
+                        "address": "0x404184"
+                    }, 
+                    {
+                        "name": "?MainLoop@wxAppBase@@UAEHXZ", 
+                        "address": "0x404188"
+                    }, 
+                    {
+                        "name": "?Exit@wxAppBase@@UAEXXZ", 
+                        "address": "0x40418c"
+                    }, 
+                    {
+                        "name": "?ExitMainLoop@wxAppBase@@UAEXXZ", 
+                        "address": "0x404190"
+                    }, 
+                    {
+                        "name": "?Pending@wxAppBase@@UAE_NXZ", 
+                        "address": "0x404194"
+                    }, 
+                    {
+                        "name": "?Dispatch@wxAppBase@@UAE_NXZ", 
+                        "address": "0x404198"
+                    }, 
+                    {
+                        "name": "?ProcessIdle@wxAppBase@@UAE_NXZ", 
+                        "address": "0x40419c"
+                    }, 
+                    {
+                        "name": "?SendIdleEvents@wxAppBase@@UAE_NPAVwxWindow@@AAVwxIdleEvent@@@Z", 
+                        "address": "0x4041a0"
+                    }, 
+                    {
+                        "name": "?GetTopWindow@wxAppBase@@UBEPAVwxWindow@@XZ", 
+                        "address": "0x4041a4"
+                    }, 
+                    {
+                        "name": "?GetDisplayMode@wxAppBase@@UBE?AUwxVideoMode@@XZ", 
+                        "address": "0x4041a8"
+                    }, 
+                    {
+                        "name": "?GetLayoutDirection@wxAppBase@@UBE?AW4wxLayoutDirection@@XZ", 
+                        "address": "0x4041ac"
+                    }, 
+                    {
+                        "name": "?OnCmdLineParsed@wxAppBase@@UAE_NAAVwxCmdLineParser@@@Z", 
+                        "address": "0x4041b0"
+                    }, 
+                    {
+                        "name": "?OnInitCmdLine@wxAppBase@@UAEXAAVwxCmdLineParser@@@Z", 
+                        "address": "0x4041b4"
+                    }, 
+                    {
+                        "name": "?SetActive@wxAppBase@@UAEX_NPAVwxWindow@@@Z", 
+                        "address": "0x4041b8"
+                    }, 
+                    {
+                        "name": "?CreateTraits@wxAppBase@@MAEPAVwxAppTraits@@XZ", 
+                        "address": "0x4041bc"
+                    }, 
+                    {
+                        "name": "?wxEntry@@YAHPAUHINSTANCE__@@0PADH@Z", 
+                        "address": "0x4041c0"
+                    }, 
+                    {
+                        "name": "?ProcessEvent@wxEvtHandler@@UAE_NAAVwxEvent@@@Z", 
+                        "address": "0x4041c4"
+                    }, 
+                    {
+                        "name": "?SearchEventTable@wxEvtHandler@@UAE_NAAUwxEventTable@@AAVwxEvent@@@Z", 
+                        "address": "0x4041c8"
+                    }, 
+                    {
+                        "name": "?TryParent@wxEvtHandler@@MAE_NAAVwxEvent@@@Z", 
+                        "address": "0x4041cc"
+                    }, 
+                    {
+                        "name": "?DoSetClientObject@wxEvtHandler@@MAEXPAVwxClientData@@@Z", 
+                        "address": "0x4041d0"
+                    }, 
+                    {
+                        "name": "?DoGetClientObject@wxEvtHandler@@MBEPAVwxClientData@@XZ", 
+                        "address": "0x4041d4"
+                    }, 
+                    {
+                        "name": "?DoSetClientData@wxEvtHandler@@MAEXPAX@Z", 
+                        "address": "0x4041d8"
+                    }, 
+                    {
+                        "name": "?DoGetClientData@wxEvtHandler@@MBEPAXXZ", 
+                        "address": "0x4041dc"
+                    }, 
+                    {
+                        "name": "?ms_appInstance@wxAppConsole@@1PAV1@A", 
+                        "address": "0x4041e0"
+                    }, 
+                    {
+                        "name": "?GetClassInfo@wxApp@@UBEPAVwxClassInfo@@XZ", 
+                        "address": "0x4041e4"
+                    }, 
+                    {
+                        "name": "??0wxApp@@QAE@XZ", 
+                        "address": "0x4041e8"
+                    }, 
+                    {
+                        "name": "??1wxApp@@UAE@XZ", 
+                        "address": "0x4041ec"
+                    }, 
+                    {
+                        "name": "?Initialize@wxApp@@UAE_NAAHPAPAD@Z", 
+                        "address": "0x4041f0"
+                    }, 
+                    {
+                        "name": "?CleanUp@wxApp@@UAEXXZ", 
+                        "address": "0x4041f4"
+                    }, 
+                    {
+                        "name": "?Yield@wxApp@@UAE_N_N@Z", 
+                        "address": "0x4041f8"
+                    }, 
+                    {
+                        "name": "?WakeUpIdle@wxApp@@UAEXXZ", 
+                        "address": "0x4041fc"
+                    }, 
+                    {
+                        "name": "?OnExceptionInMainLoop@wxApp@@UAE_NXZ", 
+                        "address": "0x404200"
+                    }, 
+                    {
+                        "name": "?GetEventTable@wxApp@@MBEPBUwxEventTable@@XZ", 
+                        "address": "0x404204"
+                    }, 
+                    {
+                        "name": "?GetEventHashTable@wxApp@@MBEAAVwxEventHashTable@@XZ", 
+                        "address": "0x404208"
+                    }, 
+                    {
+                        "name": "?CreateRefData@wxObject@@MBEPAVwxObjectRefData@@XZ", 
+                        "address": "0x40420c"
+                    }, 
+                    {
+                        "name": "?CloneRefData@wxObject@@MBEPAVwxObjectRefData@@PBV2@@Z", 
+                        "address": "0x404210"
+                    }, 
+                    {
+                        "name": "??1wxStringBase@@QAE@XZ", 
+                        "address": "0x404214"
+                    }, 
+                    {
+                        "name": "??0wxString@@QAE@ABV0@@Z", 
+                        "address": "0x404218"
+                    }, 
+                    {
+                        "name": "??0wxString@@QAE@PBD@Z", 
+                        "address": "0x40421c"
+                    }, 
+                    {
+                        "name": "??4wxString@@QAEAAV0@PBD@Z", 
+                        "address": "0x404220"
+                    }, 
+                    {
+                        "name": "??1wxString@@QAE@XZ", 
+                        "address": "0x404224"
+                    }, 
+                    {
+                        "name": "?Format@wxString@@SA?AV1@PBDZZ", 
+                        "address": "0x404228"
+                    }, 
+                    {
+                        "name": "??H@YA?AVwxString@@ABV0@D@Z", 
+                        "address": "0x40422c"
+                    }, 
+                    {
+                        "name": "?wxEmptyString@@3PBDB", 
+                        "address": "0x404230"
+                    }
+                ], 
+                "dll": "wxmsw28.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "WaitForSingleObject", 
+                        "address": "0x404000"
+                    }, 
+                    {
+                        "name": "PulseEvent", 
+                        "address": "0x404004"
+                    }, 
+                    {
+                        "name": "SetEvent", 
+                        "address": "0x404008"
+                    }, 
+                    {
+                        "name": "GetSystemTimeAsFileTime", 
+                        "address": "0x40400c"
+                    }, 
+                    {
+                        "name": "GetCurrentThreadId", 
+                        "address": "0x404010"
+                    }, 
+                    {
+                        "name": "GetCurrentProcessId", 
+                        "address": "0x404014"
+                    }, 
+                    {
+                        "name": "QueryPerformanceCounter", 
+                        "address": "0x404018"
+                    }, 
+                    {
+                        "name": "IsProcessorFeaturePresent", 
+                        "address": "0x40401c"
+                    }, 
+                    {
+                        "name": "IsDebuggerPresent", 
+                        "address": "0x404020"
+                    }, 
+                    {
+                        "name": "DecodePointer", 
+                        "address": "0x404024"
+                    }, 
+                    {
+                        "name": "EncodePointer", 
+                        "address": "0x404028"
+                    }, 
+                    {
+                        "name": "OpenEventA", 
+                        "address": "0x40402c"
+                    }, 
+                    {
+                        "name": "CloseHandle", 
+                        "address": "0x404030"
+                    }, 
+                    {
+                        "name": "GetLastError", 
+                        "address": "0x404034"
+                    }
+                ], 
+                "dll": "KERNEL32.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "ShellExecuteExA", 
+                        "address": "0x4040f4"
+                    }
+                ], 
+                "dll": "SHELL32.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "?_Winerror_map@std@@YAPBDH@Z", 
+                        "address": "0x40403c"
+                    }, 
+                    {
+                        "name": "?_Xbad_alloc@std@@YAXXZ", 
+                        "address": "0x404040"
+                    }, 
+                    {
+                        "name": "?_Xout_of_range@std@@YAXPBD@Z", 
+                        "address": "0x404044"
+                    }, 
+                    {
+                        "name": "?_Xlength_error@std@@YAXPBD@Z", 
+                        "address": "0x404048"
+                    }, 
+                    {
+                        "name": "?_Syserror_map@std@@YAPBDH@Z", 
+                        "address": "0x40404c"
+                    }
+                ], 
+                "dll": "MSVCP110.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "__setusermatherr", 
+                        "address": "0x404054"
+                    }, 
+                    {
+                        "name": "_configthreadlocale", 
+                        "address": "0x404058"
+                    }, 
+                    {
+                        "name": "_ismbblead", 
+                        "address": "0x40405c"
+                    }, 
+                    {
+                        "name": "_cexit", 
+                        "address": "0x404060"
+                    }, 
+                    {
+                        "name": "_exit", 
+                        "address": "0x404064"
+                    }, 
+                    {
+                        "name": "__set_app_type", 
+                        "address": "0x404068"
+                    }, 
+                    {
+                        "name": "__getmainargs", 
+                        "address": "0x40406c"
+                    }, 
+                    {
+                        "name": "__crtGetShowWindowMode", 
+                        "address": "0x404070"
+                    }, 
+                    {
+                        "name": "_XcptFilter", 
+                        "address": "0x404074"
+                    }, 
+                    {
+                        "name": "??1type_info@@UAE@XZ", 
+                        "address": "0x404078"
+                    }, 
+                    {
+                        "name": "_initterm_e", 
+                        "address": "0x40407c"
+                    }, 
+                    {
+                        "name": "__dllonexit", 
+                        "address": "0x404080"
+                    }, 
+                    {
+                        "name": "_calloc_crt", 
+                        "address": "0x404084"
+                    }, 
+                    {
+                        "name": "_unlock", 
+                        "address": "0x404088"
+                    }, 
+                    {
+                        "name": "_lock", 
+                        "address": "0x40408c"
+                    }, 
+                    {
+                        "name": "?terminate@@YAXXZ", 
+                        "address": "0x404090"
+                    }, 
+                    {
+                        "name": "exit", 
+                        "address": "0x404094"
+                    }, 
+                    {
+                        "name": "??2@YAPAXI@Z", 
+                        "address": "0x404098"
+                    }, 
+                    {
+                        "name": "??3@YAXPAX@Z", 
+                        "address": "0x40409c"
+                    }, 
+                    {
+                        "name": "_purecall", 
+                        "address": "0x4040a0"
+                    }, 
+                    {
+                        "name": "free", 
+                        "address": "0x4040a4"
+                    }, 
+                    {
+                        "name": "memmove", 
+                        "address": "0x4040a8"
+                    }, 
+                    {
+                        "name": "_initterm", 
+                        "address": "0x4040ac"
+                    }, 
+                    {
+                        "name": "_acmdln", 
+                        "address": "0x4040b0"
+                    }, 
+                    {
+                        "name": "_fmode", 
+                        "address": "0x4040b4"
+                    }, 
+                    {
+                        "name": "_commode", 
+                        "address": "0x4040b8"
+                    }, 
+                    {
+                        "name": "_crt_debugger_hook", 
+                        "address": "0x4040bc"
+                    }, 
+                    {
+                        "name": "__crtUnhandledException", 
+                        "address": "0x4040c0"
+                    }, 
+                    {
+                        "name": "_onexit", 
+                        "address": "0x4040c4"
+                    }, 
+                    {
+                        "name": "__crtTerminateProcess", 
+                        "address": "0x4040c8"
+                    }, 
+                    {
+                        "name": "_except_handler4_common", 
+                        "address": "0x4040cc"
+                    }, 
+                    {
+                        "name": "__crtSetUnhandledExceptionFilter", 
+                        "address": "0x4040d0"
+                    }, 
+                    {
+                        "name": "_invoke_watson", 
+                        "address": "0x4040d4"
+                    }, 
+                    {
+                        "name": "_controlfp_s", 
+                        "address": "0x4040d8"
+                    }, 
+                    {
+                        "name": "_CxxThrowException", 
+                        "address": "0x4040dc"
+                    }, 
+                    {
+                        "name": "__CxxFrameHandler3", 
+                        "address": "0x4040e0"
+                    }, 
+                    {
+                        "name": "_amsg_exit", 
+                        "address": "0x4040e4"
+                    }, 
+                    {
+                        "name": "memset", 
+                        "address": "0x4040e8"
+                    }, 
+                    {
+                        "name": "memcpy", 
+                        "address": "0x4040ec"
+                    }
+                ], 
+                "dll": "MSVCR110.dll"
+            }
+        ], 
+        "peid_signatures": null, 
+        "keys": [], 
+        "signature": [], 
+        "pe_timestamp": "2016-06-21 01:36:16", 
+        "pe_exports": [], 
+        "imported_dll_count": 5, 
+        "pe_imphash": "8bb54cda68070bc6adb2bda158bf2727", 
+        "pe_resources": [
+            {
+                "name": "RT_ICON", 
+                "language": "LANG_ENGLISH", 
+                "filetype": "Device independent bitmap graphic, 32 x 64 x 4, image size 512, 16 important colors", 
+                "sublanguage": "SUBLANG_ENGLISH_US", 
+                "offset": "0x000080f0", 
+                "size": "0x000002e8"
+            }, 
+            {
+                "name": "RT_GROUP_ICON", 
+                "language": "LANG_ENGLISH", 
+                "filetype": "data", 
+                "sublanguage": "SUBLANG_ENGLISH_US", 
+                "offset": "0x000083d8", 
+                "size": "0x00000014"
+            }, 
+            {
+                "name": "RT_MANIFEST", 
+                "language": "LANG_ENGLISH", 
+                "filetype": "XML 1.0 document, ASCII text, with CRLF line terminators", 
+                "sublanguage": "SUBLANG_ENGLISH_US", 
+                "offset": "0x000083f0", 
+                "size": "0x000002d2"
+            }
+        ], 
+        "pe_versioninfo": [], 
+        "pe_sections": [
+            {
+                "size_of_data": "0x00002400", 
+                "virtual_address": "0x00001000", 
+                "entropy": 5.941999936651792, 
+                "name": ".text", 
+                "virtual_size": "0x00002285"
+            }, 
+            {
+                "size_of_data": "0x00002200", 
+                "virtual_address": "0x00004000", 
+                "entropy": 5.181329562232543, 
+                "name": ".rdata", 
+                "virtual_size": "0x000020f0"
+            }, 
+            {
+                "size_of_data": "0x00000200", 
+                "virtual_address": "0x00007000", 
+                "entropy": 4.093486024348029, 
+                "name": ".data", 
+                "virtual_size": "0x0000055c"
+            }, 
+            {
+                "size_of_data": "0x00000800", 
+                "virtual_address": "0x00008000", 
+                "entropy": 3.9220867380804934, 
+                "name": ".rsrc", 
+                "virtual_size": "0x000006c8"
+            }, 
+            {
+                "size_of_data": "0x00000c00", 
+                "virtual_address": "0x00009000", 
+                "entropy": 4.229946042179232, 
+                "name": ".reloc", 
+                "virtual_size": "0x00000b04"
+            }
+        ]
+    }, 
+    "debug": {
+        "action": [], 
+        "dbgview": [], 
+        "errors": [], 
+        "log": [
+            "2023-08-27 09:37:01,092 [analyzer] DEBUG: Starting analyzer from: C:\\tmpezozfh\n", 
+            "2023-08-27 09:37:01,092 [analyzer] DEBUG: Pipe server name: \\??\\PIPE\\KVGNjPRcTCcHHFZeKAnovVGLuekIsu\n", 
+            "2023-08-27 09:37:01,092 [analyzer] DEBUG: Log pipe server name: \\??\\PIPE\\msnDfmOJicPDnzleGIXPxCyjoPl\n", 
+            "2023-08-27 09:37:01,108 [analyzer] DEBUG: No analysis package specified, trying to detect it automagically.\n", 
+            "2023-08-27 09:37:01,108 [analyzer] INFO: Automatically selected analysis package \"exe\"\n", 
+            "2023-08-27 09:37:02,578 [analyzer] DEBUG: Started auxiliary module DbgView\n", 
+            "2023-08-26 21:32:48,046 [analyzer] DEBUG: Started auxiliary module Disguise\n", 
+            "2023-08-26 21:32:49,312 [lib.api.process] ERROR: Failed to inject 64-bit process with pid None and process name lsass.exe\n", 
+            "2023-08-26 21:32:49,328 [analyzer] DEBUG: Started auxiliary module DumpTLSMasterSecrets\n", 
+            "2023-08-26 21:32:49,328 [analyzer] DEBUG: Started auxiliary module Human\n", 
+            "2023-08-26 21:32:49,328 [analyzer] DEBUG: Started auxiliary module InstallCertificate\n", 
+            "2023-08-26 21:32:49,328 [analyzer] DEBUG: Started auxiliary module Reboot\n", 
+            "2023-08-26 21:32:50,359 [analyzer] DEBUG: Started auxiliary module RecentFiles\n", 
+            "2023-08-26 21:32:50,375 [analyzer] DEBUG: Started auxiliary module Screenshots\n", 
+            "2023-08-26 21:32:50,375 [analyzer] DEBUG: Started auxiliary module LoadZer0m0n\n", 
+            "2023-08-26 21:32:50,828 [lib.api.process] INFO: Successfully executed process from path u'C:\\\\Users\\\\cuckoo2\\\\AppData\\\\Local\\\\Temp\\\\15805c31103b4bc0811ec97ba13e12df90e4edbb4c024e152544fa5ee48f656b_benign.exe' with arguments '' and pid 832\n", 
+            "2023-08-26 21:32:50,859 [analyzer] INFO: Process with pid 832 has terminated\n", 
+            "2023-08-26 21:32:50,859 [analyzer] INFO: Process list is empty, terminating analysis.\n", 
+            "2023-08-26 21:32:52,078 [analyzer] INFO: Analysis completed.\n"
+        ], 
+        "cuckoo": [
+            "2023-08-27 10:02:18,739 [cuckoo.core.scheduler] INFO: Task #17: acquired machine cuckoo2 (label=cuckoo2)\n", 
+            "2023-08-27 10:02:18,741 [cuckoo.core.resultserver] DEBUG: Now tracking machine 192.168.56.101 for task #17\n", 
+            "2023-08-27 10:02:18,741 [cuckoo.core.plugins] DEBUG: Started auxiliary module: Replay\n", 
+            "2023-08-27 10:02:18,784 [cuckoo.auxiliary.sniffer] INFO: Started sniffer with PID 67875 (interface=vboxnet0, host=192.168.56.101)\n", 
+            "2023-08-27 10:02:18,785 [cuckoo.core.plugins] DEBUG: Started auxiliary module: Sniffer\n", 
+            "2023-08-27 10:02:18,858 [cuckoo.machinery.virtualbox] DEBUG: Starting vm cuckoo2\n", 
+            "2023-08-27 10:02:19,048 [cuckoo.machinery.virtualbox] DEBUG: Restoring virtual machine cuckoo2 to cuckoo2_snap\n", 
+            "2023-08-27 10:02:24,384 [cuckoo.core.guest] INFO: Starting analysis #17 on guest (id=cuckoo2, ip=192.168.56.101)\n", 
+            "2023-08-27 10:02:25,388 [cuckoo.core.guest] DEBUG: cuckoo2: not ready yet\n", 
+            "2023-08-27 10:02:26,392 [cuckoo.core.guest] DEBUG: cuckoo2: not ready yet\n", 
+            "2023-08-27 10:02:27,396 [cuckoo.core.guest] DEBUG: cuckoo2: not ready yet\n", 
+            "2023-08-27 10:02:28,407 [cuckoo.core.guest] DEBUG: cuckoo2: not ready yet\n", 
+            "2023-08-27 10:02:28,425 [cuckoo.core.guest] INFO: Guest is running Cuckoo Agent 0.10 (id=cuckoo2, ip=192.168.56.101)\n", 
+            "2023-08-27 10:02:28,693 [cuckoo.core.guest] DEBUG: Uploading analyzer to guest (id=cuckoo2, ip=192.168.56.101, monitor=latest, size=3884763)\n", 
+            "2023-08-27 10:02:34,992 [cuckoo.core.guest] DEBUG: cuckoo2: analysis #17 still processing\n", 
+            "2023-08-27 10:02:36,027 [cuckoo.core.resultserver] DEBUG: Task #17: live log analysis.log initialized.\n", 
+            "2023-08-27 10:02:40,032 [cuckoo.core.guest] DEBUG: cuckoo2: analysis #17 still processing\n", 
+            "2023-08-27 10:02:45,082 [cuckoo.core.guest] DEBUG: cuckoo2: analysis #17 still processing\n", 
+            "2023-08-27 10:02:50,274 [cuckoo.core.guest] DEBUG: cuckoo2: analysis #17 still processing\n", 
+            "2023-08-27 10:02:52,159 [cuckoo.core.resultserver] DEBUG: Task #17: File upload for 'shots/0001.jpg'\n", 
+            "2023-08-27 10:02:52,194 [cuckoo.core.resultserver] DEBUG: Task #17 uploaded file length: 112733\n", 
+            "2023-08-27 10:02:52,300 [cuckoo.core.guest] INFO: cuckoo2: analysis completed successfully\n", 
+            "2023-08-27 10:02:52,321 [cuckoo.core.plugins] DEBUG: Stopped auxiliary module: Replay\n", 
+            "2023-08-27 10:02:52,357 [cuckoo.core.plugins] DEBUG: Stopped auxiliary module: Sniffer\n", 
+            "2023-08-27 10:02:52,358 [cuckoo.machinery.virtualbox] DEBUG: Stopping vm cuckoo2\n", 
+            "2023-08-27 10:02:53,686 [cuckoo.core.resultserver] DEBUG: Stopped tracking machine 192.168.56.101 for task #17\n", 
+            "2023-08-27 10:02:53,686 [cuckoo.core.resultserver] DEBUG: Cancel <Context for LOG> for task 17\n", 
+            "2023-08-27 10:02:53,699 [cuckoo.core.scheduler] DEBUG: Released database task #17\n", 
+            "2023-08-27 10:02:53,746 [cuckoo.core.plugins] DEBUG: Executed processing module \"AnalysisInfo\" for task #17\n", 
+            "2023-08-27 10:02:53,747 [cuckoo.processing.behavior] WARNING: Analysis results folder does not contain any behavior log files.\n", 
+            "2023-08-27 10:02:53,747 [cuckoo.core.plugins] DEBUG: Executed processing module \"BehaviorAnalysis\" for task #17\n", 
+            "2023-08-27 10:02:53,748 [cuckoo.core.plugins] DEBUG: Executed processing module \"Dropped\" for task #17\n", 
+            "2023-08-27 10:02:53,748 [cuckoo.core.plugins] DEBUG: Executed processing module \"DroppedBuffer\" for task #17\n", 
+            "2023-08-27 10:02:53,749 [cuckoo.core.plugins] DEBUG: Executed processing module \"MetaInfo\" for task #17\n", 
+            "2023-08-27 10:02:53,749 [cuckoo.core.plugins] DEBUG: Executed processing module \"ProcessMemory\" for task #17\n", 
+            "2023-08-27 10:02:53,750 [cuckoo.core.plugins] DEBUG: Executed processing module \"Procmon\" for task #17\n", 
+            "2023-08-27 10:02:53,791 [cuckoo.core.plugins] DEBUG: Executed processing module \"Screenshots\" for task #17\n", 
+            "2023-08-27 10:02:54,148 [cuckoo.processing.static] CRITICAL: You do not have the m2crypto library installed preventing certificate extraction. Please read the Cuckoo documentation on installing m2crypto (you need SWIG installed and then `pip install m2crypto==0.24.0`)!\n", 
+            "2023-08-27 10:02:54,151 [cuckoo.core.plugins] DEBUG: Executed processing module \"Static\" for task #17\n", 
+            "2023-08-27 10:02:54,154 [cuckoo.core.plugins] DEBUG: Executed processing mo"
+        ]
+    }, 
+    "screenshots": [
+        {
+            "path": "/home/abc/.cuckoo/storage/analyses/17/shots/0001.jpg", 
+            "ocr": ""
+        }
+    ], 
+    "strings": [
+        "!This program cannot be run in DOS mode.", 
+        "`.rdata", 
+        "@.data", 
+        "@.reloc", 
+        "t%Wh^+@", 
+        "F95Lu@", 
+        "generic", 
+        "unknown error", 
+        "iostream", 
+        "iostream stream error", 
+        "system", 
+        "Initiating launch %s", 
+        "ShellExecuteEx failed with return code %d", 
+        "%s patch installed successfully ", 
+        "Install returns with status %d from GetLastError", 
+        "invalid string position", 
+        "vector<T> too long", 
+        "string too long", 
+        "I_DECIDE_THIS", 
+        "your program", 
+        "2.8 (no debug,ANSI,Visual C++,wx containers)", 
+        "EFI_ClientPatcher.log", 
+        "%m-%d-%Y %I:%M:%S:%l %p ", 
+        "%s%s%s%c%c", 
+        "c?wxEmptyString@@3PBDB", 
+        ")?Format@wxString@@SA?AV1@PBDZZ", 
+        "??1wxString@@QAE@XZ", 
+        "??4wxString@@QAEAAV0@PBD@Z", 
+        "??0wxString@@QAE@PBD@Z", 
+        "??0wxString@@QAE@ABV0@@Z", 
+        "??1wxStringBase@@QAE@XZ", 
+        ": ?CloneRefData@wxObject@@MBEPAVwxObjectRefData@@PBV2@@Z", 
+        "\"?CreateRefData@wxObject@@MBEPAVwxObjectRefData@@XZ", 
+        "/?GetEventHashTable@wxApp@@MBEAAVwxEventHashTable@@XZ", 
+        "A0?GetEventTable@wxApp@@MBEPBUwxEventTable@@XZ", 
+        "4D?OnExceptionInMainLoop@wxApp@@UAE_NXZ", 
+        "XU?WakeUpIdle@wxApp@@UAEXXZ", 
+        "U?Yield@wxApp@@UAE_N_N@Z", 
+        "9\u001f?CleanUp@wxApp@@UAEXXZ", 
+        "$=?Initialize@wxApp@@UAE_NAAHPAPAD@Z", 
+        "??1wxApp@@UAE@XZ", 
+        "??0wxApp@@QAE@XZ", 
+        "w+?GetClassInfo@wxApp@@UBEPAVwxClassInfo@@XZ", 
+        "Z?ms_appInstance@wxAppConsole@@1PAV1@A", 
+        "%?DoGetClientData@wxEvtHandler@@MBEPAXXZ", 
+        "w&?DoSetClientData@wxEvtHandler@@MAEXPAX@Z", 
+        "%?DoGetClientObject@wxEvtHandler@@MBEPAVwxClientData@@XZ", 
+        "y&?DoSetClientObject@wxEvtHandler@@MAEXPAVwxClientData@@@Z", 
+        "rT?TryParent@wxEvtHandler@@MAE_NAAVwxEvent@@@Z", 
+        "qJ?SearchEventTable@wxEvtHandler@@UAE_NAAUwxEventTable@@AAVwxEvent@@@Z", 
+        "G?ProcessEvent@wxEvtHandler@@UAE_NAAVwxEvent@@@Z", 
+        "c?wxEntry@@YAHPAUHINSTANCE__@@0PADH@Z", 
+        "\"?CreateTraits@wxAppBase@@MAEPAVwxAppTraits@@XZ", 
+        "J?SetActive@wxAppBase@@UAEX_NPAVwxWindow@@@Z", 
+        "D?OnInitCmdLine@wxAppBase@@UAEXAAVwxCmdLineParser@@@Z", 
+        "C?OnCmdLineParsed@wxAppBase@@UAE_NAAVwxCmdLineParser@@@Z", 
+        "B3?GetLayoutDirection@wxAppBase@@UBE?AW4wxLayoutDirection@@XZ", 
+        "N/?GetDisplayMode@wxAppBase@@UBE?AUwxVideoMode@@XZ", 
+        "9?GetTopWindow@wxAppBase@@UBEPAVwxWindow@@XZ", 
+        "J?SendIdleEvents@wxAppBase@@UAE_NPAVwxWindow@@AAVwxIdleEvent@@@Z", 
+        "G?ProcessIdle@wxAppBase@@UAE_NXZ", 
+        ">$?Dispatch@wxAppBase@@UAE_NXZ", 
+        "1G?Pending@wxAppBase@@UAE_NXZ", 
+        "(?ExitMainLoop@wxAppBase@@UAEXXZ", 
+        "(?Exit@wxAppBase@@UAEXXZ", 
+        "DB?MainLoop@wxAppBase@@UAEHXZ", 
+        "9D?OnExit@wxAppBase@@UAEHXZ", 
+        "E?OnRun@wxAppBase@@UAEHXZ", 
+        "D?OnInitGui@wxAppBase@@UAE_NXZ", 
+        "Z?ms_appInitFn@wxAppConsole@@1P6APAV1@XZA", 
+        "!\u001f?CheckBuildOptions@wxAppConsole@@SA_NPBD0@Z", 
+        "G?ProcessPendingEvents@wxAppConsole@@UAEXXZ", 
+        "y:?HandleEvent@wxAppConsole@@UBEXPAVwxEvtHandler@@P82@AEXAAVwxEvent@@@Z1@Z", 
+        "(?FilterEvent@wxAppConsole@@UAEHAAVwxEvent@@@Z", 
+        "C?OnCmdLineError@wxAppConsole@@UAE_NAAVwxCmdLineParser@@@Z", 
+        "C?OnCmdLineHelp@wxAppConsole@@UAE_NAAVwxCmdLineParser@@@Z", 
+        "6?GetPrintMode@wxApp@@UBEHXZ", 
+        "/P?SetPrintMode@wxApp@@UAEXH@Z", 
+        "L?SetDisplayMode@wxAppBase@@UAE_NABUwxVideoMode@@@Z", 
+        "S>?IsActive@wxAppBase@@UBE_NXZ", 
+        "F?OnUnhandledException@wxAppConsole@@UAEXXZ", 
+        "GD?OnFatalException@wxAppConsole@@UAEXXZ", 
+        "?CallOnInit@wxAppConsole@@UAE_NXZ", 
+        "tT?TryValidator@wxEvtHandler@@MAE_NAAVwxEvent@@@Z", 
+        ")?Flush@wxFile@@QAE_NXZ", 
+        "E ?Close@wxFile@@QAE_NXZ", 
+        "??0wxFile@@QAE@PBDW4OpenMode@0@@Z", 
+        "\"A?Leave@wxCriticalSection@@QAEXXZ", 
+        "M(?Enter@wxCriticalSection@@QAEXXZ", 
+        "??1wxCriticalSection@@QAE@XZ", 
+        "??0wxCriticalSection@@QAE@XZ", 
+        "I.?GetCurrentId@wxThread@@SAKXZ", 
+        "G?Printf@wxString@@QAAHPBDZZ", 
+        "`?wxConvUTF8@@3AAVwxMBConvUTF8@@A", 
+        "??H@YA?AVwxString@@ABV0@0@Z", 
+        "??H@YA?AVwxString@@ABV0@D@Z", 
+        "??0TimeZone@wxDateTime@@QAE@W4TZ@1@@Z", 
+        ")?Format@wxDateTime@@QBE?AVwxString@@PBDABVTimeZone@1@@Z", 
+        "zT?UNow@wxDateTime@@SA?AV1@XZ", 
+        "5?GetPathSeparator@wxFileName@@SADW4wxPathFormat@@@Z", 
+        "U?Write@wxFile@@QAE_NABVwxString@@ABVwxMBConv@@@Z", 
+        "??4wxString@@QAEAAV0@ABV0@@Z", 
+        "wxmsw28.dll", 
+        "WaitForSingleObject", 
+        "GetLastError", 
+        "PulseEvent", 
+        "SetEvent", 
+        "OpenEventA", 
+        "CloseHandle", 
+        "KERNEL32.dll", 
+        "ShellExecuteExA", 
+        "SHELL32.dll", 
+        "?_Winerror_map@std@@YAPBDH@Z", 
+        "?_Syserror_map@std@@YAPBDH@Z", 
+        "?_Xbad_alloc@std@@YAXXZ", 
+        "?_Xout_of_range@std@@YAXPBD@Z", 
+        "?_Xlength_error@std@@YAXPBD@Z", 
+        "MSVCP110.dll", 
+        "memmove", 
+        "_purecall", 
+        "??3@YAXPAX@Z", 
+        "??2@YAPAXI@Z", 
+        "MSVCR110.dll", 
+        "?terminate@@YAXXZ", 
+        "_unlock", 
+        "_calloc_crt", 
+        "__dllonexit", 
+        "_onexit", 
+        "??1type_info@@UAE@XZ", 
+        "_XcptFilter", 
+        "__crtGetShowWindowMode", 
+        "_amsg_exit", 
+        "__getmainargs", 
+        "__set_app_type", 
+        "_cexit", 
+        "_ismbblead", 
+        "_configthreadlocale", 
+        "__setusermatherr", 
+        "_initterm_e", 
+        "_initterm", 
+        "_acmdln", 
+        "_fmode", 
+        "_commode", 
+        "_crt_debugger_hook", 
+        "__crtUnhandledException", 
+        "__crtTerminateProcess", 
+        "_except_handler4_common", 
+        "__crtSetUnhandledExceptionFilter", 
+        "_invoke_watson", 
+        "_controlfp_s", 
+        "EncodePointer", 
+        "DecodePointer", 
+        "IsDebuggerPresent", 
+        "IsProcessorFeaturePresent", 
+        "QueryPerformanceCounter", 
+        "GetCurrentProcessId", 
+        "GetCurrentThreadId", 
+        "GetSystemTimeAsFileTime", 
+        "_CxxThrowException", 
+        "__CxxFrameHandler3", 
+        "memcpy", 
+        "memset", 
+        ".?AVtype_info@@", 
+        ".?AV_Iostream_error_category@std@@", 
+        ".?AVCInstallerManager@@", 
+        ".?AV_System_error_category@std@@", 
+        ".?AVerror_category@std@@", 
+        ".?AV_Generic_error_category@std@@", 
+        ".?AVwxObject@@", 
+        ".?AVwxApp@@", 
+        ".?AVwxAppConsole@@", 
+        ".?AVwxEvtHandler@@", 
+        ".?AVwxAppBase@@", 
+        ".?AVEFI_ClientPatcherApp@@", 
+        "wwxwwx", 
+        "wwwwwx", 
+        "wwwwwwwwq", 
+        "wwwwwwwwwq", 
+        "wwwwwwwwww", 
+        "<?xml version='1.0' encoding='UTF-8' standalone='yes'?>", 
+        "<assembly xmlns='urn:schemas-microsoft-com:asm.v1' manifestVersion='1.0'>", 
+        "  <trustInfo xmlns=\"urn:schemas-microsoft-com:asm.v3\">", 
+        "    <security>", 
+        "      <requestedPrivileges>", 
+        "        <requestedExecutionLevel level='asInvoker' uiAccess='false' />", 
+        "      </requestedPrivileges>", 
+        "    </security>", 
+        "  </trustInfo>", 
+        "  <dependency>", 
+        "    <dependentAssembly>", 
+        "      <assemblyIdentity type='win32'              name='Microsoft.Windows.Common-Controls'        version='6.0.0.0'                               processorArchitecture='x86'                   publicKeyToken='6595b64144ccf1df'               language='*' />", 
+        "    </dependentAssembly>", 
+        "  </dependency>", 
+        "</assembly>", 
+        "1J2]2i2", 
+        "4)4.4=4C4K4Q4V4g4t4", 
+        "5&565M5i5p5|5", 
+        "7\u001f7)707A7M7R7\\7e7k7s7y7~7", 
+        "8 838H8Y8e8y8", 
+        "9%9x9~9/:5:", 
+        ":(;:;v;|;", 
+        ">&?4?E?J?P?X?s?y?", 
+        "0+0V0d0z0", 
+        "1\"121?1G1b1", 
+        "2#2T2v2", 
+        "3 3-383E3M3V3c3s3", 
+        "4\"4(4.444:4@4F4L4R4X4^4d4j4p4v4|4", 
+        "636=6x6~6", 
+        "7$7*7/74797A7F7X7`7f7r7}7", 
+        "8#858>8C8H8j8p8w8|8", 
+        "9(9V9\\9f9l9u9z9", 
+        ":#:*:1:9:A:I:U:^:c:i:s:}:", 
+        ":9;>;N;T;Z;`;", 
+        "<-<K<_<e<", 
+        "=+=7=F=O=\\=", 
+        "> >&>,>2>8>>>D>J>P>V>w>", 
+        "?5?:?B?H?N?W?\\?d?j?p?y?~?", 
+        "060N0h0t0", 
+        "111A1Q1b1r1", 
+        "2\"2:2B2Z2b2z2", 
+        "<2@2D2H2L2P2T2X2\\2`2l2p2t2", 
+        "4 4$4(4@4D4H4L4P4T4X4\\4`4d4h4l4p4t4x4|4", 
+        "6,606@6P6T6l6p6", 
+        "7$7(707H7X7h7l7p7t7", 
+        "808@8D8\\8`8x8", 
+        ":4:<:H:p:", 
+        ";4;<;D;L;T;\\;d;l;t;|;", 
+        "<$<,<4<<<D<\\<h<", 
+        "=$=0=P=X=`=h=p=x=", 
+        "0,0X0x0", 
+        "1,1H1d1|1", 
+        "s$})Ic yx", 
+        "Western Cape1", 
+        "Durbanville1", 
+        "Thawte1", 
+        "Thawte Certification1\u001f0", 
+        "Thawte Timestamping CA0", 
+        "121221000000Z", 
+        "201230235959Z0^1", 
+        "Symantec Corporation100.", 
+        "'Symantec Time Stamping Services CA - G20", 
+        "http://ocsp.thawte.com0", 
+        ".http://crl.thawte.com/ThawteTimestampingCA.crl0", 
+        "TimeStamp-2048-10", 
+        "Symantec Corporation100.", 
+        "'Symantec Time Stamping Services CA - G20", 
+        "121018000000Z", 
+        "201229235959Z0b1", 
+        "Symantec Corporation1402", 
+        "+Symantec Time Stamping Services Signer - G40", 
+        "http://ts-ocsp.ws.symantec.com07", 
+        "+http://ts-aia.ws.symantec.com/tss-ca-g2.cer0<", 
+        "+http://ts-crl.ws.symantec.com/tss-ca-g2.crl0(", 
+        "TimeStamp-2048-20", 
+        "VeriSign, Inc.1\u001f0", 
+        "VeriSign Trust Network1:08", 
+        "1(c) 2006 VeriSign, Inc. - For authorized use only1E0C", 
+        "<VeriSign Class 3 Public Primary Certification Authority - G50", 
+        "061108000000Z", 
+        "360716235959Z0", 
+        "VeriSign, Inc.1\u001f0", 
+        "VeriSign Trust Network1:08", 
+        "1(c) 2006 VeriSign, Inc. - For authorized use only1E0C", 
+        "<VeriSign Class 3 Public Primary Certification Authority - G50", 
+        "[0Y0W0U", 
+        "image/gif0!0\u001f0", 
+        "#http://logo.verisign.com/vslogo.gif0", 
+        "VeriSign, Inc.1\u001f0", 
+        "VeriSign Trust Network1:08", 
+        "1(c) 2006 VeriSign, Inc. - For authorized use only1E0C", 
+        "<VeriSign Class 3 Public Primary Certification Authority - G50", 
+        "140304000000Z", 
+        "240303235959Z0", 
+        "Symantec Corporation1\u001f0", 
+        "Symantec Trust Network1B0@", 
+        "9Symantec Class 3 Extended Validation Code Signing CA - G20", 
+        "http://s.symcb.com/pca3-g5.crl0", 
+        "http://s.symcd.com0_", 
+        "https://d.symcb.com/cps0%", 
+        "https://d.symcb.com/rpa0)", 
+        "SymantecPKI-1-6290", 
+        "dIAtA!", 
+        "Symantec Corporation1\u001f0", 
+        "Symantec Trust Network1B0@", 
+        "9Symantec Class 3 Extended Validation Code Signing CA - G20", 
+        "160203000000Z", 
+        "190202235959Z0", 
+        "Delaware1", 
+        "Private Organization1", 
+        "21788161", 
+        "California1", 
+        "Fremont1503", 
+        ",EFI Software (Electronics for Imaging, Inc.)1503", 
+        ",EFI Software (Electronics for Imaging, Inc.)0", 
+        "US-DELAWARE-21788160", 
+        "http://sw.symcb.com/sw.crl0`", 
+        "https://d.symcb.com/cps0%", 
+        "https://d.symcb.com/rpa0", 
+        "http://sw.symcd.com0'", 
+        "http://sw1.symcb.com/sw.crt0", 
+        "Symantec Corporation1\u001f0", 
+        "Symantec Trust Network1B0@", 
+        "9Symantec Class 3 Extended Validation Code Signing CA - G2", 
+        "http://www.efi.com0", 
+        "vaoj)G", 
+        "* s?ygU", 
+        "Symantec Corporation100.", 
+        "'Symantec Time Stamping Services CA - G2", 
+        "160620230114Z0#", 
+        "<<<Obsolete>>", 
+        "\"EFI_ClientPatche"
+    ], 
+    "metadata": {
+        "output": {
+            "pcap": {
+                "basename": "dump.pcap", 
+                "sha256": "a0421bec9ed9b6198ae72901ac3fd4819602d66871aa7124391b0fcfad7f546b", 
+                "dirname": ""
+            }
+        }
+    }
+}

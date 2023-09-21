@@ -1,0 +1,2763 @@
+{
+    "info": {
+        "added": 1693129013.321832, 
+        "started": 1693129821.147279, 
+        "duration": 31, 
+        "ended": 1693129853.067828, 
+        "owner": null, 
+        "score": 0.6, 
+        "id": 11, 
+        "category": "file", 
+        "git": {
+            "head": "13cbe0d9e457be3673304533043e992ead1ea9b2", 
+            "fetch_head": "13cbe0d9e457be3673304533043e992ead1ea9b2"
+        }, 
+        "monitor": "2deb9ccd75d5a7a3fe05b2625b03a8639d6ee36b", 
+        "package": "", 
+        "route": "none", 
+        "custom": null, 
+        "machine": {
+            "status": "stopped", 
+            "name": "cuckoo2", 
+            "label": "cuckoo2", 
+            "manager": "VirtualBox", 
+            "started_on": "2023-08-27 09:50:21", 
+            "shutdown_on": "2023-08-27 09:50:52"
+        }, 
+        "platform": null, 
+        "version": "2.0.7", 
+        "options": ""
+    }, 
+    "signatures": [
+        {
+            "families": [], 
+            "description": "This executable has a PDB path", 
+            "severity": 1, 
+            "ttp": {}, 
+            "markcount": 1, 
+            "references": [], 
+            "marks": [
+                {
+                    "category": "pdb_path", 
+                    "ioc": "drvinst.pdb", 
+                    "type": "ioc", 
+                    "description": null
+                }
+            ], 
+            "name": "has_pdb"
+        }, 
+        {
+            "families": [], 
+            "description": "The executable contains unknown PE section names indicative of a packer (could be a false positive)", 
+            "severity": 1, 
+            "ttp": {
+                "T1045": {
+                    "short": "Software Packing", 
+                    "long": "Software packing is a method of compressing or encrypting an executable. Packing an executable changes the file signature in an attempt to avoid signature-based detection. Most decompression techniques decompress the executable code in memory."
+                }
+            }, 
+            "markcount": 1, 
+            "references": [], 
+            "marks": [
+                {
+                    "category": "section", 
+                    "ioc": ".didat", 
+                    "type": "ioc", 
+                    "description": null
+                }
+            ], 
+            "name": "pe_features"
+        }, 
+        {
+            "families": [], 
+            "description": "The file contains an unknown PE resource name possibly indicative of a packer", 
+            "severity": 1, 
+            "ttp": {
+                "T1045": {
+                    "short": "Software Packing", 
+                    "long": "Software packing is a method of compressing or encrypting an executable. Packing an executable changes the file signature in an attempt to avoid signature-based detection. Most decompression techniques decompress the executable code in memory."
+                }
+            }, 
+            "markcount": 1, 
+            "references": [], 
+            "marks": [
+                {
+                    "category": "resource name", 
+                    "ioc": "MUI", 
+                    "type": "ioc", 
+                    "description": null
+                }
+            ], 
+            "name": "pe_unknown_resource_name"
+        }
+    ], 
+    "target": {
+        "category": "file", 
+        "file": {
+            "yara": [], 
+            "sha1": "b53d46e04b18efecec98f1ce3daa22fa08fd360e", 
+            "name": "21f7cd384465bed4795ebe736958859daf9496d0accec1874f5c1343c30f0d6b_benign.exe", 
+            "type": "PE32 executable (console) Intel 80386, for MS Windows", 
+            "sha256": "21f7cd384465bed4795ebe736958859daf9496d0accec1874f5c1343c30f0d6b", 
+            "urls": [], 
+            "crc32": "E8AE6482", 
+            "path": "/home/abc/.cuckoo/storage/binaries/21f7cd384465bed4795ebe736958859daf9496d0accec1874f5c1343c30f0d6b", 
+            "ssdeep": null, 
+            "size": 134656, 
+            "sha512": "8ffb377fd416e92ef486f315ae2d4d33e47daafa0af35764cbb99681edbae6130c0bd6c9c984f3d14694bc3a69850ee8f5aa0a1d16b68e6e7f8507f5784ec024", 
+            "md5": "e687f80472460745c022dca3cc8f9526"
+        }
+    }, 
+    "network": {
+        "tls": [], 
+        "udp": [
+            {
+                "src": "192.168.56.101", 
+                "dst": "192.168.56.1", 
+                "offset": 1682, 
+                "time": 7.177153825759888, 
+                "dport": 53, 
+                "sport": 52397
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "192.168.56.1", 
+                "offset": 1774, 
+                "time": 7.561038970947266, 
+                "dport": 53, 
+                "sport": 54106
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "192.168.56.1", 
+                "offset": 1866, 
+                "time": 16.737595796585083, 
+                "dport": 53, 
+                "sport": 55615
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "192.168.56.1", 
+                "offset": 1958, 
+                "time": 4.32503080368042, 
+                "dport": 53, 
+                "sport": 56774
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "192.168.56.1", 
+                "offset": 2059, 
+                "time": 7.613824844360352, 
+                "dport": 53, 
+                "sport": 64311
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "192.168.56.255", 
+                "offset": 2156, 
+                "time": 3.3461849689483643, 
+                "dport": 137, 
+                "sport": 137
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "192.168.56.255", 
+                "offset": 9428, 
+                "time": 11.299662828445435, 
+                "dport": 138, 
+                "sport": 138
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 15266, 
+                "time": 1.7334280014038086, 
+                "dport": 5355, 
+                "sport": 49856
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 15594, 
+                "time": 8.75133490562439, 
+                "dport": 5355, 
+                "sport": 50502
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 15922, 
+                "time": 2.3274199962615967, 
+                "dport": 5355, 
+                "sport": 53845
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 16250, 
+                "time": 3.5371549129486084, 
+                "dport": 5355, 
+                "sport": 54159
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 16578, 
+                "time": 5.029620885848999, 
+                "dport": 5355, 
+                "sport": 54218
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 16898, 
+                "time": 4.989513874053955, 
+                "dport": 5355, 
+                "sport": 56830
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 17218, 
+                "time": 6.146358966827393, 
+                "dport": 5355, 
+                "sport": 58019
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 17546, 
+                "time": 1.148270845413208, 
+                "dport": 5355, 
+                "sport": 64652
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 17890, 
+                "time": 1.2475249767303467, 
+                "dport": 5355, 
+                "sport": 64751
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 18218, 
+                "time": 3.2070629596710205, 
+                "dport": 5355, 
+                "sport": 64965
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "239.255.255.250", 
+                "offset": 18562, 
+                "time": 17.951308965682983, 
+                "dport": 1900, 
+                "sport": 55618
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "239.255.255.250", 
+                "offset": 19708, 
+                "time": 1.7266249656677246, 
+                "dport": 3702, 
+                "sport": 58151
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "8.8.8.8", 
+                "offset": 32272, 
+                "time": 19.8468279838562, 
+                "dport": 53, 
+                "sport": 49927
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "8.8.8.8", 
+                "offset": 32456, 
+                "time": 7.178228855133057, 
+                "dport": 53, 
+                "sport": 52397
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "8.8.8.8", 
+                "offset": 32824, 
+                "time": 7.561457872390747, 
+                "dport": 53, 
+                "sport": 54106
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "8.8.8.8", 
+                "offset": 33192, 
+                "time": 16.73806595802307, 
+                "dport": 53, 
+                "sport": 55615
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "8.8.8.8", 
+                "offset": 33468, 
+                "time": 18.61901879310608, 
+                "dport": 53, 
+                "sport": 55915
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "8.8.8.8", 
+                "offset": 33759, 
+                "time": 4.3255720138549805, 
+                "dport": 53, 
+                "sport": 56774
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "8.8.8.8", 
+                "offset": 34163, 
+                "time": 7.6144609451293945, 
+                "dport": 53, 
+                "sport": 64311
+            }
+        ], 
+        "dns_servers": [
+            "8.8.8.8", 
+            "192.168.56.1"
+        ], 
+        "http": [], 
+        "icmp": [], 
+        "smtp": [], 
+        "tcp": [], 
+        "smtp_ex": [], 
+        "mitm": [], 
+        "hosts": [
+            "8.8.8.8"
+        ], 
+        "pcap_sha256": "c241b2d196ef6105e3d8be9c19dc85c676f94e0fca57729a42eb595bcd77e92d", 
+        "dns": [
+            {
+                "type": "A", 
+                "request": "update.googleapis.com", 
+                "answers": []
+            }, 
+            {
+                "type": "A", 
+                "request": "time.windows.com", 
+                "answers": []
+            }, 
+            {
+                "type": "A", 
+                "request": "www.msftncsi.com", 
+                "answers": []
+            }, 
+            {
+                "type": "A", 
+                "request": "dns.msftncsi.com", 
+                "answers": []
+            }, 
+            {
+                "type": "A", 
+                "request": "teredo.ipv6.microsoft.com", 
+                "answers": []
+            }
+        ], 
+        "http_ex": [], 
+        "domains": [
+            {
+                "ip": "49.44.116.238", 
+                "domain": "www.msftncsi.com"
+            }, 
+            {
+                "ip": "131.107.255.255", 
+                "domain": "dns.msftncsi.com"
+            }, 
+            {
+                "ip": "", 
+                "domain": "teredo.ipv6.microsoft.com"
+            }, 
+            {
+                "ip": "142.250.194.35", 
+                "domain": "update.googleapis.com"
+            }
+        ], 
+        "dead_hosts": [], 
+        "sorted_pcap_sha256": "e7203ffd7838867485aa8885ca5ab6342ef7c5ac7addd00b0f7a14196b97c73e", 
+        "irc": [], 
+        "https_ex": []
+    }, 
+    "static": {
+        "pdb_path": "drvinst.pdb", 
+        "pe_imports": [
+            {
+                "imports": [
+                    {
+                        "name": "toupper", 
+                        "address": "0x41f32c"
+                    }, 
+                    {
+                        "name": "?terminate@@YAXXZ", 
+                        "address": "0x41f330"
+                    }, 
+                    {
+                        "name": "_initterm", 
+                        "address": "0x41f334"
+                    }, 
+                    {
+                        "name": "__setusermatherr", 
+                        "address": "0x41f338"
+                    }, 
+                    {
+                        "name": "__p__fmode", 
+                        "address": "0x41f33c"
+                    }, 
+                    {
+                        "name": "_cexit", 
+                        "address": "0x41f340"
+                    }, 
+                    {
+                        "name": "_exit", 
+                        "address": "0x41f344"
+                    }, 
+                    {
+                        "name": "exit", 
+                        "address": "0x41f348"
+                    }, 
+                    {
+                        "name": "__set_app_type", 
+                        "address": "0x41f34c"
+                    }, 
+                    {
+                        "name": "__wgetmainargs", 
+                        "address": "0x41f350"
+                    }, 
+                    {
+                        "name": "_amsg_exit", 
+                        "address": "0x41f354"
+                    }, 
+                    {
+                        "name": "__p__commode", 
+                        "address": "0x41f358"
+                    }, 
+                    {
+                        "name": "_XcptFilter", 
+                        "address": "0x41f35c"
+                    }, 
+                    {
+                        "name": "_vsnprintf", 
+                        "address": "0x41f360"
+                    }, 
+                    {
+                        "name": "wcsrchr", 
+                        "address": "0x41f364"
+                    }, 
+                    {
+                        "name": "wcschr", 
+                        "address": "0x41f368"
+                    }, 
+                    {
+                        "name": "swscanf", 
+                        "address": "0x41f36c"
+                    }, 
+                    {
+                        "name": "_wcsicmp", 
+                        "address": "0x41f370"
+                    }, 
+                    {
+                        "name": "_wcsnicmp", 
+                        "address": "0x41f374"
+                    }, 
+                    {
+                        "name": "_resetstkoflw", 
+                        "address": "0x41f378"
+                    }, 
+                    {
+                        "name": "_controlfp", 
+                        "address": "0x41f37c"
+                    }, 
+                    {
+                        "name": "_except_handler4_common", 
+                        "address": "0x41f380"
+                    }, 
+                    {
+                        "name": "memcpy", 
+                        "address": "0x41f384"
+                    }, 
+                    {
+                        "name": "towupper", 
+                        "address": "0x41f388"
+                    }, 
+                    {
+                        "name": "memmove", 
+                        "address": "0x41f38c"
+                    }, 
+                    {
+                        "name": "_vsnwprintf", 
+                        "address": "0x41f390"
+                    }, 
+                    {
+                        "name": "memset", 
+                        "address": "0x41f394"
+                    }
+                ], 
+                "dll": "msvcrt.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "NtQueryInformationProcess", 
+                        "address": "0x41f39c"
+                    }, 
+                    {
+                        "name": "DbgPrintEx", 
+                        "address": "0x41f3a0"
+                    }, 
+                    {
+                        "name": "NtSetValueKey", 
+                        "address": "0x41f3a4"
+                    }, 
+                    {
+                        "name": "NtQueryValueKey", 
+                        "address": "0x41f3a8"
+                    }, 
+                    {
+                        "name": "NtQueryKey", 
+                        "address": "0x41f3ac"
+                    }, 
+                    {
+                        "name": "NtCreateKey", 
+                        "address": "0x41f3b0"
+                    }, 
+                    {
+                        "name": "NtOpenKey", 
+                        "address": "0x41f3b4"
+                    }, 
+                    {
+                        "name": "NtClose", 
+                        "address": "0x41f3b8"
+                    }, 
+                    {
+                        "name": "RtlFreeUnicodeString", 
+                        "address": "0x41f3bc"
+                    }, 
+                    {
+                        "name": "RtlFormatCurrentUserKeyPath", 
+                        "address": "0x41f3c0"
+                    }, 
+                    {
+                        "name": "NtSetInformationFile", 
+                        "address": "0x41f3c4"
+                    }, 
+                    {
+                        "name": "NtQueryInformationFile", 
+                        "address": "0x41f3c8"
+                    }, 
+                    {
+                        "name": "RtlGUIDFromString", 
+                        "address": "0x41f3cc"
+                    }, 
+                    {
+                        "name": "RtlInitUnicodeString", 
+                        "address": "0x41f3d0"
+                    }, 
+                    {
+                        "name": "RtlGetVersion", 
+                        "address": "0x41f3d4"
+                    }, 
+                    {
+                        "name": "NtQuerySystemInformation", 
+                        "address": "0x41f3d8"
+                    }, 
+                    {
+                        "name": "RtlMultiByteToUnicodeN", 
+                        "address": "0x41f3dc"
+                    }, 
+                    {
+                        "name": "RtlMultiByteToUnicodeSize", 
+                        "address": "0x41f3e0"
+                    }, 
+                    {
+                        "name": "RtlUnicodeToMultiByteN", 
+                        "address": "0x41f3e4"
+                    }, 
+                    {
+                        "name": "RtlUnicodeToMultiByteSize", 
+                        "address": "0x41f3e8"
+                    }, 
+                    {
+                        "name": "RtlNtStatusToDosError", 
+                        "address": "0x41f3ec"
+                    }, 
+                    {
+                        "name": "EtwEventRegister", 
+                        "address": "0x41f3f0"
+                    }, 
+                    {
+                        "name": "EtwEventWrite", 
+                        "address": "0x41f3f4"
+                    }, 
+                    {
+                        "name": "EtwEventUnregister", 
+                        "address": "0x41f3f8"
+                    }, 
+                    {
+                        "name": "EtwEventWriteTransfer", 
+                        "address": "0x41f3fc"
+                    }, 
+                    {
+                        "name": "EtwEventSetInformation", 
+                        "address": "0x41f400"
+                    }, 
+                    {
+                        "name": "RtlInitUnicodeStringEx", 
+                        "address": "0x41f404"
+                    }, 
+                    {
+                        "name": "RtlUpcaseUnicodeString", 
+                        "address": "0x41f408"
+                    }, 
+                    {
+                        "name": "NtFlushBuffersFileEx", 
+                        "address": "0x41f40c"
+                    }
+                ], 
+                "dll": "ntdll.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "SetUnhandledExceptionFilter", 
+                        "address": "0x41f250"
+                    }, 
+                    {
+                        "name": "GetLastError", 
+                        "address": "0x41f254"
+                    }, 
+                    {
+                        "name": "SetLastError", 
+                        "address": "0x41f258"
+                    }, 
+                    {
+                        "name": "UnhandledExceptionFilter", 
+                        "address": "0x41f25c"
+                    }
+                ], 
+                "dll": "api-ms-win-core-errorhandling-l1-1-0.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "CloseHandle", 
+                        "address": "0x41f264"
+                    }
+                ], 
+                "dll": "api-ms-win-core-handle-l1-1-0.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "LoadLibraryW", 
+                        "address": "0x41f280"
+                    }
+                ], 
+                "dll": "api-ms-win-core-libraryloader-l1-2-1.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "LoadLibraryExW", 
+                        "address": "0x41f26c"
+                    }, 
+                    {
+                        "name": "FreeLibrary", 
+                        "address": "0x41f270"
+                    }, 
+                    {
+                        "name": "GetProcAddress", 
+                        "address": "0x41f274"
+                    }, 
+                    {
+                        "name": "GetModuleHandleW", 
+                        "address": "0x41f278"
+                    }
+                ], 
+                "dll": "api-ms-win-core-libraryloader-l1-2-0.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "RegOpenKeyExW", 
+                        "address": "0x41f2ac"
+                    }, 
+                    {
+                        "name": "RegCloseKey", 
+                        "address": "0x41f2b0"
+                    }, 
+                    {
+                        "name": "RegCreateKeyExW", 
+                        "address": "0x41f2b4"
+                    }, 
+                    {
+                        "name": "RegSetValueExW", 
+                        "address": "0x41f2b8"
+                    }, 
+                    {
+                        "name": "RegDeleteTreeW", 
+                        "address": "0x41f2bc"
+                    }
+                ], 
+                "dll": "api-ms-win-core-registry-l1-1-0.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "OpenProcessToken", 
+                        "address": "0x41f288"
+                    }, 
+                    {
+                        "name": "ExitProcess", 
+                        "address": "0x41f28c"
+                    }, 
+                    {
+                        "name": "GetCurrentThreadId", 
+                        "address": "0x41f290"
+                    }, 
+                    {
+                        "name": "GetCurrentProcessId", 
+                        "address": "0x41f294"
+                    }, 
+                    {
+                        "name": "TerminateProcess", 
+                        "address": "0x41f298"
+                    }, 
+                    {
+                        "name": "GetCurrentProcess", 
+                        "address": "0x41f29c"
+                    }
+                ], 
+                "dll": "api-ms-win-core-processthreads-l1-1-0.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "QueryPerformanceCounter", 
+                        "address": "0x41f2a4"
+                    }
+                ], 
+                "dll": "api-ms-win-core-profile-l1-1-0.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "CompareStringOrdinal", 
+                        "address": "0x41f2c4"
+                    }
+                ], 
+                "dll": "api-ms-win-core-string-l1-1-0.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "CreateMutexW", 
+                        "address": "0x41f2cc"
+                    }, 
+                    {
+                        "name": "WaitForSingleObjectEx", 
+                        "address": "0x41f2d0"
+                    }, 
+                    {
+                        "name": "ReleaseMutex", 
+                        "address": "0x41f2d4"
+                    }
+                ], 
+                "dll": "api-ms-win-core-synch-l1-1-0.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "Sleep", 
+                        "address": "0x41f2dc"
+                    }
+                ], 
+                "dll": "api-ms-win-core-synch-l1-2-0.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "GetNativeSystemInfo", 
+                        "address": "0x41f2f4"
+                    }
+                ], 
+                "dll": "api-ms-win-core-sysinfo-l1-2-0.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "GetSystemTime", 
+                        "address": "0x41f2e4"
+                    }, 
+                    {
+                        "name": "GetTickCount", 
+                        "address": "0x41f2e8"
+                    }, 
+                    {
+                        "name": "GetSystemTimeAsFileTime", 
+                        "address": "0x41f2ec"
+                    }
+                ], 
+                "dll": "api-ms-win-core-sysinfo-l1-1-0.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "pSetupGetGlobalFlags", 
+                        "address": "0x41f144"
+                    }, 
+                    {
+                        "name": "pSetupDiCrimsonLogDeviceInstall", 
+                        "address": "0x41f148"
+                    }, 
+                    {
+                        "name": "SetupDiSetClassPropertyW", 
+                        "address": "0x41f14c"
+                    }, 
+                    {
+                        "name": "SetupDiGetDeviceInstallParamsW", 
+                        "address": "0x41f150"
+                    }, 
+                    {
+                        "name": "pSetupDiGetStrongNameForDriverNode", 
+                        "address": "0x41f154"
+                    }, 
+                    {
+                        "name": "SetupDiEnumDriverInfoW", 
+                        "address": "0x41f158"
+                    }, 
+                    {
+                        "name": "SetupDiSetSelectedDriverW", 
+                        "address": "0x41f15c"
+                    }, 
+                    {
+                        "name": "SetupDiGetDriverInfoDetailW", 
+                        "address": "0x41f160"
+                    }, 
+                    {
+                        "name": "pSetupSetGlobalFlags", 
+                        "address": "0x41f164"
+                    }, 
+                    {
+                        "name": "SetupDiGetClassInstallParamsW", 
+                        "address": "0x41f168"
+                    }, 
+                    {
+                        "name": "SetupDiSetClassInstallParamsW", 
+                        "address": "0x41f16c"
+                    }, 
+                    {
+                        "name": "SetupCommitFileQueueW", 
+                        "address": "0x41f170"
+                    }, 
+                    {
+                        "name": "SetupDiBuildDriverInfoList", 
+                        "address": "0x41f174"
+                    }, 
+                    {
+                        "name": "SetupGetInfDriverStoreLocationW", 
+                        "address": "0x41f178"
+                    }, 
+                    {
+                        "name": "SetupDiSetDriverInstallParamsW", 
+                        "address": "0x41f17c"
+                    }, 
+                    {
+                        "name": "SetupSetFileQueueFlags", 
+                        "address": "0x41f180"
+                    }, 
+                    {
+                        "name": "SetupDiGetSelectedDriverW", 
+                        "address": "0x41f184"
+                    }, 
+                    {
+                        "name": "pSetupDoLastKnownGoodBackup", 
+                        "address": "0x41f188"
+                    }, 
+                    {
+                        "name": "SetupTermDefaultQueueCallback", 
+                        "address": "0x41f18c"
+                    }, 
+                    {
+                        "name": "SetupDiCallClassInstaller", 
+                        "address": "0x41f190"
+                    }, 
+                    {
+                        "name": "SetupDiGetActualSectionToInstallW", 
+                        "address": "0x41f194"
+                    }, 
+                    {
+                        "name": "SetupUninstallNewlyCopiedInfs", 
+                        "address": "0x41f198"
+                    }, 
+                    {
+                        "name": "SetupOpenInfFileW", 
+                        "address": "0x41f19c"
+                    }, 
+                    {
+                        "name": "SetupDiGetDevicePropertyW", 
+                        "address": "0x41f1a0"
+                    }, 
+                    {
+                        "name": "SetupDiSetDeviceInstallParamsW", 
+                        "address": "0x41f1a4"
+                    }, 
+                    {
+                        "name": "pSetupDiEnumSelectedDrivers", 
+                        "address": "0x41f1a8"
+                    }, 
+                    {
+                        "name": "SetupDiGetDeviceInstanceIdW", 
+                        "address": "0x41f1ac"
+                    }, 
+                    {
+                        "name": "SetupDiReportDeviceInstallError", 
+                        "address": "0x41f1b0"
+                    }, 
+                    {
+                        "name": "SetupDiCreateDeviceInfoList", 
+                        "address": "0x41f1b4"
+                    }, 
+                    {
+                        "name": "SetupDiEnumDeviceInfo", 
+                        "address": "0x41f1b8"
+                    }, 
+                    {
+                        "name": "SetupDiGetDriverInstallParamsW", 
+                        "address": "0x41f1bc"
+                    }, 
+                    {
+                        "name": "SetupDiSetDevicePropertyW", 
+                        "address": "0x41f1c0"
+                    }, 
+                    {
+                        "name": "SetupDiOpenDeviceInfoW", 
+                        "address": "0x41f1c4"
+                    }, 
+                    {
+                        "name": "pSetupUninstallCatalog", 
+                        "address": "0x41f1c8"
+                    }, 
+                    {
+                        "name": "pSetupSetDriverPackageRestorePoint", 
+                        "address": "0x41f1cc"
+                    }, 
+                    {
+                        "name": "pSetupValidateDriverPackage", 
+                        "address": "0x41f1d0"
+                    }, 
+                    {
+                        "name": "pSetupInstallCatalog", 
+                        "address": "0x41f1d4"
+                    }, 
+                    {
+                        "name": "SetupDiGetActualModelsSectionW", 
+                        "address": "0x41f1d8"
+                    }, 
+                    {
+                        "name": "pSetupDiGetDriverInfoExtensionId", 
+                        "address": "0x41f1dc"
+                    }, 
+                    {
+                        "name": "SetupFindNextLine", 
+                        "address": "0x41f1e0"
+                    }, 
+                    {
+                        "name": "SetupGetStringFieldW", 
+                        "address": "0x41f1e4"
+                    }, 
+                    {
+                        "name": "SetupFindFirstLineW", 
+                        "address": "0x41f1e8"
+                    }, 
+                    {
+                        "name": "SetupGetFieldCount", 
+                        "address": "0x41f1ec"
+                    }, 
+                    {
+                        "name": "SetupDiGetClassDevsW", 
+                        "address": "0x41f1f0"
+                    }, 
+                    {
+                        "name": "SetupGetInfPublishedNameW", 
+                        "address": "0x41f1f4"
+                    }, 
+                    {
+                        "name": "SetupDiInstallClassW", 
+                        "address": "0x41f1f8"
+                    }, 
+                    {
+                        "name": "SetupCloseFileQueue", 
+                        "address": "0x41f1fc"
+                    }, 
+                    {
+                        "name": "SetupDiDestroyDriverInfoList", 
+                        "address": "0x41f200"
+                    }, 
+                    {
+                        "name": "SetupPromptReboot", 
+                        "address": "0x41f204"
+                    }, 
+                    {
+                        "name": "SetupDiOpenDevRegKey", 
+                        "address": "0x41f208"
+                    }, 
+                    {
+                        "name": "SetupGetFileQueueFlags", 
+                        "address": "0x41f20c"
+                    }, 
+                    {
+                        "name": "SetupCloseInfFile", 
+                        "address": "0x41f210"
+                    }, 
+                    {
+                        "name": "SetupDefaultQueueCallbackW", 
+                        "address": "0x41f214"
+                    }, 
+                    {
+                        "name": "SetupOpenFileQueue", 
+                        "address": "0x41f218"
+                    }, 
+                    {
+                        "name": "pSetupStringFromGuid", 
+                        "address": "0x41f21c"
+                    }, 
+                    {
+                        "name": "pSetupDiBuildInfoDataFromStrongName", 
+                        "address": "0x41f220"
+                    }, 
+                    {
+                        "name": "SetupDiRestartDevices", 
+                        "address": "0x41f224"
+                    }, 
+                    {
+                        "name": "SetupInitDefaultQueueCallbackEx", 
+                        "address": "0x41f228"
+                    }, 
+                    {
+                        "name": "SetupDiGetClassPropertyW", 
+                        "address": "0x41f22c"
+                    }, 
+                    {
+                        "name": "SetupSetThreadLogToken", 
+                        "address": "0x41f230"
+                    }, 
+                    {
+                        "name": "SetupDiDestroyDeviceInfoList", 
+                        "address": "0x41f234"
+                    }, 
+                    {
+                        "name": "SetupGetNonInteractiveMode", 
+                        "address": "0x41f238"
+                    }, 
+                    {
+                        "name": "SetupWriteTextLog", 
+                        "address": "0x41f23c"
+                    }, 
+                    {
+                        "name": "SetupGetThreadLogToken", 
+                        "address": "0x41f240"
+                    }, 
+                    {
+                        "name": "SetupVerifyInfFileW", 
+                        "address": "0x41f244"
+                    }, 
+                    {
+                        "name": "SetupScanFileQueueW", 
+                        "address": "0x41f248"
+                    }
+                ], 
+                "dll": "SETUPAPI.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "DevObjOpenDeviceInfo", 
+                        "address": "0x41f000"
+                    }, 
+                    {
+                        "name": "DevObjCreateDeviceInfoList", 
+                        "address": "0x41f004"
+                    }, 
+                    {
+                        "name": "DevObjGetDeviceProperty", 
+                        "address": "0x41f008"
+                    }, 
+                    {
+                        "name": "DevObjEnumDeviceInfo", 
+                        "address": "0x41f00c"
+                    }, 
+                    {
+                        "name": "DevObjSetDeviceProperty", 
+                        "address": "0x41f010"
+                    }, 
+                    {
+                        "name": "DevObjRestartDevices", 
+                        "address": "0x41f014"
+                    }, 
+                    {
+                        "name": "DevObjGetDeviceInstanceId", 
+                        "address": "0x41f018"
+                    }, 
+                    {
+                        "name": "DevObjRegisterDeviceInfo", 
+                        "address": "0x41f01c"
+                    }, 
+                    {
+                        "name": "DevObjDeleteDevice", 
+                        "address": "0x41f020"
+                    }, 
+                    {
+                        "name": "DevObjDestroyDeviceInfoList", 
+                        "address": "0x41f024"
+                    }
+                ], 
+                "dll": "DEVOBJ.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "RegEnumValueW", 
+                        "address": "0x41f040"
+                    }, 
+                    {
+                        "name": "RegEnumKeyExW", 
+                        "address": "0x41f044"
+                    }, 
+                    {
+                        "name": "CopyFileExW", 
+                        "address": "0x41f048"
+                    }, 
+                    {
+                        "name": "IsWow64Process", 
+                        "address": "0x41f04c"
+                    }, 
+                    {
+                        "name": "WaitForSingleObject", 
+                        "address": "0x41f050"
+                    }, 
+                    {
+                        "name": "GetWindowsDirectoryW", 
+                        "address": "0x41f054"
+                    }, 
+                    {
+                        "name": "GetFileAttributesExW", 
+                        "address": "0x41f058"
+                    }, 
+                    {
+                        "name": "RegQueryValueExW", 
+                        "address": "0x41f05c"
+                    }, 
+                    {
+                        "name": "IsDebuggerPresent", 
+                        "address": "0x41f060"
+                    }, 
+                    {
+                        "name": "HeapSetInformation", 
+                        "address": "0x41f064"
+                    }, 
+                    {
+                        "name": "CreateThread", 
+                        "address": "0x41f068"
+                    }, 
+                    {
+                        "name": "GetTickCount64", 
+                        "address": "0x41f06c"
+                    }, 
+                    {
+                        "name": "GetExitCodeThread", 
+                        "address": "0x41f070"
+                    }, 
+                    {
+                        "name": "OpenProcess", 
+                        "address": "0x41f074"
+                    }, 
+                    {
+                        "name": "DuplicateHandle", 
+                        "address": "0x41f078"
+                    }, 
+                    {
+                        "name": "GetCommandLineW", 
+                        "address": "0x41f07c"
+                    }, 
+                    {
+                        "name": "SetConsoleCtrlHandler", 
+                        "address": "0x41f080"
+                    }, 
+                    {
+                        "name": "lstrcmpiW", 
+                        "address": "0x41f084"
+                    }, 
+                    {
+                        "name": "GetSystemInfo", 
+                        "address": "0x41f088"
+                    }, 
+                    {
+                        "name": "CreateDirectoryW", 
+                        "address": "0x41f08c"
+                    }, 
+                    {
+                        "name": "GetFileAttributesW", 
+                        "address": "0x41f090"
+                    }, 
+                    {
+                        "name": "GetFullPathNameW", 
+                        "address": "0x41f094"
+                    }, 
+                    {
+                        "name": "SetErrorMode", 
+                        "address": "0x41f098"
+                    }, 
+                    {
+                        "name": "SetEndOfFile", 
+                        "address": "0x41f09c"
+                    }, 
+                    {
+                        "name": "MapViewOfFile", 
+                        "address": "0x41f0a0"
+                    }, 
+                    {
+                        "name": "DelayLoadFailureHook", 
+                        "address": "0x41f0a4"
+                    }, 
+                    {
+                        "name": "SleepEx", 
+                        "address": "0x41f0a8"
+                    }, 
+                    {
+                        "name": "MoveFileExW", 
+                        "address": "0x41f0ac"
+                    }, 
+                    {
+                        "name": "FindClose", 
+                        "address": "0x41f0b0"
+                    }, 
+                    {
+                        "name": "FindNextFileW", 
+                        "address": "0x41f0b4"
+                    }, 
+                    {
+                        "name": "ResolveDelayLoadedAPI", 
+                        "address": "0x41f0b8"
+                    }, 
+                    {
+                        "name": "FindFirstFileW", 
+                        "address": "0x41f0bc"
+                    }, 
+                    {
+                        "name": "DeleteFileW", 
+                        "address": "0x41f0c0"
+                    }, 
+                    {
+                        "name": "GetFileInformationByHandle", 
+                        "address": "0x41f0c4"
+                    }, 
+                    {
+                        "name": "CreateHardLinkW", 
+                        "address": "0x41f0c8"
+                    }, 
+                    {
+                        "name": "SetFilePointer", 
+                        "address": "0x41f0cc"
+                    }, 
+                    {
+                        "name": "FlushFileBuffers", 
+                        "address": "0x41f0d0"
+                    }, 
+                    {
+                        "name": "GetFileSize", 
+                        "address": "0x41f0d4"
+                    }, 
+                    {
+                        "name": "GetLocalTime", 
+                        "address": "0x41f0d8"
+                    }, 
+                    {
+                        "name": "WriteFile", 
+                        "address": "0x41f0dc"
+                    }, 
+                    {
+                        "name": "FileTimeToLocalFileTime", 
+                        "address": "0x41f0e0"
+                    }, 
+                    {
+                        "name": "GetCommandLineA", 
+                        "address": "0x41f0e4"
+                    }, 
+                    {
+                        "name": "GetModuleFileNameA", 
+                        "address": "0x41f0e8"
+                    }, 
+                    {
+                        "name": "DeviceIoControl", 
+                        "address": "0x41f0ec"
+                    }, 
+                    {
+                        "name": "CreateFileW", 
+                        "address": "0x41f0f0"
+                    }, 
+                    {
+                        "name": "CompareStringW", 
+                        "address": "0x41f0f4"
+                    }, 
+                    {
+                        "name": "UnmapViewOfFile", 
+                        "address": "0x41f0f8"
+                    }, 
+                    {
+                        "name": "GetThreadLocale", 
+                        "address": "0x41f0fc"
+                    }, 
+                    {
+                        "name": "WaitForMultipleObjectsEx", 
+                        "address": "0x41f100"
+                    }, 
+                    {
+                        "name": "LCMapStringW", 
+                        "address": "0x41f104"
+                    }, 
+                    {
+                        "name": "GetProcessHeap", 
+                        "address": "0x41f108"
+                    }, 
+                    {
+                        "name": "HeapFree", 
+                        "address": "0x41f10c"
+                    }, 
+                    {
+                        "name": "HeapReAlloc", 
+                        "address": "0x41f110"
+                    }, 
+                    {
+                        "name": "HeapAlloc", 
+                        "address": "0x41f114"
+                    }, 
+                    {
+                        "name": "RaiseException", 
+                        "address": "0x41f118"
+                    }, 
+                    {
+                        "name": "GetSystemWindowsDirectoryW", 
+                        "address": "0x41f11c"
+                    }, 
+                    {
+                        "name": "SetEvent", 
+                        "address": "0x41f120"
+                    }, 
+                    {
+                        "name": "WideCharToMultiByte", 
+                        "address": "0x41f124"
+                    }, 
+                    {
+                        "name": "FileTimeToSystemTime", 
+                        "address": "0x41f128"
+                    }, 
+                    {
+                        "name": "LocalFree", 
+                        "address": "0x41f12c"
+                    }, 
+                    {
+                        "name": "LocalAlloc", 
+                        "address": "0x41f130"
+                    }, 
+                    {
+                        "name": "SetFileAttributesW", 
+                        "address": "0x41f134"
+                    }, 
+                    {
+                        "name": "CreateFileMappingW", 
+                        "address": "0x41f138"
+                    }, 
+                    {
+                        "name": "CreateEventW", 
+                        "address": "0x41f13c"
+                    }
+                ], 
+                "dll": "KERNEL32.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "AllocateAndInitializeSid", 
+                        "address": "0x41f2fc"
+                    }, 
+                    {
+                        "name": "GetLengthSid", 
+                        "address": "0x41f300"
+                    }, 
+                    {
+                        "name": "InitializeAcl", 
+                        "address": "0x41f304"
+                    }, 
+                    {
+                        "name": "AddAccessAllowedAceEx", 
+                        "address": "0x41f308"
+                    }, 
+                    {
+                        "name": "InitializeSecurityDescriptor", 
+                        "address": "0x41f30c"
+                    }, 
+                    {
+                        "name": "SetSecurityDescriptorDacl", 
+                        "address": "0x41f310"
+                    }, 
+                    {
+                        "name": "FreeSid", 
+                        "address": "0x41f314"
+                    }, 
+                    {
+                        "name": "GetTokenInformation", 
+                        "address": "0x41f318"
+                    }, 
+                    {
+                        "name": "DuplicateTokenEx", 
+                        "address": "0x41f31c"
+                    }, 
+                    {
+                        "name": "CheckTokenMembership", 
+                        "address": "0x41f320"
+                    }, 
+                    {
+                        "name": "IsValidSid", 
+                        "address": "0x41f324"
+                    }
+                ], 
+                "dll": "api-ms-win-security-base-l1-1-0.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "DevRtlGetThreadLogToken", 
+                        "address": "0x41f02c"
+                    }, 
+                    {
+                        "name": "DevRtlSetThreadLogToken", 
+                        "address": "0x41f030"
+                    }, 
+                    {
+                        "name": "DevRtlWriteTextLogError", 
+                        "address": "0x41f034"
+                    }, 
+                    {
+                        "name": "DevRtlWriteTextLog", 
+                        "address": "0x41f038"
+                    }
+                ], 
+                "dll": "DEVRTL.dll"
+            }
+        ], 
+        "peid_signatures": null, 
+        "keys": [], 
+        "signature": [], 
+        "pe_timestamp": "2014-07-20 09:48:03", 
+        "pe_exports": [], 
+        "imported_dll_count": 19, 
+        "pe_imphash": "2e132c7ac298ff7799b6b27d912211d7", 
+        "pe_resources": [
+            {
+                "name": "MUI", 
+                "language": "LANG_ENGLISH", 
+                "filetype": "data", 
+                "sublanguage": "SUBLANG_ENGLISH_US", 
+                "offset": "0x00023718", 
+                "size": "0x000000c8"
+            }, 
+            {
+                "name": "RT_VERSION", 
+                "language": "LANG_ENGLISH", 
+                "filetype": "OpenPGP Secret Key", 
+                "sublanguage": "SUBLANG_ENGLISH_US", 
+                "offset": "0x00023370", 
+                "size": "0x000003a4"
+            }, 
+            {
+                "name": "RT_MANIFEST", 
+                "language": "LANG_ENGLISH", 
+                "filetype": "XML 1.0 document, ASCII text, with CRLF line terminators", 
+                "sublanguage": "SUBLANG_ENGLISH_US", 
+                "offset": "0x000230f0", 
+                "size": "0x00000279"
+            }
+        ], 
+        "pe_versioninfo": [
+            {
+                "name": "LegalCopyright", 
+                "value": "\\xa9 Microsoft Corporation. All rights reserved."
+            }, 
+            {
+                "name": "InternalName", 
+                "value": "DrvInst.EXE"
+            }, 
+            {
+                "name": "FileVersion", 
+                "value": "10.0.16251.0 (WinBuild.160101.0800)"
+            }, 
+            {
+                "name": "CompanyName", 
+                "value": "Microsoft Corporation"
+            }, 
+            {
+                "name": "ProductName", 
+                "value": "Microsoft\\xae Windows\\xae Operating System"
+            }, 
+            {
+                "name": "ProductVersion", 
+                "value": "10.0.16251.0"
+            }, 
+            {
+                "name": "FileDescription", 
+                "value": "Driver Installation Module"
+            }, 
+            {
+                "name": "OriginalFilename", 
+                "value": "DrvInst.EXE"
+            }, 
+            {
+                "name": "Translation", 
+                "value": "0x0409 0x04b0"
+            }
+        ], 
+        "pe_sections": [
+            {
+                "size_of_data": "0x0001c400", 
+                "virtual_address": "0x00001000", 
+                "entropy": 6.484857828807117, 
+                "name": ".text", 
+                "virtual_size": "0x0001c238"
+            }, 
+            {
+                "size_of_data": "0x00000200", 
+                "virtual_address": "0x0001e000", 
+                "entropy": 0.49400680229131577, 
+                "name": ".data", 
+                "virtual_size": "0x0000051c"
+            }, 
+            {
+                "size_of_data": "0x00002200", 
+                "virtual_address": "0x0001f000", 
+                "entropy": 5.434329044231159, 
+                "name": ".idata", 
+                "virtual_size": "0x0000203a"
+            }, 
+            {
+                "size_of_data": "0x00000200", 
+                "virtual_address": "0x00022000", 
+                "entropy": 2.003822155885499, 
+                "name": ".didat", 
+                "virtual_size": "0x000000e4"
+            }, 
+            {
+                "size_of_data": "0x00000800", 
+                "virtual_address": "0x00023000", 
+                "entropy": 4.271747762935395, 
+                "name": ".rsrc", 
+                "virtual_size": "0x000007e0"
+            }, 
+            {
+                "size_of_data": "0x00001800", 
+                "virtual_address": "0x00024000", 
+                "entropy": 6.750327654771172, 
+                "name": ".reloc", 
+                "virtual_size": "0x0000179c"
+            }
+        ]
+    }, 
+    "debug": {
+        "action": [], 
+        "dbgview": [], 
+        "errors": [], 
+        "log": [
+            "2023-08-27 09:36:53,030 [analyzer] DEBUG: Starting analyzer from: C:\\tmpezozfh\n", 
+            "2023-08-27 09:36:53,030 [analyzer] DEBUG: Pipe server name: \\??\\PIPE\\EZneaMEWBvFqYwyPghyrhs\n", 
+            "2023-08-27 09:36:53,030 [analyzer] DEBUG: Log pipe server name: \\??\\PIPE\\JQgrJEjJZmTYcVmXmesYFGebRwYo\n", 
+            "2023-08-27 09:36:53,030 [analyzer] DEBUG: No analysis package specified, trying to detect it automagically.\n", 
+            "2023-08-27 09:36:53,062 [analyzer] INFO: Automatically selected analysis package \"exe\"\n", 
+            "2023-08-27 09:36:55,155 [analyzer] DEBUG: Started auxiliary module DbgView\n", 
+            "2023-08-26 21:20:47,730 [analyzer] DEBUG: Started auxiliary module Disguise\n", 
+            "2023-08-26 21:20:48,167 [lib.api.process] ERROR: Failed to inject 64-bit process with pid None and process name lsass.exe\n", 
+            "2023-08-26 21:20:48,167 [analyzer] DEBUG: Started auxiliary module DumpTLSMasterSecrets\n", 
+            "2023-08-26 21:20:48,183 [analyzer] DEBUG: Started auxiliary module Human\n", 
+            "2023-08-26 21:20:48,183 [analyzer] DEBUG: Started auxiliary module InstallCertificate\n", 
+            "2023-08-26 21:20:48,183 [analyzer] DEBUG: Started auxiliary module Reboot\n", 
+            "2023-08-26 21:20:49,322 [analyzer] DEBUG: Started auxiliary module RecentFiles\n", 
+            "2023-08-26 21:20:49,322 [analyzer] DEBUG: Started auxiliary module Screenshots\n", 
+            "2023-08-26 21:20:49,322 [analyzer] DEBUG: Started auxiliary module LoadZer0m0n\n", 
+            "2023-08-26 21:20:49,619 [lib.api.process] ERROR: Failed to execute process from path u'C:\\\\Users\\\\cuckoo2\\\\AppData\\\\Local\\\\Temp\\\\21f7cd384465bed4795ebe736958859daf9496d0accec1874f5c1343c30f0d6b_benign.exe' with arguments ['bin\\\\inject-x86.exe', '--app', u'C:\\\\Users\\\\cuckoo2\\\\AppData\\\\Local\\\\Temp\\\\21f7cd384465bed4795ebe736958859daf9496d0accec1874f5c1343c30f0d6b_benign.exe', '--only-start', '--curdir', 'C:\\\\Users\\\\cuckoo2\\\\AppData\\\\Local\\\\Temp'] (Error: Command '['bin\\\\inject-x86.exe', '--app', u'C:\\\\Users\\\\cuckoo2\\\\AppData\\\\Local\\\\Temp\\\\21f7cd384465bed4795ebe736958859daf9496d0accec1874f5c1343c30f0d6b_benign.exe', '--only-start', '--curdir', 'C:\\\\Users\\\\cuckoo2\\\\AppData\\\\Local\\\\Temp']' returned non-zero exit status 1)\n"
+        ], 
+        "cuckoo": [
+            "2023-08-27 09:50:21,405 [cuckoo.core.scheduler] INFO: Task #11: acquired machine cuckoo2 (label=cuckoo2)\n", 
+            "2023-08-27 09:50:21,406 [cuckoo.core.resultserver] DEBUG: Now tracking machine 192.168.56.101 for task #11\n", 
+            "2023-08-27 09:50:21,407 [cuckoo.core.plugins] DEBUG: Started auxiliary module: Replay\n", 
+            "2023-08-27 09:50:21,446 [cuckoo.auxiliary.sniffer] INFO: Started sniffer with PID 65797 (interface=vboxnet0, host=192.168.56.101)\n", 
+            "2023-08-27 09:50:21,446 [cuckoo.core.plugins] DEBUG: Started auxiliary module: Sniffer\n", 
+            "2023-08-27 09:50:21,704 [cuckoo.machinery.virtualbox] DEBUG: Starting vm cuckoo2\n", 
+            "2023-08-27 09:50:21,869 [cuckoo.machinery.virtualbox] DEBUG: Restoring virtual machine cuckoo2 to cuckoo2_snap\n", 
+            "2023-08-27 09:50:25,946 [cuckoo.core.guest] INFO: Starting analysis #11 on guest (id=cuckoo2, ip=192.168.56.101)\n", 
+            "2023-08-27 09:50:26,956 [cuckoo.core.guest] DEBUG: cuckoo2: not ready yet\n", 
+            "2023-08-27 09:50:27,960 [cuckoo.core.guest] DEBUG: cuckoo2: not ready yet\n", 
+            "2023-08-27 09:50:28,964 [cuckoo.core.guest] DEBUG: cuckoo2: not ready yet\n", 
+            "2023-08-27 09:50:29,970 [cuckoo.core.guest] DEBUG: cuckoo2: not ready yet\n", 
+            "2023-08-27 09:50:30,974 [cuckoo.core.guest] DEBUG: cuckoo2: not ready yet\n", 
+            "2023-08-27 09:50:31,142 [cuckoo.core.guest] INFO: Guest is running Cuckoo Agent 0.10 (id=cuckoo2, ip=192.168.56.101)\n", 
+            "2023-08-27 09:50:31,227 [cuckoo.core.guest] DEBUG: Uploading analyzer to guest (id=cuckoo2, ip=192.168.56.101, monitor=latest, size=3884763)\n", 
+            "2023-08-27 09:50:34,483 [cuckoo.core.resultserver] DEBUG: Task #11: live log analysis.log initialized.\n", 
+            "2023-08-27 09:50:38,303 [cuckoo.core.guest] DEBUG: cuckoo2: analysis #11 still processing\n", 
+            "2023-08-27 09:50:43,343 [cuckoo.core.guest] DEBUG: cuckoo2: analysis #11 still processing\n", 
+            "2023-08-27 09:50:48,466 [cuckoo.core.guest] DEBUG: cuckoo2: analysis #11 still processing\n", 
+            "2023-08-27 09:50:50,496 [cuckoo.core.guest] WARNING: cuckoo2: analysis #11 caught an exception\n", 
+            "Traceback (most recent call last):\n", 
+            "  File \"C:/tmpezozfh/analyzer.py\", line 808, in <module>\n", 
+            "    success = analyzer.run()\n", 
+            "  File \"C:/tmpezozfh/analyzer.py\", line 657, in run\n", 
+            "    pids = self.package.start(self.target)\n", 
+            "  File \"C:\\tmpezozfh\\modules\\packages\\exe.py\", line 23, in start\n", 
+            "    return self.execute(path, args=shlex.split(args))\n", 
+            "  File \"C:\\tmpezozfh\\lib\\common\\abstracts.py\", line 166, in execute\n", 
+            "    \"Unable to execute the initial process, analysis aborted.\"\n", 
+            "CuckooPackageError: Unable to execute the initial process, analysis aborted.\n", 
+            "\n", 
+            "2023-08-27 09:50:50,623 [cuckoo.core.plugins] DEBUG: Stopped auxiliary module: Replay\n", 
+            "2023-08-27 09:50:50,662 [cuckoo.core.plugins] DEBUG: Stopped auxiliary module: Sniffer\n", 
+            "2023-08-27 09:50:50,662 [cuckoo.machinery.virtualbox] DEBUG: Stopping vm cuckoo2\n", 
+            "2023-08-27 09:50:52,763 [cuckoo.core.resultserver] DEBUG: Stopped tracking machine 192.168.56.101 for task #11\n", 
+            "2023-08-27 09:50:52,764 [cuckoo.core.resultserver] DEBUG: Cancel <Context for LOG> for task 11\n", 
+            "2023-08-27 09:50:53,055 [cuckoo.core.scheduler] DEBUG: Released database task #11\n", 
+            "2023-08-27 09:50:53,197 [cuckoo.core.plugins] DEBUG: Executed processing module \"AnalysisInfo\" for task #11\n", 
+            "2023-08-27 09:50:53,198 [cuckoo.processing.behavior] WARNING: Analysis results folder does not contain any behavior log files.\n", 
+            "2023-08-27 09:50:53,198 [cuckoo.core.plugins] DEBUG: Executed processing module \"BehaviorAnalysis\" for task #11\n", 
+            "2023-08-27 09:50:53,199 [cuckoo.core.plugins] DEBUG: Executed processing module \"Dropped\" for task #11\n", 
+            "2023-08-27 09:50:53,199 [cuckoo.core.plugins] DEBUG: Executed processing module \"DroppedBuffer\" for task #11\n", 
+            "2023-08-27 09:50:53,200 [cuckoo.core.plugins] DEBUG: Executed processing module \"MetaInfo\" for task #11\n", 
+            "2023-08-27 09:50:53,200 [cuckoo.core.plugins] DEBUG: Executed processing module \"ProcessMemory\" for task #11\n", 
+            "2023-08-27 09:50:53,200 [cuckoo.core.plugins] DEBUG: Executed processing module \"Procmon\" for task #11\n", 
+            "2023-08-27 09:50:53,200 [cuckoo.core.plugins] DEBUG: Executed processing module \"Screenshots\" for task #11\n", 
+            "2023-08-27 09:50:53,599 [cuckoo.core.plugins] DEBUG: Executed processing module \"Static\" for task #11\n", 
+            "2023-08-27"
+        ]
+    }, 
+    "strings": [
+        "!This program cannot be run in DOS mode.", 
+        "`.data", 
+        ".idata", 
+        "@.didat", 
+        "@.reloc", 
+        "api-ms-win-security-cryptoapi-l1-1-0.dll", 
+        "COMCTL32.dll", 
+        "CFGMGR32.dll", 
+        "drvstore.dll", 
+        "WINTRUST.dll", 
+        "api-ms-win-service-management-l1-1-0.dll", 
+        "api-ms-win-service-management-l2-1-0.dll", 
+        "api-ms-win-devices-query-l1-1-0.dll", 
+        "Installation of driver is blocked by policy!", 
+        "Queueing up error report for device install failure.", 
+        "pSetupDestroyRunOnceNodeList", 
+        "pSetupAccessRunOnceNodeList", 
+        "Error 0x%X creating RunOnce key.", 
+        "Adding %ws -> %ws to RunOnce", 
+        "Error 0x%X adding %ws -> %ws to RunOnce", 
+        "Class %ws does not exist.", 
+        "Class %ws needs re-install.", 
+        "Saving LastKnownGood file %ws (rename)", 
+        "Unable to save LastKnownGood file %ws (rename), aborting install.", 
+        "Saving LastKnownGood file %ws (delete)", 
+        "Unable to save LastKnownGood file %ws (delete), aborting install.", 
+        "Saving LastKnownGood file %ws (copy)", 
+        "Unable to save LastKnownGood file %ws (copy), aborting install.", 
+        "{Install Device - %ws}", 
+        "Device Status: 0x%08x, Problem: 0x%x (0x%08x)", 
+        "Parent device: %ws", 
+        "Installation of device is blocked by policy!", 
+        "Installation of this device will be deferred until a driver is selected", 
+        "Error(%08x) determining installation policy for device!", 
+        "Selected driver cannot be configured, performing standard device installation.", 
+        "Unable to configure device, falling back to standard device installation.", 
+        "Device needs reboot: one or more files were in use and/or treated as in use.", 
+        "Device needs reboot: one or more files were in use.", 
+        "Device needs reboot: one or more files were treated as in use.", 
+        "Setting DI_NEEDREBOOT for device install with files that were in use.", 
+        "Setting DI_DONOTCALLCONFIGMG and DI_NEEDREBOOT for this device install.", 
+        "Setting DI_DONOTCALLCONFIGMG for delayed device restart.", 
+        "Setting DI_NEEDREBOOT for device install that requires reboot.", 
+        "Setting DI_NEEDREBOOT for driver update device install.", 
+        "Error(%08x) installing device!", 
+        "Device needs reboot.", 
+        "Device Status: 0x%08x, Problem: 0x%x", 
+        "Problem code 0x%x was successfully cleared.", 
+        "Problem code 0x%x was not successfully cleared.", 
+        "Device has Finish Install UI that needs to be displayed.", 
+        "Device has a Finish Install Action that needs to be run.", 
+        "Device install failure (0x%08x) attributed to system shutdown, retrying on next boot...", 
+        "Device install status: 0x%08x", 
+        "Performing device install final cleanup...", 
+        "Unable to track installed device %ws. Error = 0x%08X", 
+        "{Install Device - exit(0x%08x)}", 
+        "Marking non-present device %ws for reinstall.", 
+        "{Select Device Driver - %ws}", 
+        "{Select Device Driver - exit(0x%08x)}", 
+        "Failed to open device. Error = 0x%08X", 
+        "Failed to get device instance ID. Error = 0x%08X", 
+        "Error(%08x) creating drvinst install mutex!", 
+        "Waiting for previous device install to complete.", 
+        "{Core Device Install}", 
+        "Selected driver node does not match this device (force-install)", 
+        "Unable to locate %ws in driver store. Error = 0x%08X", 
+        "Unable to select driver for secondary device %ws. Error = 0x%08X", 
+        "Secondary device %ws is already using selected driver.", 
+        "Unable to get selected driver for secondary device %ws. Error = 0x%08X", 
+        "Unable to restart device %ws. Error = 0x%08X", 
+        "Primary device %ws restarted secondary devices.", 
+        "{Core Device Install - exit(0x%08x)}", 
+        "Setting device parameters...", 
+        "Error(%08x) creating Device Manager sync event!", 
+        "Driver Store Path: %ws", 
+        "Building driver list from driver node strong name...", 
+        "Installation of NULL driver on device is blocked by policy!", 
+        "Unable to determine matching device ID for %ws. Error = 0x%08X", 
+        "Unable to open INF file %ws. Err = 0x%08X", 
+        "Unable to get actual install section for [%ws] from %ws. Error = 0x%08X", 
+        "Driver configuration is disabled.", 
+        "Failed to get device install params.", 
+        "Failed to set device install params.", 
+        "Sysprep_Generalize_Pnp_Drivers", 
+        "Installed catalog '%ws' as '%ws'.", 
+        "Unable to install catalog '%ws' as '%ws'. Error = 0x%08X", 
+        "Failed to install catalog '%ws' as '%ws'. Error = 0x%08X", 
+        "Uninstalled catalog '%ws'.", 
+        "Unable to uninstall catalog '%ws'. Error = 0x%08X", 
+        "Driver package failed signature validation. Error = 0x%08X", 
+        "System restore point not required.", 
+        "System restore not required for signed driver package.", 
+        "System restore disabled by policy. Error = 0x%08X", 
+        "Unable to get root devices from driver package '%ws'. Error = 0x%08X", 
+        "No system restore point was set earlier.", 
+        "Currently Installed %ws:", 
+        "Installing %ws:", 
+        "Driver INF Name: %ws", 
+        "Extension Id:    %ws", 
+        "Driver Version:  %02d/%02d/%04d,%d.%d.%d.%d", 
+        "Searching for driver '%ws'.", 
+        "Driver '%ws' does not match device.", 
+        "Searching for compatible drivers.", 
+        "Searching for currently installed driver.", 
+        "Could not find primary driver to support extension driver.", 
+        "Unable to select best compatible driver. Error = 0x%08x", 
+        "No drivers found for device.", 
+        "{Update Device - %ws}", 
+        "Unable to disable co-installers. Error = 0x%08X", 
+        "No matching drivers found for device.", 
+        "Driver does not need to be installed on device.", 
+        "Current driver: %ws", 
+        "Unable to get current driver in use by device.", 
+        "Failed to install driver on device. Error = 0x%08X", 
+        "Unable to mark device for reinstall with co-installers. Error = 0x%08X", 
+        "Device needs reinstall with co-installers.", 
+        "Unable to mark non-present device for reinstall. Error = 0x%08X", 
+        "Non-present device needs reinstall.", 
+        "Unable to mark hardware configuration for respecialize. Error = 0x%08X", 
+        "{Update Device - exit(0x%08x)}", 
+        "{Install Driver Update - %ws}", 
+        "Failed to build list of device IDs in '%ws'. Error = 0x%08X", 
+        "No devices need driver update.", 
+        "Driver update needs reboot.", 
+        "{Install Driver Update - exit(0x%08x)}", 
+        "{Revert Device - %ws}", 
+        "Unable to clear device need for reinstall. Error = 0x%08X", 
+        "Cleared device need for reinstall.", 
+        "Selecting last installed driver.", 
+        "Unable to select last installed driver. Error = 0x%08X", 
+        "Restoring last installed driver on device.", 
+        "Unable to install driver. Error = 0x%08X", 
+        "Unable to mark device for reinstall to reset driver. Error = 0x%08X", 
+        "Device needs reinstall to reset driver.", 
+        "Unable to mark device for reinstall to restore last driver. Error = 0x%08X", 
+        "Device needs reinstall to restore last driver.", 
+        "Unable to clear device from being reinstalled. Error = 0x%08X", 
+        "Unable to mark device for reinstall. Error = 0x%08X", 
+        "Device needs reinstall.", 
+        "Device no longer needs reinstall.", 
+        "{Revert Device - exit(0x%08x)}", 
+        "{Revert Driver Update - %ws}", 
+        "Unable to open device '%ws'. Error = 0x%08X", 
+        "{Revert Driver Update - exit(0x%08x)}", 
+        "Failed to open driver store. Error = 0x%08X", 
+        "Failed to get pending driver updates. Error = 0x%08X", 
+        "No pending driver updates to process.", 
+        "Failed to publish driver package '%ws'. Error = 0x%08X", 
+        "Unable to clear pending driver update from driver package '%ws'. Error = 0x%08X", 
+        "Unable to get catalog file from driver package '%ws'. Error = 0x%08X", 
+        "Failed to install driver update '%ws'. Error = 0x%08X", 
+        "Uninstalling driver updates...", 
+        "Unable to unpublish driver package '%ws'. Error = 0x%08X", 
+        "Unable to reset pending driver update for driver package '%ws'. Error = 0x%08X", 
+        "no title", 
+        "[%s - %s]", 
+        "[Boot Session: %04d/%02d/%02d %02d:%02d:%02d.%03d]", 
+        "     Hardware Configuration: %s", 
+        "Section start", 
+        " os: Version = %d.%d.%d, Service Pack = %d.%d, Suite = 0x%04x, ProductType = %d, Architecture = %s", 
+        "[Exit status: SUCCESS]", 
+        "DI_DO_DEFAULT", 
+        "REBOOT_INITIATED", 
+        "REBOOT_REQUIRED", 
+        "RESTART_REQUIRED", 
+        "[Exit status: SUCCESS (%s)]", 
+        "[Exit status: FAILURE(0x%08x)]", 
+        "[Exit]", 
+        "Section end", 
+        "<message string could not be built - 0x%08x>", 
+        "[Device Install Log]", 
+        "     OS Version = %d.%d.%d", 
+        "     Service Pack = %d.%d", 
+        "     Suite = 0x%04x", 
+        "     ProductType = %d", 
+        "     Architecture = %s", 
+        "[BeginLog]", 
+        " %02d:%02d:%02d.%03d", 
+        " %04d/%02d/%02d", 
+        "{Driver package policy check}", 
+        "Driver Package importation is subject to policy", 
+        "Driver is not signed by a trusted publisher!", 
+        "Driver is signed by a trusted publisher!", 
+        "Installation of driver by limited User is allowed", 
+        "{Driver package policy check - exit(0x%08x)}", 
+        "Device installation policy not enforced for driver update.", 
+        "Only Administrators are allowed to install a NULL driver on this device", 
+        "Installation of device is restricted for this user, based on selected driver", 
+        "Installation of device is restricted for this user, selected driver does not match device", 
+        "{Device installation policy check [%ws]}", 
+        "The device is explicitly restricted by the following policy settings:", 
+        "[-] Removable devices are restricted", 
+        "[-] Restricted Hardware or Compatible ID: %ws", 
+        "[-] Restricted setup class of selected driver: %ws", 
+        "[-] Restricted installation of devices not described by policy", 
+        "[*] One or more matching policy restrictions that would allow the device have been ignored.", 
+        "Device installation policy allows installation of %ws", 
+        "The device is explicitly allowed by the following policy settings:", 
+        "[+] Hardware or Compatible ID: %ws", 
+        "[+] Setup class of the selected driver: %ws", 
+        "Device installation policy will be deferred until a driver is selected for %ws", 
+        "{Device installation policy check [%ws] exit(0x%08x)}", 
+        "Detecting devices pending query-removal:", 
+        "%ws%ws [QR]", 
+        "%ws%ws", 
+        "Detected driver hang while installing device '%ws'.", 
+        "Detected driver hang in related device '%ws' while installing device '%ws'.", 
+        "Detected driver hang in related device while installing device '%ws'.", 
+        "Detected driver hang in unrelated device '%ws' while installing device '%ws'.", 
+        "Detected driver hang in unrelated device while installing device '%ws'.", 
+        "Exception in DRVINST.EXE HandleDeviceInstallEntry!, ExceptionCode = 0x%08lx", 
+        "Exception in DRVINST.EXE wmain!, ExceptionCode = 0x%08lx", 
+        "Unable to determine if driver is pre-configured.", 
+        "Driver is not pre-configured.", 
+        "Failed to open service control manager.", 
+        "Failed to open %ws service.", 
+        "Failed to retrieve service configuration for %ws.", 
+        "Failed to get path to windows directory", 
+        "Failed to build absolute path to %ws", 
+        "Failed to get file attributes for %ws.", 
+        "Failed to convert time difference to SYSTEMTIME.", 
+        "Cannot configure %ws driver package '%ws' (%ws) on %ws architecture. Error = 0x%08X", 
+        "Unable to determine device class of driver package %ws. Error = 0x%08X", 
+        "Device class %ws is configurable for driver package class version %u.%u.", 
+        "Configuring device with non-configurable class %ws.", 
+        "Device class %ws is not configurable.", 
+        "Unable to determine if driver package %ws is configurable.", 
+        "Configuring device with non-configurable driver package %ws.", 
+        "Driver package %ws is not configurable.", 
+        "Reboot required to complete device configuration.", 
+        "Restart required for any devices using this driver.", 
+        "Failed to open driver configuration key for %ws\\%ws. Error = 0x%08X", 
+        "Failed to query included driver configurations. Error = 0x%08X", 
+        "Unable to determine if driver needs reboot. Error = 0x%08X", 
+        "{Select Best Driver - %ws}", 
+        "Failed to request best driver. Error = 0x%08X", 
+        "Failed to query best driver. Error = 0x%08X", 
+        "Invalid driver configuration ID '%ws'.", 
+        "No compatible drivers found.", 
+        "Selected driver: %ws:%ws,%ws", 
+        "Driver already installed on device.", 
+        "{Select Best Driver - exit(0x%08x)}", 
+        "{Configure Device - %ws}", 
+        "Failed to locate %ws in driver store. Error = 0x%08X", 
+        "Cleared pending configuration from last attempt.", 
+        "Device was last configured using '%ws'.", 
+        "Driver requested reboot.", 
+        "Ignoring driver reboot request for unstarted device.", 
+        "Reboot required to complete driver update.", 
+        "Install Device: Postponing device configuration (%ws) due to DONOTCALLCONFIGMG.", 
+        "Install Device: Configuring device (%ws).", 
+        "Install Device: Configuring device failed : 0x%08X (0x%02X)", 
+        "Install Device: Configuring device failed : 0x%08X", 
+        "Install Device: Configuring device completed.", 
+        "Device requires reboot before it can be started.", 
+        "{Configure Device - exit(0x%08x)}", 
+        "Failed to open device '%ws'. Error = 0x%08X", 
+        "Best matching driver (%ws) differs from selected driver (%ws).", 
+        "Invalid driver node name '%ws'. Error = 0x%08X", 
+        "Detected system shutdown in progress, continuing device install...", 
+        "Detected system shutdown in progress, deferring device install...", 
+        "Not waiting for device post-install to complete when reboot required.", 
+        "Unable to create event for post-install operation. Error = 0x%08X", 
+        "Unable to create device query for post-install operation. Error = 0x%08X", 
+        "Waiting for device post-install to complete.", 
+        "Unable to wait for device post-install to complete. Error = 0x%08X", 
+        "Timed out waiting for device post-install to complete.", 
+        "Device post-install completed.", 
+        "Device post-install problem: 0x%X (0x%08X)", 
+        "Driver INF Path: %ws", 
+        "Driver Node Name: %ws", 
+        "Installing NULL driver!", 
+        "DRVINST.EXE: Entering debugger during PnP device installation.", 
+        "Device instance = \"%ls\" ...", 
+        "DRVINST.EXE: Waiting for debugger on Process ID = %d ...", 
+        "Debugger detected!", 
+        "DRVINST.EXE: Unknown DebugInstall options, NOT breaking to debugger.", 
+        "Unable to get published INF for driver package '%ws'. Error = 0x%08x", 
+        "Unable to find devices that match INF - (%08x)!", 
+        "Found device that matches new INF!", 
+        "Unable to mark devices that match new INF - (%08x)!", 
+        "Failed to create thread for device '%ws'. Error = 0x%08X", 
+        "Timed out waiting for device '%ws'. Error = 0x%08X", 
+        "Failed to wait for device '%ws'. Error = 0x%08X", 
+        "Failed to register device '%ws'. Error = 0x%08X", 
+        "Install Device: Setting up device.", 
+        "Install Device: Setting up device completed.", 
+        "Install Device: Setting up device failed. Error = 0x%08X", 
+        "{Install Root Device: %ws}", 
+        "Device does not exist.", 
+        "Device is already installed.", 
+        "Unable to install device. Error = 0x%08X", 
+        "Device requires reboot to complete installation.", 
+        "{Install Root Device: exit(0x%08x)}", 
+        "Failed to remove device '%ws'. Error = 0x%08X", 
+        "{Uninstall Root Device: %ws}", 
+        "Unable to query device owners. Error = 0x%08X", 
+        "Device is still in use by: %ws", 
+        "                           %ws", 
+        "Unable to uninstall device. Error = 0x%08X", 
+        "Device requires reboot to complete uninstallation.", 
+        "{Uninstall Root Device: exit(0x%08x)}", 
+        "Unable to configure driver package. Error = 0x%08X", 
+        "Unable to unconfigure driver package. Error = 0x%08X", 
+        "Flushing %ws to disk.", 
+        "Could not get handle to %ws. Error = 0x%08X", 
+        "Unable to flush %ws to disk. Error = 0x%08X", 
+        "Flushed all driver package files to disk. Time = %u ms", 
+        "Unable to flush all driver package files to disk. Time = %u ms, Error = 0x%08X", 
+        "DRVINST.EXE: Entering debugger while %ws driver package to Driver Store.", 
+        "INF = \"%ls\" ...", 
+        "Doing device matching lookup", 
+        "DRVINST.EXE: Entering debugger while installing driver updates.", 
+        "DRVINST.EXE: Entering debugger while dispatching sysprep task.", 
+        "DeviceInstall", 
+        "DeviceInstanceId", 
+        "ParentDeviceInstanceId", 
+        "FirstHardwareId", 
+        "LastCompatibleId", 
+        "MatchingDeviceId", 
+        "DriverInfName", 
+        "OriginalDriverInfName", 
+        "DriverInfSectionName", 
+        "ClassGuid", 
+        "DriverDate", 
+        "DriverVersion", 
+        "DriverProvider", 
+        "DriverPackageId", 
+        "SubmissionId", 
+        "FlightIds", 
+        "ExtensionDrivers", 
+        "DriverDescription", 
+        "ServiceName", 
+        "UpperFilters", 
+        "LowerFilters", 
+        "ClassUpperFilters", 
+        "ClassLowerFilters", 
+        "CoInstallers", 
+        "DeviceStack", 
+        "SetupMode", 
+        "Problem", 
+        "ProblemStatus", 
+        "ConfigFlags", 
+        "NeedReboot", 
+        "DriverUpdated", 
+        "SecondaryDevice", 
+        "PendedDriverUpdate", 
+        "FinishInstallUI", 
+        "FinishInstallAction", 
+        "DeviceConfigured", 
+        "LegacyInstallReasonError", 
+        "Microsoft.Windows.DriverInstall", 
+        "RSDS=:", 
+        "drvinst.pdb", 
+        ".rdata$brc", 
+        ".CRT$XCA", 
+        ".CRT$XCAA", 
+        ".CRT$XCZ", 
+        ".CRT$XIA", 
+        ".CRT$XIAA", 
+        ".CRT$XIY", 
+        ".CRT$XIZ", 
+        ".gfids", 
+        ".giats", 
+        ".rdata", 
+        ".rdata$sxdata", 
+        ".rdata$zETW0", 
+        ".rdata$zETW1", 
+        ".rdata$zETW2", 
+        ".rdata$zETW9", 
+        ".rdata$zzzdbg", 
+        ".text$mn", 
+        ".xdata$x", 
+        ".didat$2", 
+        ".didat$3", 
+        ".didat$4", 
+        ".didat$6", 
+        ".didat$7", 
+        ".data$brc", 
+        ".idata$5", 
+        ".00cfg", 
+        ".idata$2", 
+        ".idata$3", 
+        ".idata$4", 
+        ".idata$6", 
+        ".didat$5", 
+        ".rsrc$01", 
+        ".rsrc$02", 
+        "Vf9<Au", 
+        "QQSVWj", 
+        "SSSh,<@", 
+        "WWWh|F@", 
+        "WWWh|F@", 
+        "t)j j@", 
+        "t2hx\u001f@", 
+        "t!Vhh!@", 
+        "Pt\"h4$@", 
+        "WWh<E@", 
+        "PVh<&@", 
+        "WPh@F@", 
+        "u=SSSh,G@", 
+        "u h()@", 
+        "VWh`+@", 
+        "SShh/@", 
+        "D$0QQQP", 
+        "PPPPhPG@", 
+        "t$0h81@", 
+        "D$$;L$", 
+        "D$,;L$", 
+        "t$(h(2@", 
+        "t$(hh2@", 
+        "QQPVSWQQ", 
+        "jWX_^[", 
+        "j\\^f9_", 
+        "PSSSSSSSj", 
+        "PSSSSSSh ", 
+        "PSSSSSSSj", 
+        "f97t}j", 
+        "f90t0j", 
+        "PSSSSSSRj j", 
+        "u&VWhD>@", 
+        "QQSj'Z", 
+        "QQSj'Z", 
+        "PPPPPPPj", 
+        "f93tPj", 
+        "u!hTH@", 
+        "WPPSh@TA", 
+        "SVWj:3", 
+        "PQh|K@", 
+        "PWh<L@", 
+        "f98tsh", 
+        "u\u001fh$R@", 
+        "t!h|S@", 
+        "VWQhHU@", 
+        "t~QQQQQ", 
+        "uRhHV@", 
+        "fVVVVV", 
+        "VShPZ@", 
+        "VWPPPP", 
+        "VShPZ@", 
+        "XPWh<\\@", 
+        "WPhxG@", 
+        "RPh(`@", 
+        "VRPh``@", 
+        "u&h<a@", 
+        "L$$)D$", 
+        "PSSSSSSSj", 
+        "CryptReleaseContext", 
+        "CryptAcquireContextW", 
+        "DestroyPropertySheetPage", 
+        "CM_Set_DevNode_Problem", 
+        "CM_Get_DevNode_Status", 
+        "CM_Get_Class_PropertyW", 
+        "CM_MapCrToSpErr", 
+        "CM_Get_DevNode_PropertyW", 
+        "DriverStoreClose", 
+        "DriverStoreOpenW", 
+        "DriverPackageOpenW", 
+        "DriverPackageClose", 
+        "DriverStoreFindW", 
+        "DriverStoreSetLogContext", 
+        "DriverPackageGetVersionInfoW", 
+        "DriverStoreGetObjectPropertyW", 
+        "DriverStoreEnumW", 
+        "DriverStoreUnpublishW", 
+        "DriverStorePublishW", 
+        "DriverStoreSetObjectPropertyW", 
+        "CryptCATClose", 
+        "CryptCATOpen", 
+        "CryptCATEnumerateCatAttr", 
+        "OpenServiceW", 
+        "OpenSCManagerW", 
+        "CloseServiceHandle", 
+        "QueryServiceConfigW", 
+        "DevCloseObjectQuery", 
+        "DevCreateObjectQueryFromId", 
+        "CM_Locate_DevNodeW", 
+        "CM_Get_Sibling", 
+        "CM_Get_Device_IDW", 
+        "CM_Get_Child", 
+        "CM_Setup_DevNode", 
+        "CM_Get_Device_ID_List_SizeW", 
+        "CM_MapCrToWin32Err", 
+        "CM_Get_Device_ID_ListW", 
+        "CM_Get_DevNode_Registry_PropertyW", 
+        "CM_Set_DevNode_Registry_PropertyW", 
+        "CM_Set_DevNode_PropertyW", 
+        "DriverStoreEnumObjectsW", 
+        "DriverStoreDriverPackageResolveCallbackW", 
+        "DriverPackageEnumConfigurationsW", 
+        "DriverStoreConfigureW", 
+        "pServerDeleteDriverPackage", 
+        "DriverPackageEnumDevicesW", 
+        "DriverStoreUnreflectW", 
+        "pServerImportDriverPackage", 
+        "DriverStoreReflectW", 
+        "_vsnwprintf", 
+        "_wcsicmp", 
+        "swscanf", 
+        "wcschr", 
+        "wcsrchr", 
+        "towupper", 
+        "_XcptFilter", 
+        "__p__commode", 
+        "_amsg_exit", 
+        "__wgetmainargs", 
+        "__set_app_type", 
+        "_cexit", 
+        "__p__fmode", 
+        "__setusermatherr", 
+        "_initterm", 
+        "msvcrt.dll", 
+        "?terminate@@YAXXZ", 
+        "_controlfp", 
+        "_except_handler4_common", 
+        "RtlUpcaseUnicodeString", 
+        "RtlInitUnicodeStringEx", 
+        "EtwEventSetInformation", 
+        "EtwEventWriteTransfer", 
+        "EtwEventUnregister", 
+        "EtwEventWrite", 
+        "EtwEventRegister", 
+        "ntdll.dll", 
+        "GetLastError", 
+        "SetLastError", 
+        "UnhandledExceptionFilter", 
+        "SetUnhandledExceptionFilter", 
+        "api-ms-win-core-errorhandling-l1-1-0.dll", 
+        "CloseHandle", 
+        "api-ms-win-core-handle-l1-1-0.dll", 
+        "LoadLibraryW", 
+        "GetProcAddress", 
+        "GetModuleHandleW", 
+        "FreeLibrary", 
+        "LoadLibraryExW", 
+        "api-ms-win-core-libraryloader-l1-2-1.dll", 
+        "api-ms-win-core-libraryloader-l1-2-0.dll", 
+        "RegSetValueExW", 
+        "RegCreateKeyExW", 
+        "RegCloseKey", 
+        "RegOpenKeyExW", 
+        "RegDeleteTreeW", 
+        "api-ms-win-core-registry-l1-1-0.dll", 
+        "ExitProcess", 
+        "GetCurrentProcess", 
+        "TerminateProcess", 
+        "GetCurrentProcessId", 
+        "GetCurrentThreadId", 
+        "api-ms-win-core-processthreads-l1-1-0.dll", 
+        "QueryPerformanceCounter", 
+        "api-ms-win-core-profile-l1-1-0.dll", 
+        "CompareStringOrdinal", 
+        "api-ms-win-core-string-l1-1-0.dll", 
+        "CreateMutexW", 
+        "ReleaseMutex", 
+        "WaitForSingleObjectEx", 
+        "api-ms-win-core-synch-l1-1-0.dll", 
+        "api-ms-win-core-synch-l1-2-0.dll", 
+        "GetNativeSystemInfo", 
+        "GetSystemTimeAsFileTime", 
+        "GetSystemTime", 
+        "GetTickCount", 
+        "api-ms-win-core-sysinfo-l1-2-0.dll", 
+        "api-ms-win-core-sysinfo-l1-1-0.dll", 
+        "SetupGetThreadLogToken", 
+        "SetupWriteTextLog", 
+        "SetupGetNonInteractiveMode", 
+        "SetupDiDestroyDeviceInfoList", 
+        "SetupSetThreadLogToken", 
+        "SetupDiGetClassPropertyW", 
+        "SetupScanFileQueueW", 
+        "SetupInitDefaultQueueCallbackEx", 
+        "SetupDiRestartDevices", 
+        "pSetupDiBuildInfoDataFromStrongName", 
+        "pSetupStringFromGuid", 
+        "SetupOpenFileQueue", 
+        "SetupDefaultQueueCallbackW", 
+        "SetupCloseInfFile", 
+        "SetupGetFileQueueFlags", 
+        "SetupDiOpenDevRegKey", 
+        "SetupPromptReboot", 
+        "SetupDiDestroyDriverInfoList", 
+        "SetupCloseFileQueue", 
+        "SetupDiInstallClassW", 
+        "SetupGetInfPublishedNameW", 
+        "pSetupGetGlobalFlags", 
+        "pSetupDiCrimsonLogDeviceInstall", 
+        "SetupDiSetClassPropertyW", 
+        "SetupDiGetDeviceInstallParamsW", 
+        "pSetupDiGetStrongNameForDriverNode", 
+        "SetupDiEnumDriverInfoW", 
+        "SetupDiSetSelectedDriverW", 
+        "SetupDiGetDriverInfoDetailW", 
+        "pSetupSetGlobalFlags", 
+        "SetupDiGetClassInstallParamsW", 
+        "SetupDiSetClassInstallParamsW", 
+        "SetupCommitFileQueueW", 
+        "SetupDiBuildDriverInfoList", 
+        "SetupGetInfDriverStoreLocationW", 
+        "SetupDiSetDriverInstallParamsW", 
+        "SetupSetFileQueueFlags", 
+        "SetupDiGetSelectedDriverW", 
+        "pSetupDoLastKnownGoodBackup", 
+        "SetupTermDefaultQueueCallback", 
+        "SetupDiCallClassInstaller", 
+        "SetupDiGetActualSectionToInstallW", 
+        "SetupUninstallNewlyCopiedInfs", 
+        "SetupOpenInfFileW", 
+        "SetupDiGetDevicePropertyW", 
+        "SetupDiSetDeviceInstallParamsW", 
+        "pSetupDiEnumSelectedDrivers", 
+        "SetupDiGetDeviceInstanceIdW", 
+        "SetupDiReportDeviceInstallError", 
+        "SetupDiCreateDeviceInfoList", 
+        "SetupDiEnumDeviceInfo", 
+        "SetupDiGetDriverInstallParamsW", 
+        "SetupDiSetDevicePropertyW", 
+        "SetupDiOpenDeviceInfoW", 
+        "pSetupUninstallCatalog", 
+        "pSetupSetDriverPackageRestorePoint", 
+        "pSetupValidateDriverPackage", 
+        "pSetupInstallCatalog", 
+        "SetupDiGetActualModelsSectionW", 
+        "pSetupDiGetDriverInfoExtensionId", 
+        "SetupFindNextLine", 
+        "SetupGetStringFieldW", 
+        "SetupFindFirstLineW", 
+        "SetupGetFieldCount", 
+        "SetupDiGetClassDevsW", 
+        "SETUPAPI.dll", 
+        "DevObjOpenDeviceInfo", 
+        "DevObjDestroyDeviceInfoList", 
+        "DevObjCreateDeviceInfoList", 
+        "DEVOBJ.dll", 
+        "LocalAlloc", 
+        "LocalFree", 
+        "FileTimeToSystemTime", 
+        "CreateEventW", 
+        "SetEvent", 
+        "GetSystemWindowsDirectoryW", 
+        "RaiseException", 
+        "HeapAlloc", 
+        "HeapReAlloc", 
+        "HeapFree", 
+        "GetProcessHeap", 
+        "LCMapStringW", 
+        "WaitForMultipleObjectsEx", 
+        "GetThreadLocale", 
+        "UnmapViewOfFile", 
+        "WideCharToMultiByte", 
+        "CompareStringW", 
+        "CreateFileW", 
+        "DeviceIoControl", 
+        "GetModuleFileNameA", 
+        "GetCommandLineA", 
+        "FileTimeToLocalFileTime", 
+        "WriteFile", 
+        "GetLocalTime", 
+        "GetFileSize", 
+        "FlushFileBuffers", 
+        "SetFilePointer", 
+        "CreateHardLinkW", 
+        "GetFileInformationByHandle", 
+        "DeleteFileW", 
+        "FindFirstFileW", 
+        "SetFileAttributesW", 
+        "FindNextFileW", 
+        "FindClose", 
+        "MoveFileExW", 
+        "SleepEx", 
+        "CreateFileMappingW", 
+        "MapViewOfFile", 
+        "SetEndOfFile", 
+        "SetErrorMode", 
+        "GetFullPathNameW", 
+        "GetFileAttributesW", 
+        "CreateDirectoryW", 
+        "GetSystemInfo", 
+        "lstrcmpiW", 
+        "SetConsoleCtrlHandler", 
+        "GetCommandLineW", 
+        "DuplicateHandle", 
+        "OpenProcess", 
+        "GetExitCodeThread", 
+        "GetTickCount64", 
+        "CreateThread", 
+        "HeapSetInformation", 
+        "IsDebuggerPresent", 
+        "RegQueryValueExW", 
+        "GetFileAttributesExW", 
+        "GetWindowsDirectoryW", 
+        "WaitForSingleObject", 
+        "IsWow64Process", 
+        "CopyFileExW", 
+        "RegEnumKeyExW", 
+        "KERNEL32.dll", 
+        "_resetstkoflw", 
+        "_wcsnicmp", 
+        "memmove", 
+        "_vsnprintf", 
+        "toupper", 
+        "RtlNtStatusToDosError", 
+        "RtlUnicodeToMultiByteSize", 
+        "RtlUnicodeToMultiByteN", 
+        "RtlMultiByteToUnicodeSize", 
+        "RtlMultiByteToUnicodeN", 
+        "NtQuerySystemInformation", 
+        "RtlGetVersion", 
+        "RtlInitUnicodeString", 
+        "RtlGUIDFromString", 
+        "NtQueryInformationFile", 
+        "NtSetInformationFile", 
+        "RtlFormatCurrentUserKeyPath", 
+        "RtlFreeUnicodeString", 
+        "NtClose", 
+        "NtOpenKey", 
+        "NtCreateKey", 
+        "NtQueryKey", 
+        "NtQueryValueKey", 
+        "NtSetValueKey", 
+        "DbgPrintEx", 
+        "NtQueryInformationProcess", 
+        "NtFlushBuffersFileEx", 
+        "OpenProcessToken", 
+        "AllocateAndInitializeSid", 
+        "GetLengthSid", 
+        "InitializeAcl", 
+        "AddAccessAllowedAceEx", 
+        "InitializeSecurityDescriptor", 
+        "SetSecurityDescriptorDacl", 
+        "FreeSid", 
+        "GetTokenInformation", 
+        "DuplicateTokenEx", 
+        "CheckTokenMembership", 
+        "IsValidSid", 
+        "api-ms-win-security-base-l1-1-0.dll", 
+        "SetupVerifyInfFileW", 
+        "DevObjGetDeviceProperty", 
+        "DevObjEnumDeviceInfo", 
+        "DevObjSetDeviceProperty", 
+        "DevObjRestartDevices", 
+        "DevObjGetDeviceInstanceId", 
+        "DevObjRegisterDeviceInfo", 
+        "DevObjDeleteDevice", 
+        "DevRtlWriteTextLogError", 
+        "DevRtlWriteTextLog", 
+        "DevRtlGetThreadLogToken", 
+        "DevRtlSetThreadLogToken", 
+        "DEVRTL.dll", 
+        "ResolveDelayLoadedAPI", 
+        "DelayLoadFailureHook", 
+        "RegEnumValueW", 
+        "memcpy", 
+        "memset", 
+        "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>", 
+        "<!-- Copyright (c) Microsoft Corporation -->", 
+        "<assembly xmlns=\"urn:schemas-microsoft-com:asm.v1\" manifestVersion=\"1.0\">", 
+        "<assemblyIdentity", 
+        "    type=\"win32\"", 
+        "    name=\"Microsoft.Windows.DrvInst\"", 
+        "    version=\"5.1.0.0\"", 
+        "    processorArchitecture=\"x86\"/>", 
+        "<description>DrvInst</description>", 
+        "<trustInfo xmlns=\"urn:schemas-microsoft-com:asm.v3\">", 
+        "    <security>", 
+        "        <requestedPrivileges>", 
+        "            <requestedExecutionLevel", 
+        "                level=\"asInvoker\"", 
+        "                uiAccess=\"false\"/>", 
+        "        </requestedPrivileges>", 
+        "    </security>", 
+        "</trustInfo>", 
+        "</assembly>", 
+        "0$0(0,0004080<0|0", 
+        "9+979C9L9Q9[9b9i9", 
+        "9':-:3:H:", 
+        ";!;);1;9;A;I;Q;d;", 
+        ">>?D?J?W?]?h?o?t?z?", 
+        ")0>0w0", 
+        "233s3}3", 
+        "5:5L5u5}5", 
+        "6D6L6y6", 
+        "787@7s7{7@8H8s8{8", 
+        ";#;1;?;`;o;", 
+        "<3<a<h<", 
+        "?\"?G?e?", 
+        "020G0[0q0", 
+        "6 616B6S6^6o6", 
+        "6 7M7W7", 
+        "7%8K8t8", 
+        ": :-:5:C:i:q:~:", 
+        ";:;P;U;Z;e;l;x;", 
+        ";/<><J<U<a<x<", 
+        ">+>2><>P>]>k>", 
+        "?>?l?x?", 
+        "0$0/0A0h0o0", 
+        "0\"1h1r1", 
+        "1,2B2_2l2", 
+        "3A3W3n3{3", 
+        "4)474M4", 
+        "495A5K5g5", 
+        "6&6/6E6s6}6", 
+        "6\"7H7k7", 
+        "8\u001f868=8H8^8", 
+        "8-979b9x9", 
+        ":-:H:^:p:", 
+        ";2;M;v;", 
+        ";*<J<f<", 
+        "=%=5=K=d=z=", 
+        ">$>G>+?5?N?Z?", 
+        "0D0S0q0", 
+        "1H1U1g1t1~1", 
+        "2!2)272d2", 
+        "4V4`4j4", 
+        "5 5<5J5e5", 
+        "7+757B7W7", 
+        "<)<?<~<", 
+        "=G=W=m=", 
+        "0-0F0h0v0", 
+        "1:1D1_1", 
+        "1\u001f2/2;2p2v2", 
+        "4$444J4}4", 
+        "5/5S5g5t5", 
+        "5$686e6j6", 
+        "9(929H9P9o9", 
+        "95:^:p:", 
+        "=\"=1=A=K=V=]=}=", 
+        ">@?U?h?", 
+        "P0Z0_0w0", 
+        "1&1.1;1b1l1", 
+        "212?2I2e2", 
+        "3G3Z3`3l3u3|3", 
+        "3=4e4|4", 
+        "6*6@6L6b6", 
+        "979G9V9d9k9p9", 
+        "=2=E=Y=`=j=", 
+        "=\u001f>Q>n>", 
+        "050G0f0", 
+        "2G2f2w2", 
+        "404D4o4", 
+        "5)585T5p5~5", 
+        "6.6H6i6", 
+        "909J9T9]9", 
+        ":);Y;d;", 
+        "=?=G=P=X=a=i=", 
+        ">*>;>K>", 
+        ">&?D?V?", 
+        "40:0O0", 
+        "2*2X2a2", 
+        "273G3l3", 
+        "515;5G5N5Z5", 
+        "6!6K6Q6f6", 
+        "7=7L7q7", 
+        "8'838A8O8m8", 
+        ":-:3:9:N:\\:d:t:", 
+        ":%;<;L;V;`;l;", 
+        "=D=R=^=y=", 
+        "? ?N?`?j?t?", 
+        "0(090Q0d0i0", 
+        "1)161E1K1Z1`1f1u1{1", 
+        "1C2V2o2", 
+        "8!959f9", 
+        ">'>2>>>F>L>X>_>|>", 
+        "3B3G3S3l3q3}3", 
+        "4,4>4V4h4", 
+        "6W6d6v6", 
+        ";(<;<L<`<j<", 
+        ">\">)>/>6>w>", 
+        "?\u001f?(?~?", 
+        "3\u001f3-3;3I3W3e3v3", 
+        "<(=B=I=`=", 
+        "041;1R1~1", 
+        "3C3R3Y3h3o3~3", 
+        "5$686B6", 
+        ":I:X:g:v:", 
+        "424@4L4Z4h4", 
+        "5/5F5U5d5o5", 
+        "5-6Z6`6", 
+        "7'848S8", 
+        "9#9(959?9G9Y9e9j9o9|9", 
+        ":$:*:@:H:P:]:c:y:", 
+        "<-<3<J<T<]<b<g<s<}<", 
+        "=-=3=I=", 
+        "=8>K>u>", 
+        "90J0]0b0i0s0", 
+        "1:1B1T1^1", 
+        "1H2R2t2", 
+        "4!505X5", 
+        "6%6*6@6c6h6", 
+        "6\u001f8(80858B8J8Q8", 
+        "909?9P9_9t9", 
+        ": :4:C:U:", 
+        "=A>K>j>|>", 
+        "1>1o1}1", 
+        "2)2G2`2", 
+        "3+3]3{3", 
+        "454;4C4", 
+        "5=5b5v5", 
+        "7<7U7g7m7", 
+        "8(8/858Q8b8i8", 
+        ":9:B:[:d:", 
+        ";&;/;W;d;z;", 
+        ">->2>=>H>d>j>t>", 
+        ">2?9?Z?r?", 
+        "0'1,151l1", 
+        "2`2s2}2", 
+        "4E4i4t4|4", 
+        "5R5g5o5", 
+        "6:6R6e6o6", 
+        "<(<6<Z<m<v<", 
+        "=4=>=L=s=", 
+        "=<>H>Y>", 
+        ">+?j?t?", 
+        "'090O0t0", 
+        "1-2A2w2", 
+        "4 4K4`4w4", 
+        "7'7/7C7Q7c7", 
+        "838E8O8c8", 
+        ":@:j:|:", 
+        ";*;;;O;Y;", 
+        ";'<1<D<X<", 
+        "=,===p=z=", 
+        ">/><>g>m>y>", 
+        "?,?T?a?|?", 
+        "40A0K0z0", 
+        "1\"101M1Z1d1z1", 
+        "3+383G3[3", 
+        "4(4/4?4O4_4", 
+        "6?6M6\\6", 
+        "8(8>8K8f8u8}8", 
+        "9X9`9t9", 
+        ":(;@;];", 
+        ";1<[<i<", 
+        ">,?E?j?", 
+        ")0S0j0", 
+        "1%181J1", 
+        "202K2^2", 
+        "2N3`3h3~3", 
+        "484g4z4", 
+        "585F5_5p5}5", 
+        "6(646:6J6P6l6", 
+        "7\u001f7/7<7X7b7l7", 
+        "8h9n9t9z9", 
+        ":\u001f:(:2:;:I:O:X:a:l:", 
+        "<V<\"=e=u=", 
+        ">#>T>a>", 
+        "?$?.?>?f?", 
+        "1M1Y1^1n1", 
+        "212A2L2W2`2g2", 
+        "3A3X3l3v3", 
+        "4V4g4u4z4", 
+        "6H6O6w6", 
+        "7!7(797J7W7g7z7", 
+        "8*878@8O8f8n8", 
+        "9#9-999K9g9s9", 
+        ": :E:Q:c:s:", 
+        ";L;U;c;", 
+        "<\u001f<,<:<Q<W<h<", 
+        ">@>J>q>", 
+        "?\u001f?,?8?B?o?", 
+        "*090I0X0", 
+        "0V1b1t1", 
+        "1 2/2h2", 
+        "3\u001f3?3_3j3z3", 
+        "4$4H4_4d4r4|4", 
+        "5!5F5w5", 
+        "5)686u6", 
+        ":#;A;Z;e;s;", 
+        "< <)<3<?<E<L<U<[<c<i<v<~<", 
+        "=/=7=<=A=c=i=p=u=", 
+        ">#>,>1>I>l>", 
+        "? ?'?.?5?=?E?M?Y?b?g?m?w?", 
+        "0#0*01080?0E0Q0\\0a0f0l0v0", 
+        "1(2-2?2]2q2w2$3?3K3Z3c3l3", 
+        "3R4W4u4", 
+        "5!5/595C5M5W5d5r5|5", 
+        "6*646>6K6Y6f6t6~6", 
+        "7\u001f7)737=7G7}7", 
+        "8D8H8d8h8", 
+        "9$9(9D9H9d9h9", 
+        ":$:(:D:H:d:h:", 
+        ",00040<0`0", 
+        "0 0$0(0,0004080<0D0L0P0T0\\0`0h0l0t0x0|0", 
+        "Submission ID", 
+        "HTREE\\ROOT\\0", 
+        "%d.%d.%d.%d", 
+        "oem%d.inf", 
+        "%ws%ws%ws:%ws:%ws", 
+        "streamci.dll", 
+        "rundll32.exe", 
+        "rundll32", 
+        "streamci", 
+        "StreamingDeviceSetup", 
+        "StreamingDeviceRemove", 
+        "setupapi.dll", 
+        "tSoftware\\Microsoft\\Windows\\CurrentVersion\\RunOnce", 
+        ".WudfRd.sys", 
+        "DrvInst.exe_mutex_{5B10AC83-4F13-4fde-8C0B-B85681BA8D73}", 
+        "Global\\DrvInst_Sync_%ws", 
+        "SYSTEM", 
+        "sppnp.dll", 
+        "Manufacturer", 
+        "ClassGUID", 
+        "Version", 
+        "Extension Driver", 
+        "Driver", 
+        "WdfCoInstaller?????.dll", 
+        "WudfUpdate_?????.dll", 
+        "WUDFCoinstaller.dll", 
+        "Software\\Microsoft\\Windows\\CurrentVersion\\Device Installer", 
+        "CurrentStatus", 
+        "StartTime", 
+        "Progress", 
+        "Device Install (Pending driver updates)", 
+        "System\\HardwareConfig\\Current", 
+        "Software\\Microsoft\\Windows\\CurrentVersion\\Setup", 
+        "LogLevel", 
+        "LogMask", 
+        "LogMaxFileSize", 
+        "setupapi.app.log", 
+        "setupapi.dev.log", 
+        "setupapi.offline.log", 
+        "SYSTEM\\Setup\\SetupapiLogStatus", 
+        "%s.%04d%02d%02d_%02d%02d%02d.%s", 
+        "%s.????????_??????.%s", 
+        "System\\CurrentControlSet\\Control", 
+        "PortableOperatingSystem", 
+        "System\\HardwareConfig", 
+        "LastConfig", 
+        "setupapi.ev1", 
+        "setupapi.ev2", 
+        "setupapi.ev3", 
+        "\\REGISTRY\\MACHINE", 
+        "\\REGISTRY\\MACHINE\\SOFTWARE\\Classes", 
+        "\\REGISTRY\\USER", 
+        "\\REGISTRY\\MACHINE\\SYSTEM\\CurrentControlSet\\Hardware Profiles\\Current", 
+        "STORAGE\\VolumeSnapshot", 
+        "DenyRemovableDevices", 
+        "Restrictions", 
+        "Software\\Policies\\Microsoft\\Windows\\DeviceInstall", 
+        "DenyUnspecified", 
+        "AllowAdminInstall", 
+        "DenyDeviceIDs", 
+        "AllowDeviceIDs", 
+        "DenyDeviceIDsRetroactive", 
+        "DenyDeviceClasses", 
+        "DenyDeviceClassesRetroactive", 
+        "AllowDeviceClasses", 
+        "AllowUserDeviceClasses", 
+        "Software\\Policies\\Microsoft\\Windows\\DriverInstall", 
+        "Driver package policy check", 
+        "InstallTimeout", 
+        "Settings", 
+        "DisableSystemRestore", 
+        "DriverPackages", 
+        "DriverInfFiles", 
+        "DriverFiles", 
+        "DeviceIds", 
+        "DriverDatabase", 
+        "%ws\\%ws\\%ws\\%ws", 
+        "Descriptors", 
+        "%ws\\%ws", 
+        "Configuration", 
+        "Configurations", 
+        "IncludedConfigs", 
+        "IncludedInfs", 
+        "Service", 
+        "LowerFilters", 
+        "UpperFilters", 
+        "ConfigFlags", 
+        "WudfRd", 
+        "\\SystemRoot\\", 
+        "Reboot", 
+        "%ws:%ws,%ws", 
+        "XSystem\\CurrentControlSet\\Services\\%ws\\Parameters", 
+        "SingleDeviceInstall", 
+        "!DebugInstall", 
+        "unknown", 
+        "!System32\\catroot\\{F750E6C3-38EE-11D1-85E5-00C04FC295EE}", 
+        "%ws\\%ws\\%ws", 
+        "DebugDriver", 
+        "delete", 
+        "DebugUpdate", 
+        "DebugSysprep", 
+        "Respecialize", 
+        "VS_VERSION_INFO", 
+        "StringFileInfo", 
+        "040904B0", 
+        "CompanyName", 
+        "Microsoft Corporation", 
+        "FileDescription", 
+        "Driver Installation Module", 
+        "FileVersion", 
+        "10.0.16251.0 (WinBuild.160101.0800)", 
+        "InternalName", 
+        "DrvInst.EXE", 
+        "LegalCopyright", 
+        " Microsoft Corporation. All rights reserved.", 
+        "OriginalFilename", 
+        "DrvInst.EXE", 
+        "ProductName", 
+        "Microsoft", 
+        " Windows", 
+        " Operating System", 
+        "ProductVersion", 
+        "10.0.16251.0", 
+        "VarFileInfo", 
+        "Translation"
+    ], 
+    "metadata": {
+        "output": {
+            "pcap": {
+                "basename": "dump.pcap", 
+                "sha256": "c241b2d196ef6105e3d8be9c19dc85c676f94e0fca57729a42eb595bcd77e92d", 
+                "dirname": ""
+            }
+        }
+    }
+}

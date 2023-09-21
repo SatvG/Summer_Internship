@@ -1,0 +1,1374 @@
+{
+    "info": {
+        "added": 1693129017.463985, 
+        "started": 1693130053.791898, 
+        "duration": 152, 
+        "ended": 1693130206.173216, 
+        "owner": null, 
+        "score": 0.0, 
+        "id": 14, 
+        "category": "file", 
+        "git": {
+            "head": "13cbe0d9e457be3673304533043e992ead1ea9b2", 
+            "fetch_head": "13cbe0d9e457be3673304533043e992ead1ea9b2"
+        }, 
+        "monitor": "2deb9ccd75d5a7a3fe05b2625b03a8639d6ee36b", 
+        "package": "", 
+        "route": "none", 
+        "custom": null, 
+        "machine": {
+            "status": "stopped", 
+            "name": "cuckoo2", 
+            "label": "cuckoo2", 
+            "manager": "VirtualBox", 
+            "started_on": "2023-08-27 09:54:13", 
+            "shutdown_on": "2023-08-27 09:56:46"
+        }, 
+        "platform": null, 
+        "version": "2.0.7", 
+        "options": ""
+    }, 
+    "signatures": [], 
+    "target": {
+        "category": "file", 
+        "file": {
+            "yara": [], 
+            "sha1": "c6348f9848461b4242bf08bccb4d0ef8f1353baf", 
+            "name": "1f6bfe70acdbc34c275e3c5a210f0916266e386f86f2a3da26682bdfcc5de5a7_benign.exe", 
+            "type": "PE32 executable (GUI) Intel 80386, for MS Windows", 
+            "sha256": "1f6bfe70acdbc34c275e3c5a210f0916266e386f86f2a3da26682bdfcc5de5a7", 
+            "urls": [], 
+            "crc32": "DA5013F8", 
+            "path": "/home/abc/.cuckoo/storage/binaries/1f6bfe70acdbc34c275e3c5a210f0916266e386f86f2a3da26682bdfcc5de5a7", 
+            "ssdeep": null, 
+            "size": 83968, 
+            "sha512": "fc810cd4615b9e1a24fa43dafe03187fa330d8a557d24274cdf77d77a437917d5b5fdd32a009baf05112d5faa1c4ac1756257c7eb7afa354222b15ef56c175f6", 
+            "md5": "9340d1573a29587cdf2f8c0708ebe58d"
+        }
+    }, 
+    "network": {
+        "tls": [], 
+        "udp": [
+            {
+                "src": "192.168.56.101", 
+                "dst": "192.168.56.1", 
+                "offset": 2359, 
+                "time": 3.3418490886688232, 
+                "dport": 53, 
+                "sport": 49925
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "192.168.56.1", 
+                "offset": 2460, 
+                "time": 35.19120192527771, 
+                "dport": 53, 
+                "sport": 49927
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "192.168.56.1", 
+                "offset": 2561, 
+                "time": 131.75302410125732, 
+                "dport": 53, 
+                "sport": 52006
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "192.168.56.1", 
+                "offset": 2662, 
+                "time": 18.49797511100769, 
+                "dport": 53, 
+                "sport": 55615
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "192.168.56.1", 
+                "offset": 2759, 
+                "time": 22.526166915893555, 
+                "dport": 53, 
+                "sport": 55915
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "192.168.56.1", 
+                "offset": 2851, 
+                "time": 7.611501932144165, 
+                "dport": 53, 
+                "sport": 56830
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "192.168.56.1", 
+                "offset": 2943, 
+                "time": 7.491276025772095, 
+                "dport": 53, 
+                "sport": 58595
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "192.168.56.1", 
+                "offset": 3040, 
+                "time": 37.53531789779663, 
+                "dport": 53, 
+                "sport": 59602
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "192.168.56.1", 
+                "offset": 3132, 
+                "time": 15.684473991394043, 
+                "dport": 53, 
+                "sport": 64311
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "192.168.56.255", 
+                "offset": 3224, 
+                "time": 3.2098000049591064, 
+                "dport": 137, 
+                "sport": 137
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "192.168.56.255", 
+                "offset": 15104, 
+                "time": 9.203888893127441, 
+                "dport": 138, 
+                "sport": 138
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 23788, 
+                "time": 17.784393072128296, 
+                "dport": 5355, 
+                "sport": 50502
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 24116, 
+                "time": 15.098422050476074, 
+                "dport": 5355, 
+                "sport": 54106
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 24444, 
+                "time": 9.946645021438599, 
+                "dport": 5355, 
+                "sport": 54218
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 24772, 
+                "time": 4.936108112335205, 
+                "dport": 5355, 
+                "sport": 55971
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 25092, 
+                "time": 7.367904901504517, 
+                "dport": 5355, 
+                "sport": 56774
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 25420, 
+                "time": 12.507333993911743, 
+                "dport": 5355, 
+                "sport": 58019
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 25748, 
+                "time": 4.788631916046143, 
+                "dport": 5355, 
+                "sport": 60415
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 26076, 
+                "time": 5.063549041748047, 
+                "dport": 5355, 
+                "sport": 62521
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 26396, 
+                "time": 1.027829885482788, 
+                "dport": 5355, 
+                "sport": 64652
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 26740, 
+                "time": 3.117302894592285, 
+                "dport": 5355, 
+                "sport": 64751
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "239.255.255.250", 
+                "offset": 27084, 
+                "time": 40.06853795051575, 
+                "dport": 1900, 
+                "sport": 1900
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "239.255.255.250", 
+                "offset": 46494, 
+                "time": 10.886323928833008, 
+                "dport": 1900, 
+                "sport": 54221
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "239.255.255.250", 
+                "offset": 52116, 
+                "time": 1.084723949432373, 
+                "dport": 3702, 
+                "sport": 58151
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "8.8.8.8", 
+                "offset": 64680, 
+                "time": 3.3423690795898438, 
+                "dport": 53, 
+                "sport": 49925
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "8.8.8.8", 
+                "offset": 65084, 
+                "time": 31.256354093551636, 
+                "dport": 53, 
+                "sport": 49927
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "8.8.8.8", 
+                "offset": 65589, 
+                "time": 127.75317788124084, 
+                "dport": 53, 
+                "sport": 52006
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "8.8.8.8", 
+                "offset": 66094, 
+                "time": 18.498358964920044, 
+                "dport": 53, 
+                "sport": 55615
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "8.8.8.8", 
+                "offset": 66482, 
+                "time": 22.526716947555542, 
+                "dport": 53, 
+                "sport": 55915
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "8.8.8.8", 
+                "offset": 66850, 
+                "time": 7.611893892288208, 
+                "dport": 53, 
+                "sport": 56830
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "8.8.8.8", 
+                "offset": 67218, 
+                "time": 7.491781949996948, 
+                "dport": 53, 
+                "sport": 58595
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "8.8.8.8", 
+                "offset": 67606, 
+                "time": 33.54048204421997, 
+                "dport": 53, 
+                "sport": 59602
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "8.8.8.8", 
+                "offset": 68066, 
+                "time": 15.685003995895386, 
+                "dport": 53, 
+                "sport": 64311
+            }
+        ], 
+        "dns_servers": [
+            "8.8.8.8", 
+            "192.168.56.1"
+        ], 
+        "http": [], 
+        "icmp": [], 
+        "smtp": [], 
+        "tcp": [], 
+        "smtp_ex": [], 
+        "mitm": [], 
+        "hosts": [
+            "8.8.8.8"
+        ], 
+        "pcap_sha256": "d3c3b5ba1e12e0dea395c408593bc5c25262980c572b6808f38737071da2609e", 
+        "dns": [
+            {
+                "type": "A", 
+                "request": "update.googleapis.com", 
+                "answers": []
+            }, 
+            {
+                "type": "A", 
+                "request": "time.windows.com", 
+                "answers": []
+            }, 
+            {
+                "type": "A", 
+                "request": "www.msftncsi.com", 
+                "answers": []
+            }, 
+            {
+                "type": "A", 
+                "request": "dns.msftncsi.com", 
+                "answers": []
+            }, 
+            {
+                "type": "A", 
+                "request": "teredo.ipv6.microsoft.com", 
+                "answers": []
+            }
+        ], 
+        "http_ex": [], 
+        "domains": [
+            {
+                "ip": "", 
+                "domain": "teredo.ipv6.microsoft.com"
+            }, 
+            {
+                "ip": "142.250.194.35", 
+                "domain": "update.googleapis.com"
+            }, 
+            {
+                "ip": "49.44.116.238", 
+                "domain": "www.msftncsi.com"
+            }, 
+            {
+                "ip": "131.107.255.255", 
+                "domain": "dns.msftncsi.com"
+            }
+        ], 
+        "dead_hosts": [], 
+        "sorted_pcap_sha256": "0a720b31a82272fb93e275f5e65fc5b14b0896843d03562da6873f4685e8a5bd", 
+        "irc": [], 
+        "https_ex": []
+    }, 
+    "static": {
+        "pdb_path": null, 
+        "pe_imports": [
+            {
+                "imports": [
+                    {
+                        "name": "CreateEventW", 
+                        "address": "0x402000"
+                    }, 
+                    {
+                        "name": "CreateMutexW", 
+                        "address": "0x402004"
+                    }, 
+                    {
+                        "name": "WaitForSingleObject", 
+                        "address": "0x402008"
+                    }, 
+                    {
+                        "name": "GetCurrentProcessId", 
+                        "address": "0x40200c"
+                    }, 
+                    {
+                        "name": "GetCurrentThreadId", 
+                        "address": "0x402010"
+                    }, 
+                    {
+                        "name": "GetTickCount", 
+                        "address": "0x402014"
+                    }, 
+                    {
+                        "name": "QueryPerformanceCounter", 
+                        "address": "0x402018"
+                    }, 
+                    {
+                        "name": "DecodePointer", 
+                        "address": "0x40201c"
+                    }, 
+                    {
+                        "name": "IsDebuggerPresent", 
+                        "address": "0x402020"
+                    }, 
+                    {
+                        "name": "SetUnhandledExceptionFilter", 
+                        "address": "0x402024"
+                    }, 
+                    {
+                        "name": "UnhandledExceptionFilter", 
+                        "address": "0x402028"
+                    }, 
+                    {
+                        "name": "GetCurrentProcess", 
+                        "address": "0x40202c"
+                    }, 
+                    {
+                        "name": "TerminateProcess", 
+                        "address": "0x402030"
+                    }, 
+                    {
+                        "name": "EncodePointer", 
+                        "address": "0x402034"
+                    }, 
+                    {
+                        "name": "GetStartupInfoW", 
+                        "address": "0x402038"
+                    }, 
+                    {
+                        "name": "HeapSetInformation", 
+                        "address": "0x40203c"
+                    }, 
+                    {
+                        "name": "InterlockedCompareExchange", 
+                        "address": "0x402040"
+                    }, 
+                    {
+                        "name": "Sleep", 
+                        "address": "0x402044"
+                    }, 
+                    {
+                        "name": "InterlockedExchange", 
+                        "address": "0x402048"
+                    }, 
+                    {
+                        "name": "GetSystemTimeAsFileTime", 
+                        "address": "0x40204c"
+                    }
+                ], 
+                "dll": "KERNEL32.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "__dllonexit", 
+                        "address": "0x402054"
+                    }, 
+                    {
+                        "name": "_unlock", 
+                        "address": "0x402058"
+                    }, 
+                    {
+                        "name": "_onexit", 
+                        "address": "0x40205c"
+                    }, 
+                    {
+                        "name": "_except_handler4_common", 
+                        "address": "0x402060"
+                    }, 
+                    {
+                        "name": "_invoke_watson", 
+                        "address": "0x402064"
+                    }, 
+                    {
+                        "name": "_controlfp_s", 
+                        "address": "0x402068"
+                    }, 
+                    {
+                        "name": "?terminate@@YAXXZ", 
+                        "address": "0x40206c"
+                    }, 
+                    {
+                        "name": "_crt_debugger_hook", 
+                        "address": "0x402070"
+                    }, 
+                    {
+                        "name": "__set_app_type", 
+                        "address": "0x402074"
+                    }, 
+                    {
+                        "name": "_fmode", 
+                        "address": "0x402078"
+                    }, 
+                    {
+                        "name": "_commode", 
+                        "address": "0x40207c"
+                    }, 
+                    {
+                        "name": "__setusermatherr", 
+                        "address": "0x402080"
+                    }, 
+                    {
+                        "name": "_configthreadlocale", 
+                        "address": "0x402084"
+                    }, 
+                    {
+                        "name": "_initterm_e", 
+                        "address": "0x402088"
+                    }, 
+                    {
+                        "name": "_initterm", 
+                        "address": "0x40208c"
+                    }, 
+                    {
+                        "name": "_wcmdln", 
+                        "address": "0x402090"
+                    }, 
+                    {
+                        "name": "exit", 
+                        "address": "0x402094"
+                    }, 
+                    {
+                        "name": "_XcptFilter", 
+                        "address": "0x402098"
+                    }, 
+                    {
+                        "name": "_exit", 
+                        "address": "0x40209c"
+                    }, 
+                    {
+                        "name": "_cexit", 
+                        "address": "0x4020a0"
+                    }, 
+                    {
+                        "name": "__wgetmainargs", 
+                        "address": "0x4020a4"
+                    }, 
+                    {
+                        "name": "_amsg_exit", 
+                        "address": "0x4020a8"
+                    }, 
+                    {
+                        "name": "_lock", 
+                        "address": "0x4020ac"
+                    }
+                ], 
+                "dll": "MSVCR100.dll"
+            }
+        ], 
+        "peid_signatures": null, 
+        "keys": [], 
+        "signature": [], 
+        "pe_timestamp": "2017-05-15 01:15:51", 
+        "pe_exports": [], 
+        "imported_dll_count": 2, 
+        "pe_imphash": "2cbf007f234b782b8ecfc7c529e8c620", 
+        "pe_resources": [
+            {
+                "name": "RT_ICON", 
+                "language": "LANG_ENGLISH", 
+                "filetype": "Device independent bitmap graphic, 16 x 32 x 32, image size 0", 
+                "sublanguage": "SUBLANG_ENGLISH_US", 
+                "offset": "0x0001607c", 
+                "size": "0x00000468"
+            }, 
+            {
+                "name": "RT_ICON", 
+                "language": "LANG_ENGLISH", 
+                "filetype": "Device independent bitmap graphic, 16 x 32 x 32, image size 0", 
+                "sublanguage": "SUBLANG_ENGLISH_US", 
+                "offset": "0x0001607c", 
+                "size": "0x00000468"
+            }, 
+            {
+                "name": "RT_ICON", 
+                "language": "LANG_ENGLISH", 
+                "filetype": "Device independent bitmap graphic, 16 x 32 x 32, image size 0", 
+                "sublanguage": "SUBLANG_ENGLISH_US", 
+                "offset": "0x0001607c", 
+                "size": "0x00000468"
+            }, 
+            {
+                "name": "RT_ICON", 
+                "language": "LANG_ENGLISH", 
+                "filetype": "Device independent bitmap graphic, 16 x 32 x 32, image size 0", 
+                "sublanguage": "SUBLANG_ENGLISH_US", 
+                "offset": "0x0001607c", 
+                "size": "0x00000468"
+            }, 
+            {
+                "name": "RT_ICON", 
+                "language": "LANG_ENGLISH", 
+                "filetype": "Device independent bitmap graphic, 16 x 32 x 32, image size 0", 
+                "sublanguage": "SUBLANG_ENGLISH_US", 
+                "offset": "0x0001607c", 
+                "size": "0x00000468"
+            }, 
+            {
+                "name": "RT_ICON", 
+                "language": "LANG_ENGLISH", 
+                "filetype": "Device independent bitmap graphic, 16 x 32 x 32, image size 0", 
+                "sublanguage": "SUBLANG_ENGLISH_US", 
+                "offset": "0x0001607c", 
+                "size": "0x00000468"
+            }, 
+            {
+                "name": "RT_ICON", 
+                "language": "LANG_ENGLISH", 
+                "filetype": "Device independent bitmap graphic, 16 x 32 x 32, image size 0", 
+                "sublanguage": "SUBLANG_ENGLISH_US", 
+                "offset": "0x0001607c", 
+                "size": "0x00000468"
+            }, 
+            {
+                "name": "RT_ICON", 
+                "language": "LANG_ENGLISH", 
+                "filetype": "Device independent bitmap graphic, 16 x 32 x 32, image size 0", 
+                "sublanguage": "SUBLANG_ENGLISH_US", 
+                "offset": "0x0001607c", 
+                "size": "0x00000468"
+            }, 
+            {
+                "name": "RT_ICON", 
+                "language": "LANG_ENGLISH", 
+                "filetype": "Device independent bitmap graphic, 16 x 32 x 32, image size 0", 
+                "sublanguage": "SUBLANG_ENGLISH_US", 
+                "offset": "0x0001607c", 
+                "size": "0x00000468"
+            }, 
+            {
+                "name": "RT_ICON", 
+                "language": "LANG_ENGLISH", 
+                "filetype": "Device independent bitmap graphic, 16 x 32 x 32, image size 0", 
+                "sublanguage": "SUBLANG_ENGLISH_US", 
+                "offset": "0x0001607c", 
+                "size": "0x00000468"
+            }, 
+            {
+                "name": "RT_ICON", 
+                "language": "LANG_ENGLISH", 
+                "filetype": "Device independent bitmap graphic, 16 x 32 x 32, image size 0", 
+                "sublanguage": "SUBLANG_ENGLISH_US", 
+                "offset": "0x0001607c", 
+                "size": "0x00000468"
+            }, 
+            {
+                "name": "RT_ICON", 
+                "language": "LANG_ENGLISH", 
+                "filetype": "Device independent bitmap graphic, 16 x 32 x 32, image size 0", 
+                "sublanguage": "SUBLANG_ENGLISH_US", 
+                "offset": "0x0001607c", 
+                "size": "0x00000468"
+            }, 
+            {
+                "name": "RT_ICON", 
+                "language": "LANG_ENGLISH", 
+                "filetype": "Device independent bitmap graphic, 16 x 32 x 32, image size 0", 
+                "sublanguage": "SUBLANG_ENGLISH_US", 
+                "offset": "0x0001607c", 
+                "size": "0x00000468"
+            }, 
+            {
+                "name": "RT_MENU", 
+                "language": "LANG_ENGLISH", 
+                "filetype": "data", 
+                "sublanguage": "SUBLANG_ENGLISH_US", 
+                "offset": "0x000164e4", 
+                "size": "0x0000004a"
+            }, 
+            {
+                "name": "RT_DIALOG", 
+                "language": "LANG_ENGLISH", 
+                "filetype": "data", 
+                "sublanguage": "SUBLANG_ENGLISH_US", 
+                "offset": "0x00016530", 
+                "size": "0x00000140"
+            }, 
+            {
+                "name": "RT_STRING", 
+                "language": "LANG_ENGLISH", 
+                "filetype": "data", 
+                "sublanguage": "SUBLANG_ENGLISH_US", 
+                "offset": "0x00016670", 
+                "size": "0x0000004c"
+            }, 
+            {
+                "name": "RT_ACCELERATOR", 
+                "language": "LANG_ENGLISH", 
+                "filetype": "data", 
+                "sublanguage": "SUBLANG_ENGLISH_US", 
+                "offset": "0x000166bc", 
+                "size": "0x00000010"
+            }, 
+            {
+                "name": "RT_GROUP_ICON", 
+                "language": "LANG_ENGLISH", 
+                "filetype": "data", 
+                "sublanguage": "SUBLANG_ENGLISH_US", 
+                "offset": "0x00016718", 
+                "size": "0x00000076"
+            }, 
+            {
+                "name": "RT_GROUP_ICON", 
+                "language": "LANG_ENGLISH", 
+                "filetype": "data", 
+                "sublanguage": "SUBLANG_ENGLISH_US", 
+                "offset": "0x00016718", 
+                "size": "0x00000076"
+            }, 
+            {
+                "name": "RT_VERSION", 
+                "language": "LANG_ENGLISH", 
+                "filetype": "data", 
+                "sublanguage": "SUBLANG_ENGLISH_US", 
+                "offset": "0x00016790", 
+                "size": "0x000002dc"
+            }, 
+            {
+                "name": "RT_MANIFEST", 
+                "language": "LANG_ENGLISH", 
+                "filetype": "ASCII text, with CRLF line terminators", 
+                "sublanguage": "SUBLANG_ENGLISH_US", 
+                "offset": "0x00016a6c", 
+                "size": "0x0000015a"
+            }
+        ], 
+        "pe_versioninfo": [
+            {
+                "name": "LegalCopyright", 
+                "value": "Copyright (C) 2017"
+            }, 
+            {
+                "name": "InternalName", 
+                "value": "tearSt0pper.exe"
+            }, 
+            {
+                "name": "FileVersion", 
+                "value": "1.0.0.0"
+            }, 
+            {
+                "name": "CompanyName", 
+                "value": "Rendition Infosec LLC."
+            }, 
+            {
+                "name": "ProductName", 
+                "value": "tearSt0pper"
+            }, 
+            {
+                "name": "ProductVersion", 
+                "value": "1.0.0.0"
+            }, 
+            {
+                "name": "FileDescription", 
+                "value": "tearSt0pper"
+            }, 
+            {
+                "name": "OriginalFilename", 
+                "value": "tearSt0pper.exe"
+            }, 
+            {
+                "name": "Translation", 
+                "value": "0x0409 0x04b0"
+            }
+        ], 
+        "pe_sections": [
+            {
+                "size_of_data": "0x00000a00", 
+                "virtual_address": "0x00001000", 
+                "entropy": 5.510334582749315, 
+                "name": ".text", 
+                "virtual_size": "0x00000884"
+            }, 
+            {
+                "size_of_data": "0x00000800", 
+                "virtual_address": "0x00002000", 
+                "entropy": 4.12514754028889, 
+                "name": ".rdata", 
+                "virtual_size": "0x0000069e"
+            }, 
+            {
+                "size_of_data": "0x00000200", 
+                "virtual_address": "0x00003000", 
+                "entropy": 0.35275948821577235, 
+                "name": ".data", 
+                "virtual_size": "0x00000520"
+            }, 
+            {
+                "size_of_data": "0x00012c00", 
+                "virtual_address": "0x00004000", 
+                "entropy": 6.330006587203198, 
+                "name": ".rsrc", 
+                "virtual_size": "0x00012bc8"
+            }, 
+            {
+                "size_of_data": "0x00000400", 
+                "virtual_address": "0x00017000", 
+                "entropy": 2.7414089197111773, 
+                "name": ".reloc", 
+                "virtual_size": "0x0000025e"
+            }
+        ]
+    }, 
+    "behavior": {
+        "generic": [
+            {
+                "process_path": "C:\\Users\\cuckoo2\\AppData\\Local\\Temp\\1f6bfe70acdbc34c275e3c5a210f0916266e386f86f2a3da26682bdfcc5de5a7_benign.exe", 
+                "process_name": "1f6bfe70acdbc34c275e3c5a210f0916266e386f86f2a3da26682bdfcc5de5a7_benign.exe", 
+                "pid": 1792, 
+                "summary": {
+                    "mutex": [
+                        "MsWinZonesCacheCounterMutexA0", 
+                        "Global\\MsWinZonesCacheCounterMutexA", 
+                        "Global\\MsWinZonesCacheCounterMutexA0", 
+                        "MsWinZonesCacheCounterMutexA"
+                    ]
+                }, 
+                "first_seen": 1693130084.10025, 
+                "ppid": 1052
+            }
+        ], 
+        "apistats": {
+            "1792": {
+                "SetUnhandledExceptionFilter": 1, 
+                "NtCreateMutant": 4, 
+                "NtAllocateVirtualMemory": 1, 
+                "GetSystemTimeAsFileTime": 1, 
+                "NtOpenDirectoryObject": 1
+            }
+        }, 
+        "processes": [
+            {
+                "process_path": "C:\\Users\\cuckoo2\\AppData\\Local\\Temp\\1f6bfe70acdbc34c275e3c5a210f0916266e386f86f2a3da26682bdfcc5de5a7_benign.exe", 
+                "calls": [
+                    {
+                        "category": "synchronisation", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "GetSystemTimeAsFileTime", 
+                        "return_value": 0, 
+                        "arguments": {}, 
+                        "time": 1693130084.41225, 
+                        "tid": 1176, 
+                        "flags": {}
+                    }, 
+                    {
+                        "category": "exception", 
+                        "status": 0, 
+                        "stacktrace": [], 
+                        "last_error": 0, 
+                        "nt_status": -1073741515, 
+                        "api": "SetUnhandledExceptionFilter", 
+                        "return_value": 0, 
+                        "arguments": {}, 
+                        "time": 1693130084.41225, 
+                        "tid": 1176, 
+                        "flags": {}
+                    }, 
+                    {
+                        "category": "process", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtAllocateVirtualMemory", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "process_identifier": 1792, 
+                            "region_size": 4096, 
+                            "stack_dep_bypass": 0, 
+                            "stack_pivoted": 0, 
+                            "heap_dep_bypass": 0, 
+                            "protection": 4, 
+                            "process_handle": "0xffffffff", 
+                            "allocation_type": 4096, 
+                            "base_address": "0x00773000"
+                        }, 
+                        "time": 1693130084.42825, 
+                        "tid": 1176, 
+                        "flags": {
+                            "protection": "PAGE_READWRITE", 
+                            "allocation_type": "MEM_COMMIT"
+                        }
+                    }, 
+                    {
+                        "category": "file", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtOpenDirectoryObject", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "desired_access": "0x0000000f", 
+                            "dirpath_r": "\\Sessions\\1\\BaseNamedObjects", 
+                            "dirpath": "\\Sessions\\1\\BaseNamedObjects", 
+                            "directory_handle": "0x0000003c"
+                        }, 
+                        "time": 1693130084.42825, 
+                        "tid": 1176, 
+                        "flags": {
+                            "desired_access": ""
+                        }
+                    }, 
+                    {
+                        "category": "synchronisation", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtCreateMutant", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "initial_owner": 0, 
+                            "desired_access": "0x001f0001", 
+                            "mutant_name": "Global\\MsWinZonesCacheCounterMutexA0", 
+                            "mutant_handle": "0x00000040"
+                        }, 
+                        "time": 1693130084.42825, 
+                        "tid": 1176, 
+                        "flags": {
+                            "desired_access": "STANDARD_RIGHTS_ALL|STANDARD_RIGHTS_REQUIRED|DELETE|READ_CONTROL|WRITE_DAC|WRITE_OWNER|SYNCHRONIZE"
+                        }
+                    }, 
+                    {
+                        "category": "synchronisation", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtCreateMutant", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "initial_owner": 0, 
+                            "desired_access": "0x001f0001", 
+                            "mutant_name": "Global\\MsWinZonesCacheCounterMutexA", 
+                            "mutant_handle": "0x00000044"
+                        }, 
+                        "time": 1693130084.42825, 
+                        "tid": 1176, 
+                        "flags": {
+                            "desired_access": "STANDARD_RIGHTS_ALL|STANDARD_RIGHTS_REQUIRED|DELETE|READ_CONTROL|WRITE_DAC|WRITE_OWNER|SYNCHRONIZE"
+                        }
+                    }, 
+                    {
+                        "category": "synchronisation", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtCreateMutant", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "initial_owner": 0, 
+                            "desired_access": "0x001f0001", 
+                            "mutant_name": "MsWinZonesCacheCounterMutexA", 
+                            "mutant_handle": "0x00000048"
+                        }, 
+                        "time": 1693130084.42825, 
+                        "tid": 1176, 
+                        "flags": {
+                            "desired_access": "STANDARD_RIGHTS_ALL|STANDARD_RIGHTS_REQUIRED|DELETE|READ_CONTROL|WRITE_DAC|WRITE_OWNER|SYNCHRONIZE"
+                        }
+                    }, 
+                    {
+                        "category": "synchronisation", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtCreateMutant", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "initial_owner": 0, 
+                            "desired_access": "0x001f0001", 
+                            "mutant_name": "MsWinZonesCacheCounterMutexA0", 
+                            "mutant_handle": "0x0000004c"
+                        }, 
+                        "time": 1693130084.42825, 
+                        "tid": 1176, 
+                        "flags": {
+                            "desired_access": "STANDARD_RIGHTS_ALL|STANDARD_RIGHTS_REQUIRED|DELETE|READ_CONTROL|WRITE_DAC|WRITE_OWNER|SYNCHRONIZE"
+                        }
+                    }
+                ], 
+                "track": true, 
+                "pid": 1792, 
+                "process_name": "1f6bfe70acdbc34c275e3c5a210f0916266e386f86f2a3da26682bdfcc5de5a7_benign.exe", 
+                "command_line": "\"C:\\Users\\cuckoo2\\AppData\\Local\\Temp\\1f6bfe70acdbc34c275e3c5a210f0916266e386f86f2a3da26682bdfcc5de5a7_benign.exe\" ", 
+                "modules": [
+                    {
+                        "basename": "1f6bfe70acdbc34c275e3c5a210f0916266e386f86f2a3da26682bdfcc5de5a7_benign.exe", 
+                        "imgsize": 98304, 
+                        "baseaddr": "0xe60000", 
+                        "filepath": "C:\\Users\\cuckoo2\\AppData\\Local\\Temp\\1f6bfe70acdbc34c275e3c5a210f0916266e386f86f2a3da26682bdfcc5de5a7_benign.exe"
+                    }, 
+                    {
+                        "basename": "ntdll.dll", 
+                        "imgsize": 1572864, 
+                        "baseaddr": "0x77c70000", 
+                        "filepath": "C:\\Windows\\SysWOW64\\ntdll.dll"
+                    }, 
+                    {
+                        "basename": "kernel32.dll", 
+                        "imgsize": 1114112, 
+                        "baseaddr": "0x75820000", 
+                        "filepath": "C:\\Windows\\syswow64\\kernel32.dll"
+                    }, 
+                    {
+                        "basename": "KERNELBASE.dll", 
+                        "imgsize": 286720, 
+                        "baseaddr": "0x76310000", 
+                        "filepath": "C:\\Windows\\syswow64\\KERNELBASE.dll"
+                    }, 
+                    {
+                        "basename": "MSVCR100.dll", 
+                        "imgsize": 782336, 
+                        "baseaddr": "0x742d0000", 
+                        "filepath": "C:\\Windows\\system32\\MSVCR100.dll"
+                    }, 
+                    {
+                        "basename": "monitor-x86.dll", 
+                        "imgsize": 2117632, 
+                        "baseaddr": "0x73c30000", 
+                        "filepath": "C:\\tmpezozfh\\bin\\monitor-x86.dll"
+                    }, 
+                    {
+                        "basename": "msvcrt.dll", 
+                        "imgsize": 704512, 
+                        "baseaddr": "0x763a0000", 
+                        "filepath": "C:\\Windows\\syswow64\\msvcrt.dll"
+                    }
+                ], 
+                "time": 0, 
+                "tid": 1176, 
+                "first_seen": 1693130084.10025, 
+                "ppid": 1052, 
+                "type": "process"
+            }
+        ], 
+        "processtree": [
+            {
+                "track": true, 
+                "pid": 1792, 
+                "process_name": "1f6bfe70acdbc34c275e3c5a210f0916266e386f86f2a3da26682bdfcc5de5a7_benign.exe", 
+                "command_line": "\"C:\\Users\\cuckoo2\\AppData\\Local\\Temp\\1f6bfe70acdbc34c275e3c5a210f0916266e386f86f2a3da26682bdfcc5de5a7_benign.exe\" ", 
+                "first_seen": 1693130084.10025, 
+                "ppid": 1052, 
+                "children": []
+            }
+        ], 
+        "summary": {
+            "mutex": [
+                "MsWinZonesCacheCounterMutexA0", 
+                "Global\\MsWinZonesCacheCounterMutexA", 
+                "Global\\MsWinZonesCacheCounterMutexA0", 
+                "MsWinZonesCacheCounterMutexA"
+            ]
+        }
+    }, 
+    "debug": {
+        "action": [], 
+        "dbgview": [], 
+        "errors": [], 
+        "log": [
+            "2023-08-27 09:36:57,030 [analyzer] DEBUG: Starting analyzer from: C:\\tmpezozfh\n", 
+            "2023-08-27 09:36:57,030 [analyzer] DEBUG: Pipe server name: \\??\\PIPE\\iNqSxHWXQHchpnigfpU\n", 
+            "2023-08-27 09:36:57,030 [analyzer] DEBUG: Log pipe server name: \\??\\PIPE\\wWpTtsLatvYDZVaLUqmMJlauYaY\n", 
+            "2023-08-27 09:36:57,030 [analyzer] DEBUG: No analysis package specified, trying to detect it automagically.\n", 
+            "2023-08-27 09:36:57,078 [analyzer] INFO: Automatically selected analysis package \"exe\"\n", 
+            "2023-08-27 09:36:59,812 [analyzer] DEBUG: Started auxiliary module DbgView\n", 
+            "2023-08-26 21:24:42,756 [analyzer] DEBUG: Started auxiliary module Disguise\n", 
+            "2023-08-26 21:24:42,990 [lib.api.process] ERROR: Failed to inject 64-bit process with pid None and process name lsass.exe\n", 
+            "2023-08-26 21:24:42,990 [analyzer] DEBUG: Started auxiliary module DumpTLSMasterSecrets\n", 
+            "2023-08-26 21:24:43,006 [analyzer] DEBUG: Started auxiliary module Human\n", 
+            "2023-08-26 21:24:43,006 [analyzer] DEBUG: Started auxiliary module InstallCertificate\n", 
+            "2023-08-26 21:24:43,006 [analyzer] DEBUG: Started auxiliary module Reboot\n", 
+            "2023-08-26 21:24:43,444 [analyzer] DEBUG: Started auxiliary module RecentFiles\n", 
+            "2023-08-26 21:24:43,444 [analyzer] DEBUG: Started auxiliary module Screenshots\n", 
+            "2023-08-26 21:24:43,444 [analyzer] DEBUG: Started auxiliary module LoadZer0m0n\n", 
+            "2023-08-26 21:24:43,849 [lib.api.process] INFO: Successfully executed process from path u'C:\\\\Users\\\\cuckoo2\\\\AppData\\\\Local\\\\Temp\\\\1f6bfe70acdbc34c275e3c5a210f0916266e386f86f2a3da26682bdfcc5de5a7_benign.exe' with arguments '' and pid 1792\n", 
+            "2023-08-26 21:24:44,411 [analyzer] DEBUG: Loaded monitor into process with pid 1792\n", 
+            "2023-08-26 21:26:43,536 [analyzer] INFO: Analysis timeout hit, terminating analysis.\n", 
+            "2023-08-26 21:26:43,536 [analyzer] INFO: Analysis completed.\n"
+        ], 
+        "cuckoo": [
+            "2023-08-27 09:54:13,920 [cuckoo.core.scheduler] INFO: Task #14: acquired machine cuckoo2 (label=cuckoo2)\n", 
+            "2023-08-27 09:54:13,921 [cuckoo.core.resultserver] DEBUG: Now tracking machine 192.168.56.101 for task #14\n", 
+            "2023-08-27 09:54:13,921 [cuckoo.core.plugins] DEBUG: Started auxiliary module: Replay\n", 
+            "2023-08-27 09:54:13,938 [cuckoo.auxiliary.sniffer] INFO: Started sniffer with PID 66268 (interface=vboxnet0, host=192.168.56.101)\n", 
+            "2023-08-27 09:54:13,939 [cuckoo.core.plugins] DEBUG: Started auxiliary module: Sniffer\n", 
+            "2023-08-27 09:54:13,983 [cuckoo.machinery.virtualbox] DEBUG: Starting vm cuckoo2\n", 
+            "2023-08-27 09:54:14,120 [cuckoo.machinery.virtualbox] DEBUG: Restoring virtual machine cuckoo2 to cuckoo2_snap\n", 
+            "2023-08-27 09:54:17,276 [cuckoo.core.guest] INFO: Starting analysis #14 on guest (id=cuckoo2, ip=192.168.56.101)\n", 
+            "2023-08-27 09:54:18,280 [cuckoo.core.guest] DEBUG: cuckoo2: not ready yet\n", 
+            "2023-08-27 09:54:19,286 [cuckoo.core.guest] DEBUG: cuckoo2: not ready yet\n", 
+            "2023-08-27 09:54:20,290 [cuckoo.core.guest] DEBUG: cuckoo2: not ready yet\n", 
+            "2023-08-27 09:54:21,293 [cuckoo.core.guest] DEBUG: cuckoo2: not ready yet\n", 
+            "2023-08-27 09:54:22,298 [cuckoo.core.guest] DEBUG: cuckoo2: not ready yet\n", 
+            "2023-08-27 09:54:23,304 [cuckoo.core.guest] DEBUG: cuckoo2: not ready yet\n", 
+            "2023-08-27 09:54:24,308 [cuckoo.core.guest] DEBUG: cuckoo2: not ready yet\n", 
+            "2023-08-27 09:54:25,314 [cuckoo.core.guest] DEBUG: cuckoo2: not ready yet\n", 
+            "2023-08-27 09:54:25,358 [cuckoo.core.guest] INFO: Guest is running Cuckoo Agent 0.10 (id=cuckoo2, ip=192.168.56.101)\n", 
+            "2023-08-27 09:54:25,382 [cuckoo.core.guest] DEBUG: Uploading analyzer to guest (id=cuckoo2, ip=192.168.56.101, monitor=latest, size=3884763)\n", 
+            "2023-08-27 09:54:30,817 [cuckoo.core.resultserver] DEBUG: Task #14: live log analysis.log initialized.\n", 
+            "2023-08-27 09:54:34,224 [cuckoo.core.guest] DEBUG: cuckoo2: analysis #14 still processing\n", 
+            "2023-08-27 09:54:39,271 [cuckoo.core.guest] DEBUG: cuckoo2: analysis #14 still processing\n", 
+            "2023-08-27 09:54:44,144 [cuckoo.core.resultserver] DEBUG: Task #14 is sending a BSON stream\n", 
+            "2023-08-27 09:54:44,339 [cuckoo.core.guest] DEBUG: cuckoo2: analysis #14 still processing\n", 
+            "2023-08-27 09:54:44,832 [cuckoo.core.resultserver] DEBUG: Task #14: File upload for 'shots/0001.jpg'\n", 
+            "2023-08-27 09:54:44,853 [cuckoo.core.resultserver] DEBUG: Task #14 uploaded file length: 109569\n", 
+            "2023-08-27 09:54:49,393 [cuckoo.core.guest] DEBUG: cuckoo2: analysis #14 still processing\n", 
+            "2023-08-27 09:54:49,616 [cuckoo.core.resultserver] DEBUG: Task #14: File upload for 'shots/0002.jpg'\n", 
+            "2023-08-27 09:54:49,634 [cuckoo.core.resultserver] DEBUG: Task #14 uploaded file length: 109821\n", 
+            "2023-08-27 09:54:51,052 [cuckoo.core.resultserver] DEBUG: Task #14: File upload for 'shots/0003.jpg'\n", 
+            "2023-08-27 09:54:51,074 [cuckoo.core.resultserver] DEBUG: Task #14 uploaded file length: 109569\n", 
+            "2023-08-27 09:54:54,439 [cuckoo.core.guest] DEBUG: cuckoo2: analysis #14 still processing\n", 
+            "2023-08-27 09:54:59,481 [cuckoo.core.guest] DEBUG: cuckoo2: analysis #14 still processing\n", 
+            "2023-08-27 09:55:04,529 [cuckoo.core.guest] DEBUG: cuckoo2: analysis #14 still processing\n", 
+            "2023-08-27 09:55:09,574 [cuckoo.core.guest] DEBUG: cuckoo2: analysis #14 still processing\n", 
+            "2023-08-27 09:55:14,623 [cuckoo.core.guest] DEBUG: cuckoo2: analysis #14 still processing\n", 
+            "2023-08-27 09:55:19,679 [cuckoo.core.guest] DEBUG: cuckoo2: analysis #14 still processing\n", 
+            "2023-08-27 09:55:22,763 [cuckoo.core.resultserver] DEBUG: Task #14: File upload for 'shots/0004.jpg'\n", 
+            "2023-08-27 09:55:22,784 [cuckoo.core.resultserver] DEBUG: Task #14 uploaded file length: 110038\n", 
+            "2023-08-27 09:55:23,957 [cuckoo.core.resultserver] DEBUG: Task #14: File upload for 'shots/0005.jpg'\n", 
+            "2023-08-27 09:55:23,978 [cuckoo.core.resultserver] DEBUG: Task #14 uploaded file length: 109574\n", 
+            "2023-08-27 09:55:24,730 [cuckoo.core.guest] DEBUG: cuckoo2: analysis #14 still processing\n", 
+            "2023-08-27 09:55:29,780 [cuckoo.core.guest] DEBUG: cuckoo2: analysis #14 still processing\n", 
+            "2023-08-27 09:55:34,862 [cuckoo.core.guest] DEBUG: cuckoo2: analysis #14 still processing\n", 
+            "2023-08-27 09:55:39,902 [cuckoo.core.guest] DEBUG: cuckoo2: analysis #14 sti"
+        ]
+    }, 
+    "screenshots": [
+        {
+            "path": "/home/abc/.cuckoo/storage/analyses/14/shots/0001.jpg", 
+            "ocr": ""
+        }, 
+        {
+            "path": "/home/abc/.cuckoo/storage/analyses/14/shots/0002.jpg", 
+            "ocr": ""
+        }, 
+        {
+            "path": "/home/abc/.cuckoo/storage/analyses/14/shots/0003.jpg", 
+            "ocr": ""
+        }, 
+        {
+            "path": "/home/abc/.cuckoo/storage/analyses/14/shots/0004.jpg", 
+            "ocr": ""
+        }, 
+        {
+            "path": "/home/abc/.cuckoo/storage/analyses/14/shots/0005.jpg", 
+            "ocr": ""
+        }, 
+        {
+            "path": "/home/abc/.cuckoo/storage/analyses/14/shots/0006.jpg", 
+            "ocr": ""
+        }, 
+        {
+            "path": "/home/abc/.cuckoo/storage/analyses/14/shots/0007.jpg", 
+            "ocr": ""
+        }
+    ], 
+    "strings": [
+        "!This program cannot be run in DOS mode.", 
+        "`.rdata", 
+        "@.data", 
+        "@.reloc", 
+        "j\\hH\"@", 
+        "CreateEventW", 
+        "CreateMutexW", 
+        "WaitForSingleObject", 
+        "KERNEL32.dll", 
+        "_amsg_exit", 
+        "__wgetmainargs", 
+        "_cexit", 
+        "_XcptFilter", 
+        "_wcmdln", 
+        "_initterm", 
+        "_initterm_e", 
+        "_configthreadlocale", 
+        "__setusermatherr", 
+        "_commode", 
+        "_fmode", 
+        "__set_app_type", 
+        "_crt_debugger_hook", 
+        "?terminate@@YAXXZ", 
+        "MSVCR100.dll", 
+        "_unlock", 
+        "__dllonexit", 
+        "_onexit", 
+        "_except_handler4_common", 
+        "_invoke_watson", 
+        "_controlfp_s", 
+        "InterlockedExchange", 
+        "InterlockedCompareExchange", 
+        "HeapSetInformation", 
+        "GetStartupInfoW", 
+        "EncodePointer", 
+        "TerminateProcess", 
+        "GetCurrentProcess", 
+        "UnhandledExceptionFilter", 
+        "SetUnhandledExceptionFilter", 
+        "IsDebuggerPresent", 
+        "DecodePointer", 
+        "QueryPerformanceCounter", 
+        "GetTickCount", 
+        "GetCurrentThreadId", 
+        "GetCurrentProcessId", 
+        "GetSystemTimeAsFileTime", 
+        "323B.-.", 
+        "!!!B \u001f ", 
+        "}|}Bsss", 
+        "b`aq!\u001f ", 
+        ">CX\u001fQf", 
+        "\u001f~8uuu", 
+        "sf]FI ", 
+        "{SSSM}}", 
+        "jjjjhmme", 
+        "+WR__Oss3", 
+        "l6Kuu5", 
+        "|cc#\u001f}", 
+        "P_OKkk", 
+        ">}zSYY", 
+        ">Chjj\"", 
+        "_[[KMM-", 
+        "@CC#---", 
+        "PSSCEE", 
+        "cTUUSSSMee%", 
+        "*[VM\"QA8", 
+        "U3l[}FS", 
+        "lW<-zz", 
+        "X-CHgH", 
+        "x\\Q>_2h", 
+        "=4661o", 
+        "y inie", 
+        "ShjnFsm", 
+        "%p{7(_", 
+        "OZ5ii]", 
+        "C{3dp-C", 
+        "G:hBs7%", 
+        ")W~Jh`", 
+        "-hmkCh", 
+        "1)M7Hg", 
+        "xH[mHi", 
+        "[hEUUJ'3", 
+        "?Lk[KA", 
+        "S]]AUuTe", 
+        "W!BC7t", 
+        "0:&dMC", 
+        "EB`;k)M", 
+        "A}:u$]\"", 
+        "=y2zM%", 
+        "n3)%MM", 
+        "cYYL3D&", 
+        "m!%DCUD", 
+        "R:{ ZR", 
+        "0#d3-h", 
+        "d$T!CFLj", 
+        "|On3nG", 
+        "(b1c2l&d", 
+        "c2lTHC", 
+        "mwH@VUV", 
+        "!=&ua*Bq", 
+        "t-$CfTj", 
+        "JGF<g84T", 
+        "=<IJY:{", 
+        "\u001f5U<S*", 
+        "_xQVTT", 
+        "TUVaYY x", 
+        "IO?MEEE", 
+        "455S[S", 
+        "*G\u001fu4+V,'Q", 
+        "y~`cH\\", 
+        "|1s: 1t", 
+        " SVIAmd-", 
+        "(ZRdOt", 
+        "Ig2TUU1`", 
+        "wwwwwwwwwwwwwwwpx", 
+        "pxwwwwwwwwwwwwwxpx", 
+        "pxDDDDDDDDD@", 
+        "pxDDDDDDDDDH", 
+        "pxDDDDDDDDDH", 
+        "pxDDDDDDDDDDDDDDpx", 
+        "pwwwwwwwwwwwwwwwp", 
+        "wwwwwwwpx", 
+        "pxwwwwwwpxDDD", 
+        "pxDDDDDDpx", 
+        "pwwwwwwww", 
+        "63[4]5mm]5\\]m]mm5\\mm5555555\\\\\\5\\\\\\5m\\55\\\\5ed:", 
+        "cOXY/P.Z0.0.QR00/ZPP0000000/0PPZR.BI@/DE0,", 
+        "WkV21TSav^8{", 
+        "}>qooggggggg1`_fhsnHK", 
+        "Nw~ytMMMMMMUbbrrrrrxxxxxxxxrriUMMMMMMMMMUuzt", 
+        "I3')+*+)))*))()*+++,6J!54 CBA", 
+        "jYPQTVTSkllZTTXRTUiHceWda/", 
+        "}zy|yx~", 
+        "{|yvrrwsqpon", 
+        "PPPPPPPPPPPPPPPPPKMNNNNNNNNNNOLO", 
+        "JHHGGGGGGGGHI", 
+        "JEEEEEEEEEEFC", 
+        "JEEEEEEEEEEFC", 
+        "JEEEEEEEEEEFD", 
+        "JEFEEEEEEEEEB", 
+        "O%JEEEEEEEEEFFB", 
+        "JJIIIIJIIIIJJ", 
+        "O(@>=77A779?<8;$O' ", 
+        ")O6530./21+*-,4#4PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP", 
+        "<assembly xmlns=\"urn:schemas-microsoft-com:asm.v1\" manifestVersion=\"1.0\">", 
+        "  <trustInfo xmlns=\"urn:schemas-microsoft-com:asm.v3\">", 
+        "    <security>", 
+        "      <requestedPrivileges>", 
+        "        <requestedExecutionLevel level=\"asInvoker\" uiAccess=\"false\"></requestedExecutionLevel>", 
+        "      </requestedPrivileges>", 
+        "    </security>", 
+        "  </trustInfo>", 
+        "</assembly>PAPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGX", 
+        "0$0/0:0I0V0d0n0u0{0", 
+        "1-171<1A1c1h1q1v1", 
+        "2J2R2[2a2i2u2", 
+        "3&313O3U3[3a3g3m3t3{3", 
+        "4 4&4<4C4", 
+        "5\u001f5\\5a5", 
+        "5H6M6_6}6", 
+        "8C8K8V8\\8b8h8n8t8z8", 
+        "0$2(2\\2`2", 
+        "@Global\\MsWinZonesCacheCounterMutexA0", 
+        "Global\\MsWinZonesCacheCounterMutexA", 
+        "MsWinZonesCacheCounterMutexA", 
+        "MsWinZonesCacheCounterMutexA0", 
+        "iE&xit", 
+        "h&About ...", 
+        "About tearStopper", 
+        "MS Shell Dlg", 
+        "tearStopper, Version 1.0", 
+        "Copyright (C) 2017", 
+        "tearStopper", 
+        "TEARSTOPPER", 
+        "VS_VERSION_INFO", 
+        "StringFileInfo", 
+        "040904b0", 
+        "CompanyName", 
+        "Rendition Infosec LLC.", 
+        "FileDescription", 
+        "tearSt0pper", 
+        "FileVersion", 
+        "1.0.0.0", 
+        "InternalName", 
+        "tearSt0pper.exe", 
+        "LegalCopyright", 
+        "Copyright (C) 2017", 
+        "OriginalFilename", 
+        "tearSt0pper.exe", 
+        "ProductName", 
+        "tearSt0pper", 
+        "ProductVersion", 
+        "1.0.0.0", 
+        "VarFileInfo", 
+        "Translation"
+    ], 
+    "metadata": {
+        "output": {
+            "pcap": {
+                "basename": "dump.pcap", 
+                "sha256": "d3c3b5ba1e12e0dea395c408593bc5c25262980c572b6808f38737071da2609e", 
+                "dirname": ""
+            }
+        }
+    }
+}

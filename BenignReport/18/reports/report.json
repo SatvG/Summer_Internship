@@ -1,0 +1,2777 @@
+{
+    "info": {
+        "added": 1693129022.457161, 
+        "started": 1693130574.084108, 
+        "duration": 151, 
+        "ended": 1693130725.790775, 
+        "owner": null, 
+        "score": 0.6, 
+        "id": 18, 
+        "category": "file", 
+        "git": {
+            "head": "13cbe0d9e457be3673304533043e992ead1ea9b2", 
+            "fetch_head": "13cbe0d9e457be3673304533043e992ead1ea9b2"
+        }, 
+        "monitor": "2deb9ccd75d5a7a3fe05b2625b03a8639d6ee36b", 
+        "package": "", 
+        "route": "none", 
+        "custom": null, 
+        "machine": {
+            "status": "stopped", 
+            "name": "cuckoo2", 
+            "label": "cuckoo2", 
+            "manager": "VirtualBox", 
+            "started_on": "2023-08-27 10:02:54", 
+            "shutdown_on": "2023-08-27 10:05:25"
+        }, 
+        "platform": null, 
+        "version": "2.0.7", 
+        "options": ""
+    }, 
+    "signatures": [
+        {
+            "families": [], 
+            "description": "This executable has a PDB path", 
+            "severity": 1, 
+            "ttp": {}, 
+            "markcount": 1, 
+            "references": [], 
+            "marks": [
+                {
+                    "category": "pdb_path", 
+                    "ioc": "sort.pdb", 
+                    "type": "ioc", 
+                    "description": null
+                }
+            ], 
+            "name": "has_pdb"
+        }, 
+        {
+            "families": [], 
+            "description": "Checks amount of memory in system, this can be used to detect virtual machines that have a low amount of memory available", 
+            "severity": 1, 
+            "ttp": {
+                "T1082": {
+                    "short": "System Information Discovery", 
+                    "long": "An adversary may attempt to get detailed information about the operating system and hardware, including version, patches, hotfixes, service packs, and architecture."
+                }
+            }, 
+            "markcount": 1, 
+            "references": [], 
+            "marks": [
+                {
+                    "call": {
+                        "category": "system", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "GlobalMemoryStatusEx", 
+                        "return_value": 1, 
+                        "arguments": {}, 
+                        "time": 1693130604.689499, 
+                        "tid": 2256, 
+                        "flags": {}
+                    }, 
+                    "pid": 1752, 
+                    "type": "call", 
+                    "cid": 81
+                }
+            ], 
+            "name": "antivm_memory_available"
+        }, 
+        {
+            "families": [], 
+            "description": "The file contains an unknown PE resource name possibly indicative of a packer", 
+            "severity": 1, 
+            "ttp": {
+                "T1045": {
+                    "short": "Software Packing", 
+                    "long": "Software packing is a method of compressing or encrypting an executable. Packing an executable changes the file signature in an attempt to avoid signature-based detection. Most decompression techniques decompress the executable code in memory."
+                }
+            }, 
+            "markcount": 1, 
+            "references": [], 
+            "marks": [
+                {
+                    "category": "resource name", 
+                    "ioc": "MUI", 
+                    "type": "ioc", 
+                    "description": null
+                }
+            ], 
+            "name": "pe_unknown_resource_name"
+        }
+    ], 
+    "target": {
+        "category": "file", 
+        "file": {
+            "yara": [], 
+            "sha1": "703079e13b8f2d3e4d282243d10b37abd470fea0", 
+            "name": "2178f2c356413aab2b9e335b70b2de86e5875ba9fca4918989798c9da614a604_benign.exe", 
+            "type": "PE32 executable (console) Intel 80386, for MS Windows", 
+            "sha256": "2178f2c356413aab2b9e335b70b2de86e5875ba9fca4918989798c9da614a604", 
+            "urls": [], 
+            "crc32": "0B0CEA40", 
+            "path": "/home/abc/.cuckoo/storage/binaries/2178f2c356413aab2b9e335b70b2de86e5875ba9fca4918989798c9da614a604", 
+            "ssdeep": null, 
+            "size": 19968, 
+            "sha512": "4ab1afe43aff8371a736e6eaf97bde99c0a74acd5654f4da5385484953e288f89fd06a046a7ec98028d43862485f2ad3ef212474aa18ad07c7cccf462832adce", 
+            "md5": "0297bc851d4c2187e80466362e0d5fa8"
+        }
+    }, 
+    "network": {
+        "tls": [], 
+        "udp": [
+            {
+                "src": "192.168.56.101", 
+                "dst": "192.168.56.1", 
+                "offset": 2533, 
+                "time": 28.462162017822266, 
+                "dport": 53, 
+                "sport": 49927
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "192.168.56.1", 
+                "offset": 2625, 
+                "time": 19.41908884048462, 
+                "dport": 53, 
+                "sport": 50502
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "192.168.56.1", 
+                "offset": 2717, 
+                "time": 137.50010299682617, 
+                "dport": 53, 
+                "sport": 52006
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "192.168.56.1", 
+                "offset": 2818, 
+                "time": 18.25710892677307, 
+                "dport": 53, 
+                "sport": 54106
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "192.168.56.1", 
+                "offset": 2915, 
+                "time": 7.263299942016602, 
+                "dport": 53, 
+                "sport": 55971
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "192.168.56.1", 
+                "offset": 3012, 
+                "time": 40.92913484573364, 
+                "dport": 53, 
+                "sport": 59602
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "192.168.56.1", 
+                "offset": 3113, 
+                "time": 8.079264879226685, 
+                "dport": 53, 
+                "sport": 62521
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "192.168.56.1", 
+                "offset": 3214, 
+                "time": 11.874531030654907, 
+                "dport": 53, 
+                "sport": 63494
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "192.168.56.1", 
+                "offset": 3306, 
+                "time": 7.315453052520752, 
+                "dport": 53, 
+                "sport": 64965
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "192.168.56.255", 
+                "offset": 3398, 
+                "time": 2.978466033935547, 
+                "dport": 137, 
+                "sport": 137
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "192.168.56.255", 
+                "offset": 15278, 
+                "time": 8.967360973358154, 
+                "dport": 138, 
+                "sport": 138
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 23666, 
+                "time": 4.668575048446655, 
+                "dport": 5355, 
+                "sport": 49856
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 23986, 
+                "time": 16.088963985443115, 
+                "dport": 5355, 
+                "sport": 52397
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 24314, 
+                "time": 4.757767915725708, 
+                "dport": 5355, 
+                "sport": 53845
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 24634, 
+                "time": 21.312150955200195, 
+                "dport": 5355, 
+                "sport": 55915
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 24962, 
+                "time": 8.146710872650146, 
+                "dport": 5355, 
+                "sport": 56774
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 25290, 
+                "time": 10.882057905197144, 
+                "dport": 5355, 
+                "sport": 56830
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 25618, 
+                "time": 13.482569932937622, 
+                "dport": 5355, 
+                "sport": 57960
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 25946, 
+                "time": 18.718289852142334, 
+                "dport": 5355, 
+                "sport": 59720
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 26274, 
+                "time": 1.0364019870758057, 
+                "dport": 5355, 
+                "sport": 64652
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "224.0.0.252", 
+                "offset": 26618, 
+                "time": 2.9002439975738525, 
+                "dport": 5355, 
+                "sport": 64751
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "239.255.255.250", 
+                "offset": 26962, 
+                "time": 39.77856683731079, 
+                "dport": 1900, 
+                "sport": 1900
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "239.255.255.250", 
+                "offset": 46372, 
+                "time": 15.909019947052002, 
+                "dport": 1900, 
+                "sport": 57963
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "239.255.255.250", 
+                "offset": 50848, 
+                "time": 1.5778679847717285, 
+                "dport": 3702, 
+                "sport": 58151
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "8.8.8.8", 
+                "offset": 59224, 
+                "time": 24.465698957443237, 
+                "dport": 53, 
+                "sport": 49927
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "8.8.8.8", 
+                "offset": 59684, 
+                "time": 19.419607877731323, 
+                "dport": 53, 
+                "sport": 50502
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "8.8.8.8", 
+                "offset": 60052, 
+                "time": 133.48693704605103, 
+                "dport": 53, 
+                "sport": 52006
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "8.8.8.8", 
+                "offset": 60557, 
+                "time": 18.257493019104004, 
+                "dport": 53, 
+                "sport": 54106
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "8.8.8.8", 
+                "offset": 60945, 
+                "time": 7.264057874679565, 
+                "dport": 53, 
+                "sport": 55971
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "8.8.8.8", 
+                "offset": 61333, 
+                "time": 36.9272358417511, 
+                "dport": 53, 
+                "sport": 59602
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "8.8.8.8", 
+                "offset": 61838, 
+                "time": 8.080353021621704, 
+                "dport": 53, 
+                "sport": 62521
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "8.8.8.8", 
+                "offset": 62242, 
+                "time": 11.875143051147461, 
+                "dport": 53, 
+                "sport": 63494
+            }, 
+            {
+                "src": "192.168.56.101", 
+                "dst": "8.8.8.8", 
+                "offset": 62610, 
+                "time": 7.3160560131073, 
+                "dport": 53, 
+                "sport": 64965
+            }
+        ], 
+        "dns_servers": [
+            "8.8.8.8", 
+            "192.168.56.1"
+        ], 
+        "http": [], 
+        "icmp": [], 
+        "smtp": [], 
+        "tcp": [], 
+        "smtp_ex": [], 
+        "mitm": [], 
+        "hosts": [
+            "8.8.8.8"
+        ], 
+        "pcap_sha256": "4f79bfae2d367fa9917406979493a933aa256066eeebeb8f4115c4d8f1d8c53b", 
+        "dns": [
+            {
+                "type": "A", 
+                "request": "update.googleapis.com", 
+                "answers": []
+            }, 
+            {
+                "type": "A", 
+                "request": "time.windows.com", 
+                "answers": []
+            }, 
+            {
+                "type": "A", 
+                "request": "www.msftncsi.com", 
+                "answers": []
+            }, 
+            {
+                "type": "A", 
+                "request": "dns.msftncsi.com", 
+                "answers": []
+            }, 
+            {
+                "type": "A", 
+                "request": "teredo.ipv6.microsoft.com", 
+                "answers": []
+            }
+        ], 
+        "http_ex": [], 
+        "domains": [
+            {
+                "ip": "131.107.255.255", 
+                "domain": "dns.msftncsi.com"
+            }, 
+            {
+                "ip": "", 
+                "domain": "teredo.ipv6.microsoft.com"
+            }, 
+            {
+                "ip": "216.58.196.99", 
+                "domain": "update.googleapis.com"
+            }, 
+            {
+                "ip": "49.44.178.161", 
+                "domain": "www.msftncsi.com"
+            }
+        ], 
+        "dead_hosts": [], 
+        "sorted_pcap_sha256": "6a0a5dc59b494a1e7f488dfb13f2796a9cb50e6ccd622262e93d3db903527f9b", 
+        "irc": [], 
+        "https_ex": []
+    }, 
+    "static": {
+        "pdb_path": "sort.pdb", 
+        "pe_imports": [
+            {
+                "imports": [
+                    {
+                        "name": "IsTextUnicode", 
+                        "address": "0x1001000"
+                    }
+                ], 
+                "dll": "ADVAPI32.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "FormatMessageA", 
+                        "address": "0x1001008"
+                    }, 
+                    {
+                        "name": "GetModuleHandleA", 
+                        "address": "0x100100c"
+                    }, 
+                    {
+                        "name": "GetLastError", 
+                        "address": "0x1001010"
+                    }, 
+                    {
+                        "name": "HeapFree", 
+                        "address": "0x1001014"
+                    }, 
+                    {
+                        "name": "HeapAlloc", 
+                        "address": "0x1001018"
+                    }, 
+                    {
+                        "name": "GetProcessHeap", 
+                        "address": "0x100101c"
+                    }, 
+                    {
+                        "name": "MultiByteToWideChar", 
+                        "address": "0x1001020"
+                    }, 
+                    {
+                        "name": "CreateEventA", 
+                        "address": "0x1001024"
+                    }, 
+                    {
+                        "name": "GetConsoleMode", 
+                        "address": "0x1001028"
+                    }, 
+                    {
+                        "name": "GetFileSize", 
+                        "address": "0x100102c"
+                    }, 
+                    {
+                        "name": "GetFileType", 
+                        "address": "0x1001030"
+                    }, 
+                    {
+                        "name": "CreateFileA", 
+                        "address": "0x1001034"
+                    }, 
+                    {
+                        "name": "GetStdHandle", 
+                        "address": "0x1001038"
+                    }, 
+                    {
+                        "name": "VirtualAlloc", 
+                        "address": "0x100103c"
+                    }, 
+                    {
+                        "name": "GetCPInfo", 
+                        "address": "0x1001040"
+                    }, 
+                    {
+                        "name": "GetSystemInfo", 
+                        "address": "0x1001044"
+                    }, 
+                    {
+                        "name": "GlobalMemoryStatusEx", 
+                        "address": "0x1001048"
+                    }, 
+                    {
+                        "name": "GetOverlappedResult", 
+                        "address": "0x100104c"
+                    }, 
+                    {
+                        "name": "ReadFile", 
+                        "address": "0x1001050"
+                    }, 
+                    {
+                        "name": "ResetEvent", 
+                        "address": "0x1001054"
+                    }, 
+                    {
+                        "name": "CloseHandle", 
+                        "address": "0x1001058"
+                    }, 
+                    {
+                        "name": "WriteFile", 
+                        "address": "0x100105c"
+                    }, 
+                    {
+                        "name": "GetDiskFreeSpaceA", 
+                        "address": "0x1001060"
+                    }, 
+                    {
+                        "name": "GetTempPathA", 
+                        "address": "0x1001064"
+                    }, 
+                    {
+                        "name": "GetTempFileNameA", 
+                        "address": "0x1001068"
+                    }, 
+                    {
+                        "name": "WideCharToMultiByte", 
+                        "address": "0x100106c"
+                    }, 
+                    {
+                        "name": "WaitForSingleObject", 
+                        "address": "0x1001070"
+                    }, 
+                    {
+                        "name": "HeapSetInformation", 
+                        "address": "0x1001074"
+                    }, 
+                    {
+                        "name": "SetThreadUILanguage", 
+                        "address": "0x1001078"
+                    }, 
+                    {
+                        "name": "GetCurrentProcess", 
+                        "address": "0x100107c"
+                    }, 
+                    {
+                        "name": "TerminateProcess", 
+                        "address": "0x1001080"
+                    }, 
+                    {
+                        "name": "GetSystemTimeAsFileTime", 
+                        "address": "0x1001084"
+                    }, 
+                    {
+                        "name": "GetCurrentProcessId", 
+                        "address": "0x1001088"
+                    }, 
+                    {
+                        "name": "GetCurrentThreadId", 
+                        "address": "0x100108c"
+                    }, 
+                    {
+                        "name": "GetTickCount", 
+                        "address": "0x1001090"
+                    }, 
+                    {
+                        "name": "QueryPerformanceCounter", 
+                        "address": "0x1001094"
+                    }, 
+                    {
+                        "name": "SetUnhandledExceptionFilter", 
+                        "address": "0x1001098"
+                    }, 
+                    {
+                        "name": "InterlockedCompareExchange", 
+                        "address": "0x100109c"
+                    }, 
+                    {
+                        "name": "UnhandledExceptionFilter", 
+                        "address": "0x10010a0"
+                    }, 
+                    {
+                        "name": "Sleep", 
+                        "address": "0x10010a4"
+                    }, 
+                    {
+                        "name": "InterlockedExchange", 
+                        "address": "0x10010a8"
+                    }
+                ], 
+                "dll": "KERNEL32.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "strcpy_s", 
+                        "address": "0x10010b0"
+                    }, 
+                    {
+                        "name": "memcpy", 
+                        "address": "0x10010b4"
+                    }, 
+                    {
+                        "name": "qsort", 
+                        "address": "0x10010b8"
+                    }, 
+                    {
+                        "name": "memset", 
+                        "address": "0x10010bc"
+                    }, 
+                    {
+                        "name": "setlocale", 
+                        "address": "0x10010c0"
+                    }, 
+                    {
+                        "name": "__getmainargs", 
+                        "address": "0x10010c4"
+                    }, 
+                    {
+                        "name": "_cexit", 
+                        "address": "0x10010c8"
+                    }, 
+                    {
+                        "name": "_exit", 
+                        "address": "0x10010cc"
+                    }, 
+                    {
+                        "name": "_XcptFilter", 
+                        "address": "0x10010d0"
+                    }, 
+                    {
+                        "name": "_initterm", 
+                        "address": "0x10010d4"
+                    }, 
+                    {
+                        "name": "_amsg_exit", 
+                        "address": "0x10010d8"
+                    }, 
+                    {
+                        "name": "__setusermatherr", 
+                        "address": "0x10010dc"
+                    }, 
+                    {
+                        "name": "__p__commode", 
+                        "address": "0x10010e0"
+                    }, 
+                    {
+                        "name": "__p__fmode", 
+                        "address": "0x10010e4"
+                    }, 
+                    {
+                        "name": "__set_app_type", 
+                        "address": "0x10010e8"
+                    }, 
+                    {
+                        "name": "?terminate@@YAXXZ", 
+                        "address": "0x10010ec"
+                    }, 
+                    {
+                        "name": "_except_handler4_common", 
+                        "address": "0x10010f0"
+                    }, 
+                    {
+                        "name": "_controlfp", 
+                        "address": "0x10010f4"
+                    }, 
+                    {
+                        "name": "exit", 
+                        "address": "0x10010f8"
+                    }, 
+                    {
+                        "name": "fprintf", 
+                        "address": "0x10010fc"
+                    }, 
+                    {
+                        "name": "_iob", 
+                        "address": "0x1001100"
+                    }, 
+                    {
+                        "name": "strchr", 
+                        "address": "0x1001104"
+                    }, 
+                    {
+                        "name": "_ftol2", 
+                        "address": "0x1001108"
+                    }, 
+                    {
+                        "name": "wcscoll", 
+                        "address": "0x100110c"
+                    }, 
+                    {
+                        "name": "_wcsicoll", 
+                        "address": "0x1001110"
+                    }, 
+                    {
+                        "name": "strcoll", 
+                        "address": "0x1001114"
+                    }, 
+                    {
+                        "name": "_stricoll", 
+                        "address": "0x1001118"
+                    }, 
+                    {
+                        "name": "atoi", 
+                        "address": "0x100111c"
+                    }, 
+                    {
+                        "name": "_strnicmp", 
+                        "address": "0x1001120"
+                    }, 
+                    {
+                        "name": "_ftol2_sse", 
+                        "address": "0x1001124"
+                    }
+                ], 
+                "dll": "msvcrt.dll"
+            }, 
+            {
+                "imports": [
+                    {
+                        "name": "RtlUnicodeToOemN", 
+                        "address": "0x100112c"
+                    }, 
+                    {
+                        "name": "RtlMultiByteToUnicodeN", 
+                        "address": "0x1001130"
+                    }
+                ], 
+                "dll": "ntdll.dll"
+            }
+        ], 
+        "peid_signatures": null, 
+        "keys": [], 
+        "signature": [], 
+        "pe_timestamp": "2009-07-14 04:45:25", 
+        "pe_exports": [], 
+        "imported_dll_count": 4, 
+        "pe_imphash": "aa594458ba047efb41e6051cf4d51d2b", 
+        "pe_resources": [
+            {
+                "name": "MUI", 
+                "language": "LANG_ENGLISH", 
+                "filetype": "data", 
+                "sublanguage": "SUBLANG_ENGLISH_US", 
+                "offset": "0x00008700", 
+                "size": "0x000000c8"
+            }, 
+            {
+                "name": "RT_VERSION", 
+                "language": "LANG_ENGLISH", 
+                "filetype": "data", 
+                "sublanguage": "SUBLANG_ENGLISH_US", 
+                "offset": "0x00008390", 
+                "size": "0x00000370"
+            }, 
+            {
+                "name": "RT_MANIFEST", 
+                "language": "LANG_ENGLISH", 
+                "filetype": "XML 1.0 document, ASCII text, with CRLF line terminators", 
+                "sublanguage": "SUBLANG_ENGLISH_US", 
+                "offset": "0x000080f0", 
+                "size": "0x0000029a"
+            }
+        ], 
+        "pe_versioninfo": [
+            {
+                "name": "LegalCopyright", 
+                "value": "\\xa9 Microsoft Corporation. All rights reserved."
+            }, 
+            {
+                "name": "InternalName", 
+                "value": "Sort"
+            }, 
+            {
+                "name": "FileVersion", 
+                "value": "6.1.7600.16385 (win7_rtm.090713-1255)"
+            }, 
+            {
+                "name": "CompanyName", 
+                "value": "Microsoft Corporation"
+            }, 
+            {
+                "name": "ProductName", 
+                "value": "Microsoft\\xae Windows\\xae Operating System"
+            }, 
+            {
+                "name": "ProductVersion", 
+                "value": "6.1.7600.16385"
+            }, 
+            {
+                "name": "FileDescription", 
+                "value": "Sort Utility"
+            }, 
+            {
+                "name": "OriginalFilename", 
+                "value": "Sort.EXE"
+            }, 
+            {
+                "name": "Translation", 
+                "value": "0x0409 0x04b0"
+            }
+        ], 
+        "pe_sections": [
+            {
+                "size_of_data": "0x00003800", 
+                "virtual_address": "0x00001000", 
+                "entropy": 6.327180089718133, 
+                "name": ".text", 
+                "virtual_size": "0x00003658"
+            }, 
+            {
+                "size_of_data": "0x00000200", 
+                "virtual_address": "0x00005000", 
+                "entropy": 0.4346002063611969, 
+                "name": ".data", 
+                "virtual_size": "0x00002990"
+            }, 
+            {
+                "size_of_data": "0x00000800", 
+                "virtual_address": "0x00008000", 
+                "entropy": 4.312652496352763, 
+                "name": ".rsrc", 
+                "virtual_size": "0x000007c8"
+            }, 
+            {
+                "size_of_data": "0x00000800", 
+                "virtual_address": "0x00009000", 
+                "entropy": 5.653470076824539, 
+                "name": ".reloc", 
+                "virtual_size": "0x000006b8"
+            }
+        ]
+    }, 
+    "behavior": {
+        "generic": [
+            {
+                "process_path": "C:\\Users\\cuckoo2\\AppData\\Local\\Temp\\2178f2c356413aab2b9e335b70b2de86e5875ba9fca4918989798c9da614a604_benign.exe", 
+                "process_name": "2178f2c356413aab2b9e335b70b2de86e5875ba9fca4918989798c9da614a604_benign.exe", 
+                "pid": 1752, 
+                "summary": {
+                    "regkey_read": [
+                        "HKEY_LOCAL_MACHINE\\SYSTEM\\ControlSet001\\Control\\Nls\\Language\\InstallLanguageFallback", 
+                        "HKEY_LOCAL_MACHINE\\SYSTEM\\ControlSet001\\Control\\Nls\\CustomLocale\\en-US", 
+                        "HKEY_LOCAL_MACHINE\\SYSTEM\\ControlSet001\\Control\\Nls\\Locale\\00000409", 
+                        "HKEY_LOCAL_MACHINE\\SYSTEM\\ControlSet001\\Control\\Nls\\Language Groups\\1", 
+                        "HKEY_CURRENT_USER\\Control Panel\\Desktop\\PreferredUILanguages", 
+                        "HKEY_LOCAL_MACHINE\\SYSTEM\\ControlSet001\\Control\\MUI\\UILanguages\\en-US\\Type", 
+                        "HKEY_LOCAL_MACHINE\\SYSTEM\\ControlSet001\\Control\\MUI\\UILanguages\\en-US\\AlternateCodePage", 
+                        "HKEY_CURRENT_USER\\Control Panel\\Desktop\\MuiCached\\MachinePreferredUILanguages", 
+                        "HKEY_LOCAL_MACHINE\\SYSTEM\\ControlSet001\\Control\\Nls\\CustomLocale\\EMPTY", 
+                        "HKEY_LOCAL_MACHINE\\SYSTEM\\ControlSet001\\Control\\Nls\\ExtendedLocale\\en-US"
+                    ]
+                }, 
+                "first_seen": 1693130604.252499, 
+                "ppid": 1684
+            }
+        ], 
+        "apistats": {
+            "1752": {
+                "NtEnumerateValueKey": 3, 
+                "NtAllocateVirtualMemory": 4, 
+                "GetFileType": 2, 
+                "NtOpenKey": 33, 
+                "SetUnhandledExceptionFilter": 1, 
+                "NtEnumerateKey": 2, 
+                "NtQueryValueKey": 13, 
+                "GetSystemTimeAsFileTime": 1, 
+                "GlobalMemoryStatusEx": 1, 
+                "GetSystemInfo": 1, 
+                "NtClose": 24
+            }
+        }, 
+        "processes": [
+            {
+                "process_path": "C:\\Users\\cuckoo2\\AppData\\Local\\Temp\\2178f2c356413aab2b9e335b70b2de86e5875ba9fca4918989798c9da614a604_benign.exe", 
+                "calls": [
+                    {
+                        "category": "synchronisation", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "GetSystemTimeAsFileTime", 
+                        "return_value": 0, 
+                        "arguments": {}, 
+                        "time": 1693130604.611499, 
+                        "tid": 2256, 
+                        "flags": {}
+                    }, 
+                    {
+                        "category": "exception", 
+                        "status": 0, 
+                        "stacktrace": [], 
+                        "last_error": 0, 
+                        "nt_status": -1073741515, 
+                        "api": "SetUnhandledExceptionFilter", 
+                        "return_value": 0, 
+                        "arguments": {}, 
+                        "time": 1693130604.611499, 
+                        "tid": 2256, 
+                        "flags": {}
+                    }, 
+                    {
+                        "category": "registry", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtOpenKey", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "key_handle": "0x00000054", 
+                            "desired_access": "0x00000001", 
+                            "regkey": "HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Nls\\CustomLocale"
+                        }, 
+                        "time": 1693130604.611499, 
+                        "tid": 2256, 
+                        "flags": {
+                            "desired_access": ""
+                        }
+                    }, 
+                    {
+                        "category": "registry", 
+                        "status": 0, 
+                        "stacktrace": [], 
+                        "last_error": 0, 
+                        "nt_status": -1073741515, 
+                        "api": "NtQueryValueKey", 
+                        "return_value": 3221225524, 
+                        "arguments": {
+                            "key_handle": "0x00000054", 
+                            "key_name": "", 
+                            "value": "", 
+                            "reg_type": 0, 
+                            "information_class": 2, 
+                            "regkey": "HKEY_LOCAL_MACHINE\\SYSTEM\\ControlSet001\\Control\\Nls\\CustomLocale\\EMPTY"
+                        }, 
+                        "time": 1693130604.611499, 
+                        "tid": 2256, 
+                        "flags": {
+                            "reg_type": "REG_NONE", 
+                            "information_class": "KeyValuePartialInformation"
+                        }
+                    }, 
+                    {
+                        "category": "registry", 
+                        "status": 0, 
+                        "stacktrace": [], 
+                        "last_error": 0, 
+                        "nt_status": -1073741515, 
+                        "api": "NtQueryValueKey", 
+                        "return_value": 3221225524, 
+                        "arguments": {
+                            "key_handle": "0x00000054", 
+                            "key_name": "", 
+                            "value": "", 
+                            "reg_type": 0, 
+                            "information_class": 2, 
+                            "regkey": "HKEY_LOCAL_MACHINE\\SYSTEM\\ControlSet001\\Control\\Nls\\CustomLocale\\EMPTY"
+                        }, 
+                        "time": 1693130604.611499, 
+                        "tid": 2256, 
+                        "flags": {
+                            "reg_type": "REG_NONE", 
+                            "information_class": "KeyValuePartialInformation"
+                        }
+                    }, 
+                    {
+                        "category": "registry", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtOpenKey", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "key_handle": "0x00000058", 
+                            "desired_access": "0x00020019", 
+                            "regkey": "HKEY_LOCAL_MACHINE\\System\\CurrentControlSet\\Control\\NLS\\Language"
+                        }, 
+                        "time": 1693130604.611499, 
+                        "tid": 2256, 
+                        "flags": {
+                            "desired_access": "READ_CONTROL"
+                        }
+                    }, 
+                    {
+                        "category": "registry", 
+                        "status": 0, 
+                        "stacktrace": [], 
+                        "last_error": 0, 
+                        "nt_status": -1073741515, 
+                        "api": "NtQueryValueKey", 
+                        "return_value": 3221225524, 
+                        "arguments": {
+                            "key_handle": "0x00000058", 
+                            "key_name": "", 
+                            "value": "", 
+                            "reg_type": 0, 
+                            "information_class": 2, 
+                            "regkey": "HKEY_LOCAL_MACHINE\\SYSTEM\\ControlSet001\\Control\\Nls\\Language\\InstallLanguageFallback"
+                        }, 
+                        "time": 1693130604.611499, 
+                        "tid": 2256, 
+                        "flags": {
+                            "reg_type": "REG_NONE", 
+                            "information_class": "KeyValuePartialInformation"
+                        }
+                    }, 
+                    {
+                        "category": "system", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtClose", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "handle": "0x00000058"
+                        }, 
+                        "time": 1693130604.611499, 
+                        "tid": 2256, 
+                        "flags": {}
+                    }, 
+                    {
+                        "category": "registry", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtOpenKey", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "key_handle": "0x00000058", 
+                            "desired_access": "0x00020019", 
+                            "regkey": "HKEY_LOCAL_MACHINE\\System\\CurrentControlSet\\Control\\MUI\\UILanguages"
+                        }, 
+                        "time": 1693130604.627499, 
+                        "tid": 2256, 
+                        "flags": {
+                            "desired_access": "READ_CONTROL"
+                        }
+                    }, 
+                    {
+                        "category": "registry", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtEnumerateKey", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "index": 0, 
+                            "key_handle": "0x00000058", 
+                            "buffer": "\u00a2\u0092#\u00aeJ\u0089\u00cb\u0001\u0000\u0000\u0000\u0000\n\u0000\u0000\u0000e\u0000n\u0000-\u0000U\u0000S\u0000", 
+                            "information_class": 0, 
+                            "regkey": "HKEY_LOCAL_MACHINE\\SYSTEM\\ControlSet001\\Control\\MUI\\UILanguages"
+                        }, 
+                        "time": 1693130604.627499, 
+                        "tid": 2256, 
+                        "flags": {
+                            "information_class": "KeyBasicInformation"
+                        }
+                    }, 
+                    {
+                        "category": "registry", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtOpenKey", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "key_handle": "0x0000005c", 
+                            "desired_access": "0x00020019", 
+                            "regkey": "HKEY_LOCAL_MACHINE\\SYSTEM\\ControlSet001\\Control\\MUI\\UILanguages\\en-US"
+                        }, 
+                        "time": 1693130604.627499, 
+                        "tid": 2256, 
+                        "flags": {
+                            "desired_access": "READ_CONTROL"
+                        }
+                    }, 
+                    {
+                        "category": "registry", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtQueryValueKey", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "key_handle": "0x0000005c", 
+                            "key_name": "", 
+                            "value": 145, 
+                            "reg_type": 4, 
+                            "information_class": 2, 
+                            "regkey": "HKEY_LOCAL_MACHINE\\SYSTEM\\ControlSet001\\Control\\MUI\\UILanguages\\en-US\\Type"
+                        }, 
+                        "time": 1693130604.627499, 
+                        "tid": 2256, 
+                        "flags": {
+                            "reg_type": "REG_DWORD", 
+                            "information_class": "KeyValuePartialInformation"
+                        }
+                    }, 
+                    {
+                        "category": "registry", 
+                        "status": 0, 
+                        "stacktrace": [], 
+                        "last_error": 0, 
+                        "nt_status": -1073741515, 
+                        "api": "NtQueryValueKey", 
+                        "return_value": 3221225524, 
+                        "arguments": {
+                            "key_handle": "0x0000005c", 
+                            "key_name": "", 
+                            "value": "", 
+                            "reg_type": 0, 
+                            "information_class": 2, 
+                            "regkey": "HKEY_LOCAL_MACHINE\\SYSTEM\\ControlSet001\\Control\\MUI\\UILanguages\\en-US\\AlternateCodePage"
+                        }, 
+                        "time": 1693130604.627499, 
+                        "tid": 2256, 
+                        "flags": {
+                            "reg_type": "REG_NONE", 
+                            "information_class": "KeyValuePartialInformation"
+                        }
+                    }, 
+                    {
+                        "category": "system", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtClose", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "handle": "0x0000005c"
+                        }, 
+                        "time": 1693130604.627499, 
+                        "tid": 2256, 
+                        "flags": {}
+                    }, 
+                    {
+                        "category": "registry", 
+                        "status": 0, 
+                        "stacktrace": [], 
+                        "last_error": 0, 
+                        "nt_status": -1073741515, 
+                        "api": "NtEnumerateKey", 
+                        "return_value": 2147483674, 
+                        "arguments": {
+                            "index": 1, 
+                            "key_handle": "0x00000058", 
+                            "buffer": "\u00a2\u0092#\u00aeJ\u0089\u00cb\u0001\u0000\u0000\u0000\u0000\n\u0000\u0000\u0000e\u0000n\u0000-\u0000U\u0000S\u0000", 
+                            "information_class": 0, 
+                            "regkey": "HKEY_LOCAL_MACHINE\\SYSTEM\\ControlSet001\\Control\\MUI\\UILanguages"
+                        }, 
+                        "time": 1693130604.627499, 
+                        "tid": 2256, 
+                        "flags": {
+                            "information_class": "KeyBasicInformation"
+                        }
+                    }, 
+                    {
+                        "category": "system", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtClose", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "handle": "0x00000058"
+                        }, 
+                        "time": 1693130604.627499, 
+                        "tid": 2256, 
+                        "flags": {}
+                    }, 
+                    {
+                        "category": "registry", 
+                        "status": 0, 
+                        "stacktrace": [], 
+                        "last_error": 0, 
+                        "nt_status": -1073741515, 
+                        "api": "NtOpenKey", 
+                        "return_value": 3221225524, 
+                        "arguments": {
+                            "key_handle": "0x00000000", 
+                            "desired_access": "0x00020019", 
+                            "regkey": "HKEY_LOCAL_MACHINE\\System\\CurrentControlSet\\Control\\MUI\\UILanguages\\PendingDelete"
+                        }, 
+                        "time": 1693130604.627499, 
+                        "tid": 2256, 
+                        "flags": {
+                            "desired_access": "READ_CONTROL"
+                        }
+                    }, 
+                    {
+                        "category": "registry", 
+                        "status": 0, 
+                        "stacktrace": [], 
+                        "last_error": 0, 
+                        "nt_status": -1073741515, 
+                        "api": "NtOpenKey", 
+                        "return_value": 3221225524, 
+                        "arguments": {
+                            "key_handle": "0x00000000", 
+                            "desired_access": "0x00020019", 
+                            "regkey": "HKEY_LOCAL_MACHINE\\Software\\Policies\\Microsoft\\MUI\\Settings"
+                        }, 
+                        "time": 1693130604.627499, 
+                        "tid": 2256, 
+                        "flags": {
+                            "desired_access": "READ_CONTROL"
+                        }
+                    }, 
+                    {
+                        "category": "system", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtClose", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "handle": "0x00000058"
+                        }, 
+                        "time": 1693130604.627499, 
+                        "tid": 2256, 
+                        "flags": {}
+                    }, 
+                    {
+                        "category": "registry", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtOpenKey", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "key_handle": "0x00000058", 
+                            "desired_access": "0x02000000", 
+                            "regkey": "HKEY_CURRENT_USER"
+                        }, 
+                        "time": 1693130604.627499, 
+                        "tid": 2256, 
+                        "flags": {
+                            "desired_access": "MAXIMUM_ALLOWED"
+                        }
+                    }, 
+                    {
+                        "category": "registry", 
+                        "status": 0, 
+                        "stacktrace": [], 
+                        "last_error": 0, 
+                        "nt_status": -1073741515, 
+                        "api": "NtOpenKey", 
+                        "return_value": 3221225524, 
+                        "arguments": {
+                            "key_handle": "0x00000000", 
+                            "desired_access": "0x00020019", 
+                            "regkey": "HKEY_CURRENT_USER\\Control Panel\\Desktop\\MuiCached\\MachineLanguageConfiguration"
+                        }, 
+                        "time": 1693130604.627499, 
+                        "tid": 2256, 
+                        "flags": {
+                            "desired_access": "READ_CONTROL"
+                        }
+                    }, 
+                    {
+                        "category": "registry", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtOpenKey", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "key_handle": "0x0000005c", 
+                            "desired_access": "0x00020019", 
+                            "regkey": "HKEY_LOCAL_MACHINE\\System\\CurrentControlSet\\Control\\MUI\\Settings\\LanguageConfiguration"
+                        }, 
+                        "time": 1693130604.642499, 
+                        "tid": 2256, 
+                        "flags": {
+                            "desired_access": "READ_CONTROL"
+                        }
+                    }, 
+                    {
+                        "category": "registry", 
+                        "status": 0, 
+                        "stacktrace": [], 
+                        "last_error": 0, 
+                        "nt_status": -1073741515, 
+                        "api": "NtEnumerateValueKey", 
+                        "return_value": 2147483674, 
+                        "arguments": {
+                            "index": 0, 
+                            "key_handle": "0x0000005c", 
+                            "key_name": "", 
+                            "value": "", 
+                            "reg_type": 0, 
+                            "information_class": 1, 
+                            "regkey": "HKEY_LOCAL_MACHINE\\SYSTEM\\ControlSet001\\Control\\MUI\\Settings\\LanguageConfiguration"
+                        }, 
+                        "time": 1693130604.642499, 
+                        "tid": 2256, 
+                        "flags": {
+                            "reg_type": "REG_NONE", 
+                            "information_class": "KeyValueFullInformation"
+                        }
+                    }, 
+                    {
+                        "category": "system", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtClose", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "handle": "0x0000005c"
+                        }, 
+                        "time": 1693130604.642499, 
+                        "tid": 2256, 
+                        "flags": {}
+                    }, 
+                    {
+                        "category": "system", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtClose", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "handle": "0x00000058"
+                        }, 
+                        "time": 1693130604.642499, 
+                        "tid": 2256, 
+                        "flags": {}
+                    }, 
+                    {
+                        "category": "registry", 
+                        "status": 0, 
+                        "stacktrace": [], 
+                        "last_error": 0, 
+                        "nt_status": -1073741515, 
+                        "api": "NtOpenKey", 
+                        "return_value": 3221225524, 
+                        "arguments": {
+                            "key_handle": "0x00000000", 
+                            "desired_access": "0x00020019", 
+                            "regkey": "HKEY_LOCAL_MACHINE\\Software\\Policies\\Microsoft\\MUI\\Settings"
+                        }, 
+                        "time": 1693130604.642499, 
+                        "tid": 2256, 
+                        "flags": {
+                            "desired_access": "READ_CONTROL"
+                        }
+                    }, 
+                    {
+                        "category": "system", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtClose", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "handle": "0x00000058"
+                        }, 
+                        "time": 1693130604.642499, 
+                        "tid": 2256, 
+                        "flags": {}
+                    }, 
+                    {
+                        "category": "registry", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtOpenKey", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "key_handle": "0x00000058", 
+                            "desired_access": "0x02000000", 
+                            "regkey": "HKEY_CURRENT_USER"
+                        }, 
+                        "time": 1693130604.642499, 
+                        "tid": 2256, 
+                        "flags": {
+                            "desired_access": "MAXIMUM_ALLOWED"
+                        }
+                    }, 
+                    {
+                        "category": "registry", 
+                        "status": 0, 
+                        "stacktrace": [], 
+                        "last_error": 0, 
+                        "nt_status": -1073741515, 
+                        "api": "NtOpenKey", 
+                        "return_value": 3221225524, 
+                        "arguments": {
+                            "key_handle": "0x00000000", 
+                            "desired_access": "0x00020019", 
+                            "regkey": "HKEY_CURRENT_USER\\Software\\Policies\\Microsoft\\Control Panel\\Desktop"
+                        }, 
+                        "time": 1693130604.642499, 
+                        "tid": 2256, 
+                        "flags": {
+                            "desired_access": "READ_CONTROL"
+                        }
+                    }, 
+                    {
+                        "category": "registry", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtOpenKey", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "key_handle": "0x0000005c", 
+                            "desired_access": "0x00020019", 
+                            "regkey": "HKEY_CURRENT_USER\\Control Panel\\Desktop\\LanguageConfiguration"
+                        }, 
+                        "time": 1693130604.642499, 
+                        "tid": 2256, 
+                        "flags": {
+                            "desired_access": "READ_CONTROL"
+                        }
+                    }, 
+                    {
+                        "category": "registry", 
+                        "status": 0, 
+                        "stacktrace": [], 
+                        "last_error": 0, 
+                        "nt_status": -1073741515, 
+                        "api": "NtEnumerateValueKey", 
+                        "return_value": 2147483674, 
+                        "arguments": {
+                            "index": 0, 
+                            "key_handle": "0x0000005c", 
+                            "key_name": "", 
+                            "value": "", 
+                            "reg_type": 0, 
+                            "information_class": 1, 
+                            "regkey": "HKEY_CURRENT_USER\\Control Panel\\Desktop\\LanguageConfiguration"
+                        }, 
+                        "time": 1693130604.642499, 
+                        "tid": 2256, 
+                        "flags": {
+                            "reg_type": "REG_NONE", 
+                            "information_class": "KeyValueFullInformation"
+                        }
+                    }, 
+                    {
+                        "category": "system", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtClose", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "handle": "0x0000005c"
+                        }, 
+                        "time": 1693130604.642499, 
+                        "tid": 2256, 
+                        "flags": {}
+                    }, 
+                    {
+                        "category": "system", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtClose", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "handle": "0x00000058"
+                        }, 
+                        "time": 1693130604.642499, 
+                        "tid": 2256, 
+                        "flags": {}
+                    }, 
+                    {
+                        "category": "registry", 
+                        "status": 0, 
+                        "stacktrace": [], 
+                        "last_error": 0, 
+                        "nt_status": -1073741515, 
+                        "api": "NtOpenKey", 
+                        "return_value": 3221225524, 
+                        "arguments": {
+                            "key_handle": "0x00000000", 
+                            "desired_access": "0x00020019", 
+                            "regkey": "HKEY_LOCAL_MACHINE\\Software\\Policies\\Microsoft\\MUI\\Settings"
+                        }, 
+                        "time": 1693130604.642499, 
+                        "tid": 2256, 
+                        "flags": {
+                            "desired_access": "READ_CONTROL"
+                        }
+                    }, 
+                    {
+                        "category": "system", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtClose", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "handle": "0x00000058"
+                        }, 
+                        "time": 1693130604.642499, 
+                        "tid": 2256, 
+                        "flags": {}
+                    }, 
+                    {
+                        "category": "registry", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtOpenKey", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "key_handle": "0x00000058", 
+                            "desired_access": "0x02000000", 
+                            "regkey": "HKEY_CURRENT_USER"
+                        }, 
+                        "time": 1693130604.642499, 
+                        "tid": 2256, 
+                        "flags": {
+                            "desired_access": "MAXIMUM_ALLOWED"
+                        }
+                    }, 
+                    {
+                        "category": "registry", 
+                        "status": 0, 
+                        "stacktrace": [], 
+                        "last_error": 0, 
+                        "nt_status": -1073741515, 
+                        "api": "NtOpenKey", 
+                        "return_value": 3221225524, 
+                        "arguments": {
+                            "key_handle": "0x00000000", 
+                            "desired_access": "0x00020019", 
+                            "regkey": "HKEY_CURRENT_USER\\Software\\Policies\\Microsoft\\Control Panel\\Desktop"
+                        }, 
+                        "time": 1693130604.642499, 
+                        "tid": 2256, 
+                        "flags": {
+                            "desired_access": "READ_CONTROL"
+                        }
+                    }, 
+                    {
+                        "category": "registry", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtOpenKey", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "key_handle": "0x0000005c", 
+                            "desired_access": "0x00020019", 
+                            "regkey": "HKEY_CURRENT_USER\\Control Panel\\Desktop"
+                        }, 
+                        "time": 1693130604.642499, 
+                        "tid": 2256, 
+                        "flags": {
+                            "desired_access": "READ_CONTROL"
+                        }
+                    }, 
+                    {
+                        "category": "registry", 
+                        "status": 0, 
+                        "stacktrace": [], 
+                        "last_error": 0, 
+                        "nt_status": -1073741515, 
+                        "api": "NtQueryValueKey", 
+                        "return_value": 3221225524, 
+                        "arguments": {
+                            "key_handle": "0x0000005c", 
+                            "key_name": "", 
+                            "value": "", 
+                            "reg_type": 0, 
+                            "information_class": 2, 
+                            "regkey": "HKEY_CURRENT_USER\\Control Panel\\Desktop\\PreferredUILanguages"
+                        }, 
+                        "time": 1693130604.642499, 
+                        "tid": 2256, 
+                        "flags": {
+                            "reg_type": "REG_NONE", 
+                            "information_class": "KeyValuePartialInformation"
+                        }
+                    }, 
+                    {
+                        "category": "system", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtClose", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "handle": "0x0000005c"
+                        }, 
+                        "time": 1693130604.642499, 
+                        "tid": 2256, 
+                        "flags": {}
+                    }, 
+                    {
+                        "category": "system", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtClose", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "handle": "0x00000058"
+                        }, 
+                        "time": 1693130604.642499, 
+                        "tid": 2256, 
+                        "flags": {}
+                    }, 
+                    {
+                        "category": "registry", 
+                        "status": 0, 
+                        "stacktrace": [], 
+                        "last_error": 0, 
+                        "nt_status": -1073741515, 
+                        "api": "NtOpenKey", 
+                        "return_value": 3221225524, 
+                        "arguments": {
+                            "key_handle": "0x00000000", 
+                            "desired_access": "0x00020019", 
+                            "regkey": "HKEY_LOCAL_MACHINE\\Software\\Policies\\Microsoft\\MUI\\Settings"
+                        }, 
+                        "time": 1693130604.642499, 
+                        "tid": 2256, 
+                        "flags": {
+                            "desired_access": "READ_CONTROL"
+                        }
+                    }, 
+                    {
+                        "category": "system", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtClose", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "handle": "0x00000058"
+                        }, 
+                        "time": 1693130604.642499, 
+                        "tid": 2256, 
+                        "flags": {}
+                    }, 
+                    {
+                        "category": "registry", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtOpenKey", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "key_handle": "0x00000058", 
+                            "desired_access": "0x02000000", 
+                            "regkey": "HKEY_CURRENT_USER"
+                        }, 
+                        "time": 1693130604.642499, 
+                        "tid": 2256, 
+                        "flags": {
+                            "desired_access": "MAXIMUM_ALLOWED"
+                        }
+                    }, 
+                    {
+                        "category": "registry", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtOpenKey", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "key_handle": "0x0000005c", 
+                            "desired_access": "0x00020019", 
+                            "regkey": "HKEY_CURRENT_USER\\Control Panel\\Desktop\\MuiCached"
+                        }, 
+                        "time": 1693130604.642499, 
+                        "tid": 2256, 
+                        "flags": {
+                            "desired_access": "READ_CONTROL"
+                        }
+                    }, 
+                    {
+                        "category": "registry", 
+                        "status": 0, 
+                        "stacktrace": [], 
+                        "last_error": 0, 
+                        "nt_status": -1073741515, 
+                        "api": "NtQueryValueKey", 
+                        "return_value": 2147483653, 
+                        "arguments": {
+                            "key_handle": "0x0000005c", 
+                            "key_name": "", 
+                            "value": "", 
+                            "reg_type": 0, 
+                            "information_class": 2, 
+                            "regkey": "HKEY_CURRENT_USER\\Control Panel\\Desktop\\MuiCached\\MachinePreferredUILanguages"
+                        }, 
+                        "time": 1693130604.658499, 
+                        "tid": 2256, 
+                        "flags": {
+                            "reg_type": "REG_NONE", 
+                            "information_class": "KeyValuePartialInformation"
+                        }
+                    }, 
+                    {
+                        "category": "registry", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtQueryValueKey", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "key_handle": "0x0000005c", 
+                            "key_name": "", 
+                            "value": "en-US", 
+                            "reg_type": 7, 
+                            "information_class": 2, 
+                            "regkey": "HKEY_CURRENT_USER\\Control Panel\\Desktop\\MuiCached\\MachinePreferredUILanguages"
+                        }, 
+                        "time": 1693130604.658499, 
+                        "tid": 2256, 
+                        "flags": {
+                            "reg_type": "REG_MULTI_SZ", 
+                            "information_class": "KeyValuePartialInformation"
+                        }
+                    }, 
+                    {
+                        "category": "system", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtClose", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "handle": "0x0000005c"
+                        }, 
+                        "time": 1693130604.658499, 
+                        "tid": 2256, 
+                        "flags": {}
+                    }, 
+                    {
+                        "category": "system", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtClose", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "handle": "0x00000058"
+                        }, 
+                        "time": 1693130604.658499, 
+                        "tid": 2256, 
+                        "flags": {}
+                    }, 
+                    {
+                        "category": "registry", 
+                        "status": 0, 
+                        "stacktrace": [], 
+                        "last_error": 0, 
+                        "nt_status": -1073741515, 
+                        "api": "NtOpenKey", 
+                        "return_value": 3221225524, 
+                        "arguments": {
+                            "key_handle": "0x00000000", 
+                            "desired_access": "0x00020019", 
+                            "regkey": "HKEY_LOCAL_MACHINE\\Software\\Policies\\Microsoft\\MUI\\Settings"
+                        }, 
+                        "time": 1693130604.658499, 
+                        "tid": 2256, 
+                        "flags": {
+                            "desired_access": "READ_CONTROL"
+                        }
+                    }, 
+                    {
+                        "category": "system", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtClose", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "handle": "0x00000058"
+                        }, 
+                        "time": 1693130604.658499, 
+                        "tid": 2256, 
+                        "flags": {}
+                    }, 
+                    {
+                        "category": "registry", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtOpenKey", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "key_handle": "0x00000058", 
+                            "desired_access": "0x02000000", 
+                            "regkey": "HKEY_CURRENT_USER"
+                        }, 
+                        "time": 1693130604.658499, 
+                        "tid": 2256, 
+                        "flags": {
+                            "desired_access": "MAXIMUM_ALLOWED"
+                        }
+                    }, 
+                    {
+                        "category": "registry", 
+                        "status": 0, 
+                        "stacktrace": [], 
+                        "last_error": 0, 
+                        "nt_status": -1073741515, 
+                        "api": "NtOpenKey", 
+                        "return_value": 3221225524, 
+                        "arguments": {
+                            "key_handle": "0x00000000", 
+                            "desired_access": "0x00020019", 
+                            "regkey": "HKEY_CURRENT_USER\\Software\\Policies\\Microsoft\\Control Panel\\Desktop"
+                        }, 
+                        "time": 1693130604.658499, 
+                        "tid": 2256, 
+                        "flags": {
+                            "desired_access": "READ_CONTROL"
+                        }
+                    }, 
+                    {
+                        "category": "registry", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtOpenKey", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "key_handle": "0x0000005c", 
+                            "desired_access": "0x00020019", 
+                            "regkey": "HKEY_CURRENT_USER\\Control Panel\\Desktop"
+                        }, 
+                        "time": 1693130604.658499, 
+                        "tid": 2256, 
+                        "flags": {
+                            "desired_access": "READ_CONTROL"
+                        }
+                    }, 
+                    {
+                        "category": "registry", 
+                        "status": 0, 
+                        "stacktrace": [], 
+                        "last_error": 0, 
+                        "nt_status": -1073741515, 
+                        "api": "NtQueryValueKey", 
+                        "return_value": 3221225524, 
+                        "arguments": {
+                            "key_handle": "0x0000005c", 
+                            "key_name": "", 
+                            "value": "", 
+                            "reg_type": 0, 
+                            "information_class": 2, 
+                            "regkey": "HKEY_CURRENT_USER\\Control Panel\\Desktop\\PreferredUILanguages"
+                        }, 
+                        "time": 1693130604.658499, 
+                        "tid": 2256, 
+                        "flags": {
+                            "reg_type": "REG_NONE", 
+                            "information_class": "KeyValuePartialInformation"
+                        }
+                    }, 
+                    {
+                        "category": "system", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtClose", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "handle": "0x0000005c"
+                        }, 
+                        "time": 1693130604.658499, 
+                        "tid": 2256, 
+                        "flags": {}
+                    }, 
+                    {
+                        "category": "system", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtClose", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "handle": "0x00000058"
+                        }, 
+                        "time": 1693130604.658499, 
+                        "tid": 2256, 
+                        "flags": {}
+                    }, 
+                    {
+                        "category": "registry", 
+                        "status": 0, 
+                        "stacktrace": [], 
+                        "last_error": 0, 
+                        "nt_status": -1073741515, 
+                        "api": "NtOpenKey", 
+                        "return_value": 3221225524, 
+                        "arguments": {
+                            "key_handle": "0x00000000", 
+                            "desired_access": "0x00020019", 
+                            "regkey": "HKEY_LOCAL_MACHINE\\Software\\Policies\\Microsoft\\MUI\\Settings"
+                        }, 
+                        "time": 1693130604.658499, 
+                        "tid": 2256, 
+                        "flags": {
+                            "desired_access": "READ_CONTROL"
+                        }
+                    }, 
+                    {
+                        "category": "system", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtClose", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "handle": "0x00000058"
+                        }, 
+                        "time": 1693130604.658499, 
+                        "tid": 2256, 
+                        "flags": {}
+                    }, 
+                    {
+                        "category": "registry", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtOpenKey", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "key_handle": "0x00000058", 
+                            "desired_access": "0x02000000", 
+                            "regkey": "HKEY_CURRENT_USER"
+                        }, 
+                        "time": 1693130604.658499, 
+                        "tid": 2256, 
+                        "flags": {
+                            "desired_access": "MAXIMUM_ALLOWED"
+                        }
+                    }, 
+                    {
+                        "category": "registry", 
+                        "status": 0, 
+                        "stacktrace": [], 
+                        "last_error": 0, 
+                        "nt_status": -1073741515, 
+                        "api": "NtOpenKey", 
+                        "return_value": 3221225524, 
+                        "arguments": {
+                            "key_handle": "0x00000000", 
+                            "desired_access": "0x00020019", 
+                            "regkey": "HKEY_CURRENT_USER\\Software\\Policies\\Microsoft\\Control Panel\\Desktop"
+                        }, 
+                        "time": 1693130604.658499, 
+                        "tid": 2256, 
+                        "flags": {
+                            "desired_access": "READ_CONTROL"
+                        }
+                    }, 
+                    {
+                        "category": "registry", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtOpenKey", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "key_handle": "0x0000005c", 
+                            "desired_access": "0x00020019", 
+                            "regkey": "HKEY_CURRENT_USER\\Control Panel\\Desktop\\LanguageConfiguration"
+                        }, 
+                        "time": 1693130604.674499, 
+                        "tid": 2256, 
+                        "flags": {
+                            "desired_access": "READ_CONTROL"
+                        }
+                    }, 
+                    {
+                        "category": "registry", 
+                        "status": 0, 
+                        "stacktrace": [], 
+                        "last_error": 0, 
+                        "nt_status": -1073741515, 
+                        "api": "NtEnumerateValueKey", 
+                        "return_value": 2147483674, 
+                        "arguments": {
+                            "index": 0, 
+                            "key_handle": "0x0000005c", 
+                            "key_name": "", 
+                            "value": "", 
+                            "reg_type": 0, 
+                            "information_class": 1, 
+                            "regkey": "HKEY_CURRENT_USER\\Control Panel\\Desktop\\LanguageConfiguration"
+                        }, 
+                        "time": 1693130604.674499, 
+                        "tid": 2256, 
+                        "flags": {
+                            "reg_type": "REG_NONE", 
+                            "information_class": "KeyValueFullInformation"
+                        }
+                    }, 
+                    {
+                        "category": "system", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtClose", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "handle": "0x0000005c"
+                        }, 
+                        "time": 1693130604.674499, 
+                        "tid": 2256, 
+                        "flags": {}
+                    }, 
+                    {
+                        "category": "system", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtClose", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "handle": "0x00000058"
+                        }, 
+                        "time": 1693130604.674499, 
+                        "tid": 2256, 
+                        "flags": {}
+                    }, 
+                    {
+                        "category": "system", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtClose", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "handle": "0x00000058"
+                        }, 
+                        "time": 1693130604.674499, 
+                        "tid": 2256, 
+                        "flags": {}
+                    }, 
+                    {
+                        "category": "registry", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtOpenKey", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "key_handle": "0x00000058", 
+                            "desired_access": "0x00020019", 
+                            "regkey": "HKEY_LOCAL_MACHINE\\System\\CurrentControlSet\\Control\\Nls\\CustomLocale"
+                        }, 
+                        "time": 1693130604.674499, 
+                        "tid": 2256, 
+                        "flags": {
+                            "desired_access": "READ_CONTROL"
+                        }
+                    }, 
+                    {
+                        "category": "registry", 
+                        "status": 0, 
+                        "stacktrace": [], 
+                        "last_error": 0, 
+                        "nt_status": 0, 
+                        "api": "NtQueryValueKey", 
+                        "return_value": 3221225524, 
+                        "arguments": {
+                            "key_handle": "0x00000058", 
+                            "key_name": "", 
+                            "value": "", 
+                            "reg_type": 0, 
+                            "information_class": 1, 
+                            "regkey": "HKEY_LOCAL_MACHINE\\SYSTEM\\ControlSet001\\Control\\Nls\\CustomLocale\\en-US"
+                        }, 
+                        "time": 1693130604.674499, 
+                        "tid": 2256, 
+                        "flags": {
+                            "reg_type": "REG_NONE", 
+                            "information_class": "KeyValueFullInformation"
+                        }
+                    }, 
+                    {
+                        "category": "system", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtClose", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "handle": "0x00000058"
+                        }, 
+                        "time": 1693130604.674499, 
+                        "tid": 2256, 
+                        "flags": {}
+                    }, 
+                    {
+                        "category": "registry", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtOpenKey", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "key_handle": "0x00000058", 
+                            "desired_access": "0x00020019", 
+                            "regkey": "HKEY_LOCAL_MACHINE\\System\\CurrentControlSet\\Control\\Nls\\ExtendedLocale"
+                        }, 
+                        "time": 1693130604.674499, 
+                        "tid": 2256, 
+                        "flags": {
+                            "desired_access": "READ_CONTROL"
+                        }
+                    }, 
+                    {
+                        "category": "registry", 
+                        "status": 0, 
+                        "stacktrace": [], 
+                        "last_error": 0, 
+                        "nt_status": 0, 
+                        "api": "NtQueryValueKey", 
+                        "return_value": 3221225524, 
+                        "arguments": {
+                            "key_handle": "0x00000058", 
+                            "key_name": "", 
+                            "value": "", 
+                            "reg_type": 0, 
+                            "information_class": 1, 
+                            "regkey": "HKEY_LOCAL_MACHINE\\SYSTEM\\ControlSet001\\Control\\Nls\\ExtendedLocale\\en-US"
+                        }, 
+                        "time": 1693130604.674499, 
+                        "tid": 2256, 
+                        "flags": {
+                            "reg_type": "REG_NONE", 
+                            "information_class": "KeyValueFullInformation"
+                        }
+                    }, 
+                    {
+                        "category": "system", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtClose", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "handle": "0x00000058"
+                        }, 
+                        "time": 1693130604.674499, 
+                        "tid": 2256, 
+                        "flags": {}
+                    }, 
+                    {
+                        "category": "registry", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtOpenKey", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "key_handle": "0x00000058", 
+                            "desired_access": "0x00020019", 
+                            "regkey": "HKEY_LOCAL_MACHINE\\System\\CurrentControlSet\\Control\\Nls\\Locale"
+                        }, 
+                        "time": 1693130604.674499, 
+                        "tid": 2256, 
+                        "flags": {
+                            "desired_access": "READ_CONTROL"
+                        }
+                    }, 
+                    {
+                        "category": "registry", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtOpenKey", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "key_handle": "0x0000005c", 
+                            "desired_access": "0x00020019", 
+                            "regkey": "HKEY_LOCAL_MACHINE\\System\\CurrentControlSet\\Control\\Nls\\Locale\\Alternate Sorts"
+                        }, 
+                        "time": 1693130604.674499, 
+                        "tid": 2256, 
+                        "flags": {
+                            "desired_access": "READ_CONTROL"
+                        }
+                    }, 
+                    {
+                        "category": "registry", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtOpenKey", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "key_handle": "0x00000060", 
+                            "desired_access": "0x00020019", 
+                            "regkey": "HKEY_LOCAL_MACHINE\\System\\CurrentControlSet\\Control\\Nls\\Language Groups"
+                        }, 
+                        "time": 1693130604.674499, 
+                        "tid": 2256, 
+                        "flags": {
+                            "desired_access": "READ_CONTROL"
+                        }
+                    }, 
+                    {
+                        "category": "registry", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtQueryValueKey", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "key_handle": "0x00000058", 
+                            "key_name": "00000409", 
+                            "value": "1", 
+                            "reg_type": 1, 
+                            "information_class": 1, 
+                            "regkey": "HKEY_LOCAL_MACHINE\\SYSTEM\\ControlSet001\\Control\\Nls\\Locale\\00000409"
+                        }, 
+                        "time": 1693130604.674499, 
+                        "tid": 2256, 
+                        "flags": {
+                            "reg_type": "REG_SZ", 
+                            "information_class": "KeyValueFullInformation"
+                        }
+                    }, 
+                    {
+                        "category": "registry", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtQueryValueKey", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "key_handle": "0x00000060", 
+                            "key_name": "1", 
+                            "value": "1", 
+                            "reg_type": 1, 
+                            "information_class": 1, 
+                            "regkey": "HKEY_LOCAL_MACHINE\\SYSTEM\\ControlSet001\\Control\\Nls\\Language Groups\\1"
+                        }, 
+                        "time": 1693130604.689499, 
+                        "tid": 2256, 
+                        "flags": {
+                            "reg_type": "REG_SZ", 
+                            "information_class": "KeyValueFullInformation"
+                        }
+                    }, 
+                    {
+                        "category": "process", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtAllocateVirtualMemory", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "process_identifier": 1752, 
+                            "region_size": 16384, 
+                            "stack_dep_bypass": 0, 
+                            "stack_pivoted": 0, 
+                            "heap_dep_bypass": 0, 
+                            "protection": 4, 
+                            "process_handle": "0xffffffff", 
+                            "allocation_type": 4096, 
+                            "base_address": "0x00625000"
+                        }, 
+                        "time": 1693130604.689499, 
+                        "tid": 2256, 
+                        "flags": {
+                            "protection": "PAGE_READWRITE", 
+                            "allocation_type": "MEM_COMMIT"
+                        }
+                    }, 
+                    {
+                        "category": "process", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtAllocateVirtualMemory", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "process_identifier": 1752, 
+                            "region_size": 28672, 
+                            "stack_dep_bypass": 0, 
+                            "stack_pivoted": 0, 
+                            "heap_dep_bypass": 0, 
+                            "protection": 4, 
+                            "process_handle": "0xffffffff", 
+                            "allocation_type": 4096, 
+                            "base_address": "0x00629000"
+                        }, 
+                        "time": 1693130604.689499, 
+                        "tid": 2256, 
+                        "flags": {
+                            "protection": "PAGE_READWRITE", 
+                            "allocation_type": "MEM_COMMIT"
+                        }
+                    }, 
+                    {
+                        "category": "file", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "GetFileType", 
+                        "return_value": 2, 
+                        "arguments": {
+                            "file_handle": "0x00000003"
+                        }, 
+                        "time": 1693130604.689499, 
+                        "tid": 2256, 
+                        "flags": {}
+                    }, 
+                    {
+                        "category": "file", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "GetFileType", 
+                        "return_value": 2, 
+                        "arguments": {
+                            "file_handle": "0x00000007"
+                        }, 
+                        "time": 1693130604.689499, 
+                        "tid": 2256, 
+                        "flags": {}
+                    }, 
+                    {
+                        "category": "system", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "GlobalMemoryStatusEx", 
+                        "return_value": 1, 
+                        "arguments": {}, 
+                        "time": 1693130604.689499, 
+                        "tid": 2256, 
+                        "flags": {}
+                    }, 
+                    {
+                        "category": "system", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "GetSystemInfo", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "processor_count": 1
+                        }, 
+                        "time": 1693130604.689499, 
+                        "tid": 2256, 
+                        "flags": {}
+                    }, 
+                    {
+                        "category": "process", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtAllocateVirtualMemory", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "process_identifier": 1752, 
+                            "region_size": 483184640, 
+                            "stack_dep_bypass": 0, 
+                            "stack_pivoted": 0, 
+                            "heap_dep_bypass": 0, 
+                            "protection": 4, 
+                            "process_handle": "0xffffffff", 
+                            "allocation_type": 8192, 
+                            "base_address": "0x00630000"
+                        }, 
+                        "time": 1693130604.689499, 
+                        "tid": 2256, 
+                        "flags": {
+                            "protection": "PAGE_READWRITE", 
+                            "allocation_type": "MEM_RESERVE"
+                        }
+                    }, 
+                    {
+                        "category": "process", 
+                        "status": 1, 
+                        "stacktrace": [], 
+                        "api": "NtAllocateVirtualMemory", 
+                        "return_value": 0, 
+                        "arguments": {
+                            "process_identifier": 1752, 
+                            "region_size": 1077248, 
+                            "stack_dep_bypass": 0, 
+                            "stack_pivoted": 0, 
+                            "heap_dep_bypass": 0, 
+                            "protection": 4, 
+                            "process_handle": "0xffffffff", 
+                            "allocation_type": 4096, 
+                            "base_address": "0x00630000"
+                        }, 
+                        "time": 1693130604.689499, 
+                        "tid": 2256, 
+                        "flags": {
+                            "protection": "PAGE_READWRITE", 
+                            "allocation_type": "MEM_COMMIT"
+                        }
+                    }
+                ], 
+                "track": true, 
+                "pid": 1752, 
+                "process_name": "2178f2c356413aab2b9e335b70b2de86e5875ba9fca4918989798c9da614a604_benign.exe", 
+                "command_line": "\"C:\\Users\\cuckoo2\\AppData\\Local\\Temp\\2178f2c356413aab2b9e335b70b2de86e5875ba9fca4918989798c9da614a604_benign.exe\" ", 
+                "modules": [
+                    {
+                        "basename": "2178f2c356413aab2b9e335b70b2de86e5875ba9fca4918989798c9da614a604_benign.exe", 
+                        "imgsize": 40960, 
+                        "baseaddr": "0x320000", 
+                        "filepath": "C:\\Users\\cuckoo2\\AppData\\Local\\Temp\\2178f2c356413aab2b9e335b70b2de86e5875ba9fca4918989798c9da614a604_benign.exe"
+                    }, 
+                    {
+                        "basename": "ntdll.dll", 
+                        "imgsize": 1572864, 
+                        "baseaddr": "0x77c70000", 
+                        "filepath": "C:\\Windows\\SysWOW64\\ntdll.dll"
+                    }, 
+                    {
+                        "basename": "kernel32.dll", 
+                        "imgsize": 1114112, 
+                        "baseaddr": "0x75820000", 
+                        "filepath": "C:\\Windows\\syswow64\\kernel32.dll"
+                    }, 
+                    {
+                        "basename": "KERNELBASE.dll", 
+                        "imgsize": 286720, 
+                        "baseaddr": "0x76310000", 
+                        "filepath": "C:\\Windows\\syswow64\\KERNELBASE.dll"
+                    }, 
+                    {
+                        "basename": "ADVAPI32.dll", 
+                        "imgsize": 655360, 
+                        "baseaddr": "0x765c0000", 
+                        "filepath": "C:\\Windows\\syswow64\\ADVAPI32.dll"
+                    }, 
+                    {
+                        "basename": "msvcrt.dll", 
+                        "imgsize": 704512, 
+                        "baseaddr": "0x763a0000", 
+                        "filepath": "C:\\Windows\\syswow64\\msvcrt.dll"
+                    }, 
+                    {
+                        "basename": "sechost.dll", 
+                        "imgsize": 102400, 
+                        "baseaddr": "0x762f0000", 
+                        "filepath": "C:\\Windows\\SysWOW64\\sechost.dll"
+                    }, 
+                    {
+                        "basename": "RPCRT4.dll", 
+                        "imgsize": 983040, 
+                        "baseaddr": "0x76660000", 
+                        "filepath": "C:\\Windows\\syswow64\\RPCRT4.dll"
+                    }, 
+                    {
+                        "basename": "SspiCli.dll", 
+                        "imgsize": 393216, 
+                        "baseaddr": "0x757c0000", 
+                        "filepath": "C:\\Windows\\syswow64\\SspiCli.dll"
+                    }, 
+                    {
+                        "basename": "CRYPTBASE.dll", 
+                        "imgsize": 49152, 
+                        "baseaddr": "0x757b0000", 
+                        "filepath": "C:\\Windows\\syswow64\\CRYPTBASE.dll"
+                    }, 
+                    {
+                        "basename": "monitor-x86.dll", 
+                        "imgsize": 2117632, 
+                        "baseaddr": "0x73c30000", 
+                        "filepath": "C:\\tmpezozfh\\bin\\monitor-x86.dll"
+                    }
+                ], 
+                "time": 0, 
+                "tid": 2256, 
+                "first_seen": 1693130604.252499, 
+                "ppid": 1684, 
+                "type": "process"
+            }
+        ], 
+        "processtree": [
+            {
+                "track": true, 
+                "pid": 1752, 
+                "process_name": "2178f2c356413aab2b9e335b70b2de86e5875ba9fca4918989798c9da614a604_benign.exe", 
+                "command_line": "\"C:\\Users\\cuckoo2\\AppData\\Local\\Temp\\2178f2c356413aab2b9e335b70b2de86e5875ba9fca4918989798c9da614a604_benign.exe\" ", 
+                "first_seen": 1693130604.252499, 
+                "ppid": 1684, 
+                "children": []
+            }
+        ], 
+        "summary": {
+            "regkey_read": [
+                "HKEY_LOCAL_MACHINE\\SYSTEM\\ControlSet001\\Control\\Nls\\Language\\InstallLanguageFallback", 
+                "HKEY_LOCAL_MACHINE\\SYSTEM\\ControlSet001\\Control\\Nls\\CustomLocale\\en-US", 
+                "HKEY_LOCAL_MACHINE\\SYSTEM\\ControlSet001\\Control\\Nls\\Locale\\00000409", 
+                "HKEY_LOCAL_MACHINE\\SYSTEM\\ControlSet001\\Control\\Nls\\Language Groups\\1", 
+                "HKEY_CURRENT_USER\\Control Panel\\Desktop\\PreferredUILanguages", 
+                "HKEY_LOCAL_MACHINE\\SYSTEM\\ControlSet001\\Control\\MUI\\UILanguages\\en-US\\Type", 
+                "HKEY_LOCAL_MACHINE\\SYSTEM\\ControlSet001\\Control\\MUI\\UILanguages\\en-US\\AlternateCodePage", 
+                "HKEY_CURRENT_USER\\Control Panel\\Desktop\\MuiCached\\MachinePreferredUILanguages", 
+                "HKEY_LOCAL_MACHINE\\SYSTEM\\ControlSet001\\Control\\Nls\\CustomLocale\\EMPTY", 
+                "HKEY_LOCAL_MACHINE\\SYSTEM\\ControlSet001\\Control\\Nls\\ExtendedLocale\\en-US"
+            ]
+        }
+    }, 
+    "debug": {
+        "action": [], 
+        "dbgview": [], 
+        "errors": [], 
+        "log": [
+            "2023-08-27 09:37:02,030 [analyzer] DEBUG: Starting analyzer from: C:\\tmpezozfh\n", 
+            "2023-08-27 09:37:02,030 [analyzer] DEBUG: Pipe server name: \\??\\PIPE\\rljcqGXquXtSUUBHMRxRWLvrDoSIkQ\n", 
+            "2023-08-27 09:37:02,030 [analyzer] DEBUG: Log pipe server name: \\??\\PIPE\\DONVgFHkqtelcvLqScGzlWLA\n", 
+            "2023-08-27 09:37:02,030 [analyzer] DEBUG: No analysis package specified, trying to detect it automagically.\n", 
+            "2023-08-27 09:37:02,046 [analyzer] INFO: Automatically selected analysis package \"exe\"\n", 
+            "2023-08-27 09:37:07,015 [analyzer] DEBUG: Started auxiliary module DbgView\n", 
+            "2023-08-26 21:33:22,454 [analyzer] DEBUG: Started auxiliary module Disguise\n", 
+            "2023-08-26 21:33:22,782 [lib.api.process] ERROR: Failed to inject 64-bit process with pid None and process name lsass.exe\n", 
+            "2023-08-26 21:33:22,782 [analyzer] DEBUG: Started auxiliary module DumpTLSMasterSecrets\n", 
+            "2023-08-26 21:33:22,782 [analyzer] DEBUG: Started auxiliary module Human\n", 
+            "2023-08-26 21:33:22,782 [analyzer] DEBUG: Started auxiliary module InstallCertificate\n", 
+            "2023-08-26 21:33:22,782 [analyzer] DEBUG: Started auxiliary module Reboot\n", 
+            "2023-08-26 21:33:23,549 [analyzer] DEBUG: Started auxiliary module RecentFiles\n", 
+            "2023-08-26 21:33:23,549 [analyzer] DEBUG: Started auxiliary module Screenshots\n", 
+            "2023-08-26 21:33:23,549 [analyzer] DEBUG: Started auxiliary module LoadZer0m0n\n", 
+            "2023-08-26 21:33:23,924 [lib.api.process] INFO: Successfully executed process from path u'C:\\\\Users\\\\cuckoo2\\\\AppData\\\\Local\\\\Temp\\\\2178f2c356413aab2b9e335b70b2de86e5875ba9fca4918989798c9da614a604_benign.exe' with arguments '' and pid 1752\n", 
+            "2023-08-26 21:33:24,611 [analyzer] DEBUG: Loaded monitor into process with pid 1752\n", 
+            "2023-08-26 21:35:23,704 [analyzer] INFO: Analysis timeout hit, terminating analysis.\n", 
+            "2023-08-26 21:35:23,704 [analyzer] INFO: Analysis completed.\n"
+        ], 
+        "cuckoo": [
+            "2023-08-27 10:02:54,212 [cuckoo.core.scheduler] INFO: Task #18: acquired machine cuckoo2 (label=cuckoo2)\n", 
+            "2023-08-27 10:02:54,213 [cuckoo.core.resultserver] DEBUG: Now tracking machine 192.168.56.101 for task #18\n", 
+            "2023-08-27 10:02:54,213 [cuckoo.core.plugins] DEBUG: Started auxiliary module: Replay\n", 
+            "2023-08-27 10:02:54,239 [cuckoo.auxiliary.sniffer] INFO: Started sniffer with PID 68028 (interface=vboxnet0, host=192.168.56.101)\n", 
+            "2023-08-27 10:02:54,240 [cuckoo.core.plugins] DEBUG: Started auxiliary module: Sniffer\n", 
+            "2023-08-27 10:02:54,298 [cuckoo.machinery.virtualbox] DEBUG: Starting vm cuckoo2\n", 
+            "2023-08-27 10:02:54,494 [cuckoo.machinery.virtualbox] DEBUG: Restoring virtual machine cuckoo2 to cuckoo2_snap\n", 
+            "2023-08-27 10:02:57,423 [cuckoo.core.guest] INFO: Starting analysis #18 on guest (id=cuckoo2, ip=192.168.56.101)\n", 
+            "2023-08-27 10:02:58,432 [cuckoo.core.guest] DEBUG: cuckoo2: not ready yet\n", 
+            "2023-08-27 10:02:59,436 [cuckoo.core.guest] DEBUG: cuckoo2: not ready yet\n", 
+            "2023-08-27 10:03:00,450 [cuckoo.core.guest] DEBUG: cuckoo2: not ready yet\n", 
+            "2023-08-27 10:03:01,454 [cuckoo.core.guest] DEBUG: cuckoo2: not ready yet\n", 
+            "2023-08-27 10:03:01,475 [cuckoo.core.guest] INFO: Guest is running Cuckoo Agent 0.10 (id=cuckoo2, ip=192.168.56.101)\n", 
+            "2023-08-27 10:03:01,539 [cuckoo.core.guest] DEBUG: Uploading analyzer to guest (id=cuckoo2, ip=192.168.56.101, monitor=latest, size=3884763)\n", 
+            "2023-08-27 10:03:07,823 [cuckoo.core.resultserver] DEBUG: Task #18: live log analysis.log initialized.\n", 
+            "2023-08-27 10:03:08,679 [cuckoo.core.guest] DEBUG: cuckoo2: analysis #18 still processing\n", 
+            "2023-08-27 10:03:13,726 [cuckoo.core.guest] DEBUG: cuckoo2: analysis #18 still processing\n", 
+            "2023-08-27 10:03:18,807 [cuckoo.core.guest] DEBUG: cuckoo2: analysis #18 still processing\n", 
+            "2023-08-27 10:03:23,880 [cuckoo.core.guest] DEBUG: cuckoo2: analysis #18 still processing\n", 
+            "2023-08-27 10:03:24,306 [cuckoo.core.resultserver] DEBUG: Task #18 is sending a BSON stream\n", 
+            "2023-08-27 10:03:25,044 [cuckoo.core.resultserver] DEBUG: Task #18: File upload for 'shots/0001.jpg'\n", 
+            "2023-08-27 10:03:25,058 [cuckoo.core.resultserver] DEBUG: Task #18 uploaded file length: 72504\n", 
+            "2023-08-27 10:03:26,237 [cuckoo.core.resultserver] DEBUG: Task #18: File upload for 'shots/0002.jpg'\n", 
+            "2023-08-27 10:03:26,273 [cuckoo.core.resultserver] DEBUG: Task #18 uploaded file length: 68237\n", 
+            "2023-08-27 10:03:28,946 [cuckoo.core.guest] DEBUG: cuckoo2: analysis #18 still processing\n", 
+            "2023-08-27 10:03:33,989 [cuckoo.core.guest] DEBUG: cuckoo2: analysis #18 still processing\n", 
+            "2023-08-27 10:03:39,031 [cuckoo.core.guest] DEBUG: cuckoo2: analysis #18 still processing\n", 
+            "2023-08-27 10:03:44,084 [cuckoo.core.guest] DEBUG: cuckoo2: analysis #18 still processing\n", 
+            "2023-08-27 10:03:49,141 [cuckoo.core.guest] DEBUG: cuckoo2: analysis #18 still processing\n", 
+            "2023-08-27 10:03:54,183 [cuckoo.core.guest] DEBUG: cuckoo2: analysis #18 still processing\n", 
+            "2023-08-27 10:03:59,254 [cuckoo.core.guest] DEBUG: cuckoo2: analysis #18 still processing\n", 
+            "2023-08-27 10:04:04,298 [cuckoo.core.guest] DEBUG: cuckoo2: analysis #18 still processing\n", 
+            "2023-08-27 10:04:09,346 [cuckoo.core.guest] DEBUG: cuckoo2: analysis #18 still processing\n", 
+            "2023-08-27 10:04:14,395 [cuckoo.core.guest] DEBUG: cuckoo2: analysis #18 still processing\n", 
+            "2023-08-27 10:04:19,449 [cuckoo.core.guest] DEBUG: cuckoo2: analysis #18 still processing\n", 
+            "2023-08-27 10:04:24,543 [cuckoo.core.guest] DEBUG: cuckoo2: analysis #18 still processing\n", 
+            "2023-08-27 10:04:29,593 [cuckoo.core.guest] DEBUG: cuckoo2: analysis #18 still processing\n", 
+            "2023-08-27 10:04:34,641 [cuckoo.core.guest] DEBUG: cuckoo2: analysis #18 still processing\n", 
+            "2023-08-27 10:04:39,692 [cuckoo.core.guest] DEBUG: cuckoo2: analysis #18 still processing\n", 
+            "2023-08-27 10:04:44,459 [cuckoo.core.resultserver] DEBUG: Task #18: File upload for 'shots/0003.jpg'\n", 
+            "2023-08-27 10:04:44,472 [cuckoo.core.resultserver] DEBUG: Task #18 uploaded file length: 68902\n", 
+            "2023-08-27 10:04:44,746 [cuckoo.core.guest] DEBUG: cuckoo2: analysis #18 still processing\n", 
+            "2023-08-27 10:04:45,606 [cuckoo.core.resultserver] DEBUG: Task #18: File upload for 'shots/0004.jpg'\n", 
+            "2023-08-27 10:04:45,616 [cuckoo.core.r"
+        ]
+    }, 
+    "screenshots": [
+        {
+            "path": "/home/abc/.cuckoo/storage/analyses/18/shots/0001.jpg", 
+            "ocr": ""
+        }, 
+        {
+            "path": "/home/abc/.cuckoo/storage/analyses/18/shots/0002.jpg", 
+            "ocr": ""
+        }, 
+        {
+            "path": "/home/abc/.cuckoo/storage/analyses/18/shots/0003.jpg", 
+            "ocr": ""
+        }, 
+        {
+            "path": "/home/abc/.cuckoo/storage/analyses/18/shots/0004.jpg", 
+            "ocr": ""
+        }, 
+        {
+            "path": "/home/abc/.cuckoo/storage/analyses/18/shots/0005.jpg", 
+            "ocr": ""
+        }
+    ], 
+    "strings": [
+        "!This program cannot be run in DOS mode.", 
+        "`.data", 
+        "@.reloc", 
+        "ADVAPI32.dll", 
+        "KERNEL32.dll", 
+        "NTDLL.DLL", 
+        "msvcrt.dll", 
+        "uni_output", 
+        "temporary", 
+        "record_maximum", 
+        "reverse", 
+        "output", 
+        "memory", 
+        "locale", 
+        "case_sensitive", 
+        "TEMP path", 
+        "sort.pdb", 
+        "t'<+u#", 
+        "QQSVWh`t", 
+        "FL;FPt", 
+        "V4;VD|", 
+        "v&WjX_", 
+        "IsTextUnicode", 
+        "ADVAPI32.dll", 
+        "FormatMessageA", 
+        "GetModuleHandleA", 
+        "GetLastError", 
+        "HeapFree", 
+        "HeapAlloc", 
+        "GetProcessHeap", 
+        "MultiByteToWideChar", 
+        "CreateEventA", 
+        "GetConsoleMode", 
+        "GetFileSize", 
+        "GetFileType", 
+        "CreateFileA", 
+        "GetStdHandle", 
+        "VirtualAlloc", 
+        "GetCPInfo", 
+        "GetSystemInfo", 
+        "GlobalMemoryStatusEx", 
+        "GetOverlappedResult", 
+        "ReadFile", 
+        "ResetEvent", 
+        "CloseHandle", 
+        "WriteFile", 
+        "GetDiskFreeSpaceA", 
+        "GetTempPathA", 
+        "GetTempFileNameA", 
+        "WideCharToMultiByte", 
+        "WaitForSingleObject", 
+        "HeapSetInformation", 
+        "SetThreadUILanguage", 
+        "KERNEL32.dll", 
+        "fprintf", 
+        "_strnicmp", 
+        "_stricoll", 
+        "strcoll", 
+        "_wcsicoll", 
+        "wcscoll", 
+        "_ftol2_sse", 
+        "_ftol2", 
+        "strchr", 
+        "strcpy_s", 
+        "memcpy", 
+        "memset", 
+        "setlocale", 
+        "__getmainargs", 
+        "_cexit", 
+        "_XcptFilter", 
+        "_initterm", 
+        "_amsg_exit", 
+        "__setusermatherr", 
+        "__p__commode", 
+        "__p__fmode", 
+        "__set_app_type", 
+        "msvcrt.dll", 
+        "?terminate@@YAXXZ", 
+        "_except_handler4_common", 
+        "_controlfp", 
+        "RtlUnicodeToOemN", 
+        "RtlMultiByteToUnicodeN", 
+        "ntdll.dll", 
+        "InterlockedExchange", 
+        "InterlockedCompareExchange", 
+        "SetUnhandledExceptionFilter", 
+        "QueryPerformanceCounter", 
+        "GetTickCount", 
+        "GetCurrentThreadId", 
+        "GetCurrentProcessId", 
+        "GetSystemTimeAsFileTime", 
+        "TerminateProcess", 
+        "GetCurrentProcess", 
+        "UnhandledExceptionFilter", 
+        "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>", 
+        "<!-- Copyright (c) Microsoft Corporation -->", 
+        "<assembly xmlns=\"urn:schemas-microsoft-com:asm.v1\" manifestVersion=\"1.0\">", 
+        "<assemblyIdentity", 
+        "    version=\"5.1.0.0\"", 
+        "    processorArchitecture=\"x86\"", 
+        "    name=\"Microsoft.Windows.Filesystem.Sort\"", 
+        "    type=\"win32\"", 
+        "<description>Sort Utility</description>", 
+        "<trustInfo xmlns=\"urn:schemas-microsoft-com:asm.v3\">", 
+        "    <security>", 
+        "        <requestedPrivileges>", 
+        "            <requestedExecutionLevel", 
+        "                level=\"asInvoker\"", 
+        "                uiAccess=\"false\"", 
+        "            />", 
+        "        </requestedPrivileges>", 
+        "    </security>", 
+        "</trustInfo>", 
+        "</assembly>", 
+        "<1H1L1,202t2x2", 
+        "273`3~3", 
+        "3\"4@4J4T4p4", 
+        "5,545B5[5c5j5", 
+        "6%6,696K6R6j6x6", 
+        "7+787A7[7b7o7~7", 
+        "8*8/8;8I8O8W8f8l8", 
+        "9,9=9C9`9q9w9", 
+        ":!:.:;:I:Q:c:i:{:", 
+        ";-;E;P;`;f;", 
+        "<!<(<C<I<V<_<s<z<", 
+        "=*=0=5=?=K=Q=_=e=s=", 
+        ">/>5>?>E>S>Z>_>i>t>", 
+        "?(?@?F?V?a?i?", 
+        "0+0@0F0L0Z0k0v0", 
+        "1+12181>1K1U1\\1b1i1o1", 
+        "2!2)282>2C2K2Q2Y2j2x2", 
+        "4/4Q4W4\\4e4j4q4w4|4", 
+        "51565F5\\5b5o5", 
+        "6-6I6P6p6}6", 
+        "7&7-797F7X7n7t7z7", 
+        "8.848@8U8", 
+        "9-92989>9L9Y9_9v9~9", 
+        ":-:3:K:Q:V:b:m:s:", 
+        ";$;8;L;Q;W;f;y;", 
+        "<,<1<C<Q<V<d<x<", 
+        "=/=5===\\=d=j={=", 
+        ">\u001f>%>2>;>A>P>d>q>|>", 
+        "?A?G?T?b?m?", 
+        "0&0<0B0L0Z0k0t0z0", 
+        "2 2O2V2", 
+        "4(40484c4j4|4", 
+        "5 5)525;5D5V5c5y5", 
+        "656@6I6k6x6", 
+        "6\u001f7$7*7/74797>7D7L7Y7t7}7", 
+        "8\"8)8=8C8I8O8\\8b8k8", 
+        "8&92989?9H9N9V9\\9i9q9w9", 
+        "9(:4:@:L:", 
+        ";T;d;j;x;", 
+        ">*>6>>>F>R>d>q>y>", 
+        "?$?-?8?F?K?Q?\\?c?p?", 
+        "VS_VERSION_INFO", 
+        "StringFileInfo", 
+        "040904B0", 
+        "CompanyName", 
+        "Microsoft Corporation", 
+        "FileDescription", 
+        "Sort Utility", 
+        "FileVersion", 
+        "6.1.7600.16385 (win7_rtm.090713-1255)", 
+        "InternalName", 
+        "LegalCopyright", 
+        " Microsoft Corporation. All rights reserved.", 
+        "OriginalFilename", 
+        "Sort.EXE", 
+        "ProductName", 
+        "Microsoft", 
+        " Windows", 
+        " Operating System", 
+        "ProductVersion", 
+        "6.1.7600.16385", 
+        "VarFileInfo", 
+        "Translation"
+    ], 
+    "metadata": {
+        "output": {
+            "pcap": {
+                "basename": "dump.pcap", 
+                "sha256": "4f79bfae2d367fa9917406979493a933aa256066eeebeb8f4115c4d8f1d8c53b", 
+                "dirname": ""
+            }
+        }
+    }
+}

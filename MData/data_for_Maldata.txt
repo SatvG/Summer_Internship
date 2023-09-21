@@ -1,0 +1,2 @@
+Number of files removed: 7
+The removed files are: [87, 134, 139, 187, 268, 286, 486]
